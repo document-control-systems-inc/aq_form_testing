@@ -1,0 +1,57 @@
+Se pierden archivos por problemas de conexión
+--> crear antes de que se transmita
+	-> se lo que voy a transmitir antes
+	-> al finalizar puedo hacer la validación
+	
+---
+Tamaño de los archivos
+
+--
+Certificado de proceso
+--
+Mover después de subir a aquarius --> de respaldo
+-----------
+El usuario al que le llega la información
+	-> registro de usuario
+Qué documentos le van a llegar
+Al documento se le aplica un proceso:
+	Cambio de status de un campo
+	-> se crea un campo que tiene status: por ejemplo: REVISADO, APROBADO
+	incluso que haya llegado es un cambio de status
+	
+	un timer y notificación (vía correo, alarma, notificación en dashboard)
+	
+boton derecho sobre la carpeta:
+	-> Definir acciones (reglas) (tarea)
+		Definir el tipo de archivo al que aplica la regla
+		Obtiene los usuario en el sistema --> Selecciona a los usuarios que quiera
+		obtener los index field de la metadata: Selecciona el campo que vas a usar
+		define los estados que va a tener
+		Tipo de notificación
+		
+	Cuando le llegue a el usuario, que seleccione el estado
+	
+	
+	
+Json: {"name":"prueba01","options":["Aprobar","Rechazar"],"duration":{"quantity":"1","type":1}}
+Botón Aceptar
+Json: {"name":"prueba02","options":["Opción 1"],"dueDate":"1/8/2019"}
+Cerrando ventana Task
+
+
+--> Para fecha, que sea con hora
+
+No actualizó la tarea
+revisar acentos
+
+--
+workflow - seguridad - forms
+--
+buscar todos los backfiles a partir de una carpeta
+clasificación automática (detectar formas) por medio de texto
+--
+
+http://ec2-52-23-226-55.compute-1.amazonaws.com:8080/aquarius
+http://localhost:9090
+ecm
+aquarius01

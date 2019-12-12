@@ -1,0 +1,546 @@
+Clase Documental
+{
+	"id": "XX",
+	"name": "XX",
+	"label": "XX",
+	"createdBy": "XX",
+	"createdOn": {
+			"time": 0, 
+			"timezone": "XX"
+		}
+	"fields":[
+				{
+					"name": "XX",
+					"label": "XX",
+					"type": "XX"
+					"properties": {
+							"size": xxx,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				}
+			]
+}
+
+
+Conf Default Storage Area:
+{
+	"id": "storagearea",
+	"prefix": "sa",
+	"defaultPath": "/opt/ecm/"
+}
+
+
+----------------
+Storage Area
+{
+	"id": "XX",
+	"name": "XX",
+	"path": "XX",
+	"domain": "XX",
+	"status": "active",
+	"file": 0
+}
+--> "status": "active"|"standby"|"closed"
+
+
+Storage Policy
+{
+	"id": "XX",
+	"name": "XX",
+	"type": "domain",
+	"domain": "XXXX",
+	"typeId": ["XX"],
+	"storageId": ["XX"]
+}
+--> "type": "domain"|"folder"|"class"
+
+Nodo:
+{
+	"id": "XX",
+	"type": "document",
+	"parent": ["XX"],
+	"domain": "XX",
+	"status": "active",
+	"visible": true,
+	"properties": {
+		"name": "XX",
+		"createdBy": "XX",
+		"createdOn": {
+			"time": 0, 
+			"timezone": "XX"
+		}
+		"modifiedBy": "XX",
+		"modifiedOn": {
+			"time": 0, 
+			"timezone": "XX"
+		}
+	}
+}
+--> "type": "domain"|"folder"|"document"
+--> "status": "active"|"deleted"|"closed"
+--> "visible": true|false
+
+Document
+{
+	"id": "XX",
+	"documentClass": "XX",
+	"docVersion": [
+		{
+			"id": "id",
+			"version": 0,
+			"revision": 0,
+			"status": "active",
+			"createdBy": "XX",
+			"createdOn": {
+				"time": 0, 
+				"timezone": "XX"
+			},
+			"mimeType": "XX",
+			"extension": "XX",
+			"size": 0,
+			"storageId": "XX",
+			"file": 0
+		}
+	],
+	"data": [
+		{
+			"version": 0,
+			"revision": 0,
+			"status": "active",
+			"createdBy": "XX",
+			"createdOn": {
+				"time": 0,
+				"timezone": "XX"
+			},
+			"properties": {
+				"numero_empleado": "XXXX",
+				"departamento": "XXXX"
+			}
+		}
+	]
+}
+-->"version"."status": "active"|"closed"
+-->"data"."status": "active"|"closed"
+
+
+// versiones:
+
+{
+	"id": "XX",
+	"versionId": "XX",
+	"numVersion": 0,
+	"status": "active",
+	"createdBy": "XX",
+	"createdOn": {
+		"time": 0, 
+		"timezone": "XX"
+	},
+	"mimeType": "XX",
+	"extension": "XX",
+	"size": 0,
+	"storageId": "XX",
+	"file": 0,
+	"thumbnail": "XX"
+}
+"version"."status": "active"|"closed"
+
+// metadata:
+{
+	"id": "XX",
+	"metadataId": "XX",
+	"numVersion": 0,
+	"status": "active",
+	"createdBy": "XX",
+	"createdOn": {
+		"time": 0,
+		"timezone": "XX"
+	},
+	"documentClassId": "XX",
+	"properties": {
+		"numero_empleado": "XXXX",
+		"departamento": "XXXX"
+	}
+}
+
+// comentarios:
+{
+	"id": "XX",
+	"objectId": "XX",
+	"createdBy": "XX",
+	"createdOn": {
+		"time": 0,
+		"timezone": "XX"
+	},
+	"comment": "XX"
+}
+
+// likes:
+{
+	"id": "XX",
+	"objectId": "XX",
+	"createdBy": "XX",
+	"createdOn": {
+		"time": 0,
+		"timezone": "XX"
+	}
+}
+
+// usuario:
+{
+	"cn": "XX",
+	"dn": "XX",
+	"displayName": "XX",
+	"photo":
+	"sessionTime": 0,
+	"maxConcurrent" : 0
+}
+
+// team:
+
+
+
+// Lista de Minuaturas
+{
+	"id": "XX",
+	"name": "XX",
+	"type": "XX",
+	"
+}
+
+
+
+// Perfil de Pantallas
+
+{
+	"id": "XX",
+	"name": "XX",
+	"elements": [
+		{
+			"pageId": "XX",
+			"componentsId": ["XX", "XX", "XX"]
+		}, 
+		{
+			"pageId": "XX",
+			"componentsId": ["XX", "XX", "XX"]
+		}
+	],
+	"createdBy": "XX",
+	"createdOn": {
+		"time": 0,
+		"timezone": "XX"
+	}
+}
+
+// Agregar perfil a usuarios
+[
+	{
+		"id": "XX",
+		"type": "XX",
+	},
+	{
+		"id": "XX",
+		"type": "XX",
+	},
+]
+
+
+
+
+
+// Acciones de documentos y carpetas:
+
+{
+	"id": "XX",
+	"type": "document",
+	"name": "XX"
+}
+
+
+
+// Proceso Batch:
+{
+	"id": "XX",
+	"type": "ocr",
+	"createdBy": "XX",
+	"createdOn": {
+		"time": 0,
+		"timezone": "XX"
+	},
+	"periodicity": 0,
+	"properties": {
+	}
+}
+
+"type":"ocr"|"thumbnail"
+
+// Properties by Document
+{
+	"nodeType": "document",
+	"id": "XXXX"
+}
+// Properties by Doc Version
+{
+	"nodeType": "document",
+	"id": "XXXX",
+	"versionId": "XXXX"
+}
+// Folder:
+{
+	"nodeType": "folder",
+	"id": "XXXX"
+}
+
+//Defición de tarea:
+// Por cantidad:
+{
+	"id": "XX",
+	"taskDef": {
+		"name": "XX",
+		"options": ["XX", "XX"],
+		"multifile": true,
+		"assignedTo": ["XX", "XX"],
+		"duration": {
+			"type": 0,
+			"quantity": 0
+		},
+		"form": [
+			{
+				"type": "checkbox",
+				"id": "XX",
+				"name": "Documentos Expediente",
+				"isMandatoty": true,
+				"items": ["Expediente de solicitud","Anexos","Pago correspondiente"]
+			},
+			{
+				"type": "textbox",
+				"id": "XX",
+				"name": "Texto de Prueba",
+				"isMandatoty": false
+			}
+		]
+	},
+	"createdBy": "XX",
+	"createdOn": {
+		"time": 0,
+		"timezone": "XX"
+	}
+}
+
+--> "type": 0|1|2|3|4 que significan: minutos|horas|días|meses|años
+
+
+	
+
+Tarea:
+{
+	"id": "XX",
+	"workflowId": "XX",
+	"taskDef": "XX",
+	"assignedTo": ["XX", "XX"],
+	"createdBy": "XX",
+	"createdOn": {
+		"time": 0,
+		"timezone": "XX"
+	},
+	"startedOn": {
+		"time": 0,
+		"timezone": "XX"
+	},
+	"finishedOn": {
+		"time": 0,
+		"timezone": "XX"
+	},
+	"dueDate": {
+		"time": 0,
+		"timezone": "XX"
+	},
+	"status": 0,
+	"file": "XX",
+	"output": "XX",
+	"comments": [
+		{
+			"createdBy": "XX",
+			"createdOn": {
+				"time": 0,
+				"timezone": "XX"
+			},
+			"comment": "XX"
+		},
+		{
+			"createdBy": "XX",
+			"createdOn": {
+				"time": 0,
+				"timezone": "XX"
+			},
+			"comment": "XX"
+		}
+	],
+	"form": [
+		{
+			"id": "XX",
+			"value": "XX"
+		},
+		{
+			"id": "XX",
+			"value": "XX"
+		}
+	]
+}
+
+--> "status": 0|1|2|3|4 que significan: inicial|en progreso|posponer|finalizada|cancelada
+
+Workflow def:
+
+{
+	"id": "XX",
+	"workflowDef": {
+		"name": "XX",
+		"tasks": [
+			{
+				"order": 0,
+				"taskDef": "XX",
+				"options": [
+					{
+						"option": "XX",
+						"nextTask": "XX"
+					},
+					{
+						"option": "XX",
+						"nextTask": "XX"
+					}
+				]
+			}
+		]
+	},
+	"createdBy": "XX",
+	"createdOn": {
+		"time": 0,
+		"timezone": "XX"
+	}
+}
+
+workflow Instance:
+{
+	"id": "XX",
+	"workflowDef": "XX",
+	"createdBy": "XX",
+	"createdOn": {
+		"time": 0,
+		"timezone": "XX"
+	},
+	"startedOn": {
+		"time": 0,
+		"timezone": "XX"
+	},
+	"finishedOn": {
+		"time": 0,
+		"timezone": "XX"
+	},
+	"status": 0,
+	"file": {
+		"XX"
+	}
+}
+
+--> "status": 0|1|2|3 que significan: inicial|en progreso|finalizada|cancelada
+
+
+//Magic Folder Tree
+{
+	"name": "XX",
+	"localPath": "XX",
+	"remotePath": "XX",
+	"type": 0,
+	"createdOn": {
+		"time": 0,
+		"timezone": "XX"
+	},
+	"modifiedOn": {
+		"time": 0,
+		"timezone": "XX"
+	},
+	"childs": [
+		"XX"
+	]
+}
+
+//Magig Folder Exclude Files
+{
+	"extensions": [ "XX", "XX"]
+}
+--> type: 0 Folder, 1 File
+
+
+
+
+---
+
+Json PDF & Web:
+
+Template PDF & Web:
+{
+	"name": "XXX",
+	"type": "XX",
+	"form": [{
+		"image": "XXX",
+		"params": [
+
+		]
+	}]
+}
+
+type: pdf|web
+
+
+paramsDef PDF:
+--> COLOR de letra
+{
+	"type": "XX",
+	"name": "XX",
+	"xcoord": 0,
+	"ycoord": 0,
+	Si es text:
+	"font": "XX",
+	"fontSize": 0
+	"Si es image:
+	"scaleX": 0,
+	"scaleY": 0
+}
+type: text|image
+font: Courier|Courier-Bold|Helvetica|Helvetica-Bold|Times-Bold|Times-BoldItalic|Times-Italic|Times-Roman
+
+paramsDef Web:
+{
+	"type": "XX",
+	"name": "XX",
+	"xcoord": 0,
+	"ycoord": 0,
+	"width": 0,
+	"height": 0,
+	"backgroundColor": "#xxxxxx",
+	"fontSize": 0,
+	"isEnable": true|false,
+	"isRequired": true|false,
+	"options": [{
+		"value": "XX",
+		"label": "XX"
+	}]
+}
+
+type: text|radio|checkbox|select
+text: xcoord, ycoord, width, height,backgroundColor,fontSize,isEnable,isRequired
+radio: xcoord, ycoord, width, height,isEnable
+checkbox: xcoord, ycoord, width, height,isEnable
+select: xcoord, ycoord, width, height,backgroundColor,fontSize,isEnable,isRequired,options
+
+Data:
+{
+	"template": "XX",
+	"docName": "XX",
+	"values": [{
+		"param": "XX",
+		"value": "XX"
+	}]
+}

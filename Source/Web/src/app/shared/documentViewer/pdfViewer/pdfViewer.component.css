@@ -1,0 +1,86 @@
+.pdfViewer.removePageBorders{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.btn-link-preview{
+	padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 200000;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+.viewer{
+	float:right;
+}
+
+.layout{
+	background-color:#999999;
+	padding-left:0px;
+	padding-right:0px;
+	max-height:552px;
+	border-bottom-right-radius:5px;
+	border-bottom-left-radius:5px;
+}
+
+.withoutFullscreenViewer{
+	overflow:auto;
+	max-height:493px;
+}
+
+label{
+    color:#505050;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #666666;
+}
+::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #e1e1e1;
+}
+::-webkit-scrollbar-track:active {
+  background: #e1e1e1;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

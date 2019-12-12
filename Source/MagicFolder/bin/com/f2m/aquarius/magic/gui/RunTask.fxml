@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="373.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.f2m.aquarius.magic.gui.RunTaskController">
+   <children>
+      <Label fx:id="lblTaskName" contentDisplay="CENTER" layoutX="22.0" layoutY="22.0" prefHeight="17.0" prefWidth="238.0" text="\%Task Name%" />
+      <HBox fx:id="panButtons" alignment="TOP_RIGHT" layoutX="144.0" layoutY="332.0" prefHeight="29.0" prefWidth="434.0" spacing="10.0">
+         <children>
+            <Button fx:id="btnCancelar" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#closeWindowCancel" text="Cancelar" />
+         </children>
+      </HBox>
+      <TabPane fx:id="tabPane" layoutX="15.0" layoutY="70.0" prefHeight="242.0" prefWidth="621.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Información">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="215.0" prefWidth="110.0" spacing="5.0">
+                           <children>
+                              <Label text="Fecha Creación:" />
+                              <Label text="Creador:" />
+                              <Label text="Fecha Inicio:" />
+                              <Label text="Fecha Expiración:" />
+                              <Label text="Tiempo Ejecución:" />
+                              <Label text="Fecha Finalización:" />
+                              <Label text="Responsable:" />
+                              <Label text="Status:" />
+                              <Label text="ID:" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="111.0" prefHeight="215.0" prefWidth="171.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="lblCreationDate" text="Label" />
+                              <Label fx:id="lblCreator" text="Label" />
+                              <Label fx:id="lblStartDate" text="Label" />
+                              <Label fx:id="lblDueDate" text="Label" />
+                              <Label fx:id="lblExecutionTime" text="Label" />
+                              <Label fx:id="lblFinalizationDate" text="Label" />
+                              <Label fx:id="lblResponsable" text="Label" />
+                              <Label fx:id="lblStatus" text="Label" />
+                              <Label fx:id="lblId" text="Label" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab fx:id="panFiles" text="Archivos">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <VBox fx:id="panFilesElements" prefHeight="212.0" prefWidth="621.0" />
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab fx:id="panForm" text="Formulario">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <VBox fx:id="panFormElements" prefHeight="212.0" prefWidth="621.0" />
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+          <Tab text="Comentarios">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="211.0" prefWidth="578.0">
+                           <children>
+                              <Label layoutX="34.0" layoutY="3.0" text="Comentarios" />
+                              <TextArea fx:id="txtComments" editable="false" layoutX="120.0" layoutY="3.0" prefHeight="158.0" prefWidth="449.0" />
+                              <TextField fx:id="txtComment" layoutX="120.0" layoutY="171.0" prefHeight="25.0" prefWidth="366.0" />
+                              <Button fx:id="bntAddComment" layoutX="492.0" layoutY="171.0" mnemonicParsing="false" onAction="#addComment" prefHeight="25.0" prefWidth="74.0" text="Agregar" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="btnPause" layoutX="552.0" layoutY="18.0" mnemonicParsing="false" onAction="#pauseTaskAction" text="Posponer" />
+      <Button fx:id="btnSave" layoutX="479.0" layoutY="18.0" mnemonicParsing="false" onAction="#saveTaskAction" text="Guardar" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,9 @@
+#logout:hover{
+	cursor:pointer;
+}
+.sidebar-normal{
+	color:white;
+}
+li.active > a > span.sidebar-normal{
+	color:#3C4858;
+}

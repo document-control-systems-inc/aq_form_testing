@@ -1,0 +1,185 @@
+{"id": "XX","workflowId": "XX","taskDef": "0a0ebeb2-1b4c-414f-a866-04e26d0e0089","assignedTo": ["ECM"],"createdBy": "ECM","createdOn": {"time": 0,"timezone": "XX"},"startedOn": {"time": 0,"timezone": "XX"},"finishedOn": {"time": 0,"timezone": "XX"},"dueDate": {"time": 0,"timezone": "XX"},"status": 0,"file": "archivo01.jpg","output": "","comments": [{"createdBy": "Adrian","createdOn": {"time": 0,"timezone": "XX"},"comment": "Comentario 01"},{"createdBy": "Adrian","createdOn": {"time": 0,"timezone": "XX"},"comment": "Comentario 02"}]}
+
+{"id": "0a0ebeb2-1b4c-414f-a866-04e26d0e0089", "taskDef": {"name": "prueba01", "options": ["Aprobar", "Rechazar"], "duration": {"type": 1, "quantity": "1"},"form": [{"type": "checkbox","id":"docExp","name": "Documentos Expediente","isMandatoty": true,"items": ["Expediente de solicitud","Anexos","Pago correspondiente","1","2","3","4","5","6","7","8","9","10"]},{"type": "textbox","id": "observacion","name": "Texto de Prueba","isMandatoty": false}]}, "createdBy": "DEMO", "createdOn": {"time": 1546994444046, "timezone": "America/Mexico_City"}}
+
+
+{
+	"form": [{
+		"id": "observacion",
+		"name": "Observaciones",
+		"type": "textbox",
+		"isMandatoty": false
+	}],
+	"name": "Escaneado",
+	"options": ["Registrado", "Enviar a Papelera"],
+	"duration": {
+		"type": 1,
+		"quantity": "1"
+	}
+}
+
+
+{
+	"form": [{
+			"id": "observacion",
+			"name": "Observaciones",
+			"type": "textbox",
+			"isMandatoty": false
+		}],
+	"name": "Recepción Solicitud",
+	"options": ["Recibido", "Rechazado"],
+	"duration": {
+		"type": 1,
+		"quantity": "1"
+	}
+}
+
+{
+	"form": [{
+			"id": "docExp",
+			"name": "Documentos Expediente",
+			"type": "checkbox",
+			"items": ["Expediente de solicitud", "Anexos", "Pago correspondiente"],
+			"isMandatoty": true
+		}, {
+			"id": "observacion",
+			"name": "Observaciones",
+			"type": "textbox",
+			"isMandatoty": false
+		}],
+	"name": "Recepción inicial de Expediente",
+	"options": ["Recibido", "Rechazado"],
+	"duration": {
+		"type": 1,
+		"quantity": "1"
+	}
+}
+
+{
+	"form": [{
+			"id": "typeRequest",
+			"name": "Tipo Solicitud",
+			"type": "checkbox",
+			"items": ["Con Pago", "Sin Pago"],
+			"isMandatoty": true
+		},{
+			"id": "infoRequest",
+			"name": "Información complementaria",
+			"type": "textbox",
+			"isMandatoty": false
+		},{
+			"id": "assignAnalist",
+			"name": "Asignar Analista",
+			"type": "textbox",
+			"isMandatoty": false
+		}],
+	"name": "Revisión de Expediente",
+	"options": ["Revisado", "Rechazado"],
+	"duration": {
+		"type": 1,
+		"quantity": "1"
+	}
+}
+
+{
+	"form": [{
+			"id": "additionalPay",
+			"name": "Pago Adicional",
+			"type": "checkbox",
+			"items": ["Si", "No"],
+			"isMandatoty": true
+		},{
+			"id": "typeService",
+			"name": "Tipo de Servicio Solicitado",
+			"type": "textbox",
+			"isMandatoty": false
+		},{
+			"id": "observacion",
+			"name": "Observaciones",
+			"type": "textbox",
+			"isMandatoty": false
+		}],
+	"name": "Análisis Solicitud",
+	"options": ["Análisis Completado", "Rechazado"],
+	"duration": {
+		"type": 1,
+		"quantity": "1"
+	}
+}
+
+
+
+{
+	"name": "Demo Banco Central",
+	"tasks": [
+		{
+			"order": 0,
+			"taskDef": "2a60dcbc-cf9e-4ed2-9846-6781cb42038b",
+			"options": [
+				{
+					"option": "Registrado",
+					"nextTask": "495a5322-44cb-436b-b7aa-b54544fffa9f"
+				},
+				{
+					"option": "Enviar a Papelera",
+					"nextTask": ""
+				}
+			]
+		}, {
+			"order": 1,
+			"taskDef": "495a5322-44cb-436b-b7aa-b54544fffa9f",
+			"options": [
+				{
+					"option": "Recibido",
+					"nextTask": "0e2c80a2-b7df-4325-a75b-8358d981dd12"
+				},
+				{
+					"option": "Rechazado",
+					"nextTask": "2a60dcbc-cf9e-4ed2-9846-6781cb42038b"
+				}
+			]
+		}, {
+			"order": 2,
+			"taskDef": "0e2c80a2-b7df-4325-a75b-8358d981dd12",
+			"options": [
+				{
+					"option": "Recibido",
+					"nextTask": "61376e01-ef96-4f71-be30-bab9064dda4c"
+				},
+				{
+					"option": "Rechazado",
+					"nextTask": "495a5322-44cb-436b-b7aa-b54544fffa9f"
+				}
+			]
+		}, {
+			"order": 3,
+			"taskDef": "61376e01-ef96-4f71-be30-bab9064dda4c",
+			"options": [
+				{
+					"option": "Revisado",
+					"nextTask": "35394e85-f398-4016-847b-37e7a581a3d7"
+				},
+				{
+					"option": "Rechazado",
+					"nextTask": "0e2c80a2-b7df-4325-a75b-8358d981dd12"
+				}
+			]
+		}, {
+			"order": 4,
+			"taskDef": "35394e85-f398-4016-847b-37e7a581a3d7",
+			"options": [
+				{
+					"option": "Análisis Completado",
+					"nextTask": ""
+				},
+				{
+					"option": "Rechazado",
+					"nextTask": "61376e01-ef96-4f71-be30-bab9064dda4c"
+				}
+			]
+		}
+	]
+}
+
+
+

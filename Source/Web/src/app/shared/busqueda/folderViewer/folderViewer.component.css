@@ -1,0 +1,93 @@
+.imagePad{
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.thumbMargin{
+  margin-top: 10px;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 7px;
+  text-align: right;
+}
+
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 68%;
+}
+
+@media only screen and (max-width: 480px) {
+    .img-overlay:before {
+    content: ' ';
+    display: block;
+    /* adjust 'height' to position overlay content vertically */
+    height: 57%;
+  }
+}
+
+
+.iconForm {
+	padding: 5px;
+}
+
+.check{
+	bottom: 8px;
+}
+
+.card-table {
+	width: 50%;
+}
+
+.movimiento{
+	padding-left: 1px;
+}
+
+.main-content{
+	padding: 10px;
+}
+
+/* Test de Scroll*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #aaa;
+}
+::-webkit-scrollbar-track {
+  background: #eee;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #eee;
+}
+::-webkit-scrollbar-track:active {
+  background: #eee;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

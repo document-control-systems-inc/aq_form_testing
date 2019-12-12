@@ -1,0 +1,11 @@
+.userPic{
+	height:40px;
+	border-radius: 50%;
+}
+.userName{
+	color:blue;
+}
+.comment{
+	padding-left: 0px;
+    padding-right: 0px;
+}

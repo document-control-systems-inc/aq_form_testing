@@ -1,0 +1,43 @@
+<div class="left">
+    <div class="profile-user" style="margin-bottom: 5px;">
+        <img class="profile-pic" src="/assets/images/example-pic.jpg"><br>
+        <label style="margin-top: 4px;margin-bottom: 10px;margin-left: 6px;">Alexis Gallardo </label>
+        <button type="" class="btn btn-link btn-xs" (click)="logout()">
+            <span class="glyphicon glyphicon-log-out" style="margin-left: 5px;margin-top: 3px;margin-right: 5px;margin-bottom: 5px;top: 0px;"></span>
+        </button>
+    </div>
+    <div class="item text-left">
+        <a [routerLink]="['/portal']" [routerLinkActive]="['activePage']" translate><span class="glyphicon glyphicon-home"></span> navbar.home</a>
+    </div>
+    <div class="item text-left">
+        <span class="glyphicon glyphicon-cloud-upload"></span>
+            Captura
+    </div>
+    <div class="item text-left">
+        <a [routerLink]="['/documentViewer']" [routerLinkActive]="['activePage']"><span class="glyphicon glyphicon-folder-open"></span>Explorar</a>
+    </div> 
+    <div class="item text-left">
+        <span class="glyphicon glyphicon-search"></span>
+            Búsqueda
+    </div>
+    <div class="item text-left">
+        <span class="glyphicon glyphicon-th-list"></span>
+            Tareas
+    </div>
+    <div class="item text-left">
+        <span class="glyphicon glyphicon-tasks"></span>
+            Reportes
+    </div> 
+    <div class="item text-left">
+        <span class="glyphicon glyphicon-stats"></span>
+            Monitoreo
+    </div>  
+    <div class="item text-left">
+        <span class="glyphicon glyphicon-eye-open"></span>
+            Auditoría
+    </div>
+    <div class="item text-left">
+        <span class="glyphicon glyphicon-wrench"></span>
+            Configuración
+    </div>
+</div>

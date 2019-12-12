@@ -1,0 +1,38 @@
+<div class="main-content">
+	<ngx-loading [show]="loading"></ngx-loading>
+
+	<div class="col-xs-12 col-sm-4">
+		<div class="text-center">
+			<button class="btn btn-primary" (click)="setNuevaBusqueda()">
+	            <i class="material-icons">add_box</i> Nueva búsqueda
+	        </button>
+		</div>
+			
+        <div class="card hidden-xs" style="min-height: 400px;">
+			<div class="card-header card-header-icon" data-background-color="blue">
+		        <i class="material-icons">youtube_searched_for</i>
+		    </div>
+		    <h4 class="card-title" style="margin-top: 10px;margin-bottom: 15px;">Búsquedas guardadas</h4>
+		    <div style="padding: 0;width: 100%;" *ngFor="let busqueda of lstStoredSearch">
+		    	<button class="btn btn-primary btn-simple" style="padding: 0;margin-left: 15px;" (click)="showSearch(busqueda)">{{busqueda.info.name}}</button>
+		    </div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-8 noPad">
+		<mat-tab-group style="margin-bottom: 5px;" [selectedIndex]="selectedIndex" (selectedTabChange)="tabChanged($event)">
+			<mat-tab *ngFor="let tab of tabs;let i = index">
+				<ng-template mat-tab-label>
+					{{tab.label}}
+					<button class="btn btn-primary btn-simple btn-xs" (click)='removeTab(i)' style="font-size: 18px;padding-left: 7px;padding-right: 7px;">×</button>
+				</ng-template>
+				<!-- Tab types: new, stored, search, document, folder -->
+				<nueva-busqueda [lstClase]="lstClase" [lstCriteria]="lstCriteria" [lstPaths]="lstPaths" [id]="tab.id" *ngIf="tab.type==='new'" (execute)="execute($event)"></nueva-busqueda>
+				<busqueda-almacenada [lstClase]="lstClase" [lstCriteria]="lstCriteria" [lstPaths]="lstPaths" [id]="tab.id" *ngIf="tab.type==='stored'" [searchData]="tab.info" (execute)="execute($event)"></busqueda-almacenada>
+				<resultado-busqueda [searchResult]="tab.search" [class]="lstClase" (thumbnail)="thumbnails($event)" (folder)="goToFolderView($event)" *ngIf="tab.type==='search'"></resultado-busqueda>
+				<documentViewer [idDoc]="tab.idDoc" [lstDoc]="[]" (tabs)="tabsEvent($event)" *ngIf="tab.type==='document'"></documentViewer>
+				<folder-viewer [id]="tab.idDoc" [class]="lstClase" (change)="changeId($event)" (thumbnail)="thumbnails($event)" (viewer)="goToDocView($event)" *ngIf="tab.type==='folder'"></folder-viewer>
+			</mat-tab>
+		</mat-tab-group>	
+	</div>
+		
+</div>

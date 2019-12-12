@@ -1,0 +1,80 @@
+<div class="main-content">
+	<div class="col-md-12">
+        <div class="card">
+            <form [formGroup]="form" class="form-horizontal">
+                <div class="card-header card-header-text" data-background-color="rose">
+                    <h4 class="card-title">Configuración</h4>
+                </div>
+                <div class="card-content">
+                	<div class="row">
+                        <label class="col-sm-2 label-on-left">LDAP server</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(form, 'ldapServer')">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control" id="ldapServer" formControlName="ldapServer">
+                                <div *ngIf="isFieldValid(form, 'ldapServer')">
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Required text
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                	<div class="row">
+                        <label class="col-sm-2 label-on-left">LDAP port</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(form, 'ldapPort')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="ldapPort" formControlName="ldapPort">
+                                <div *ngIf="isFieldValid(form, 'ldapPort')" >
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Add a number!
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">LDAP user</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(form, 'ldapUser')">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control" id="ldapUser" formControlName="ldapUser">
+                                <div *ngIf="isFieldValid(form, 'ldapUser')">
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Required text
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">LDAP password</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating column-sizing" [ngClass]="displayFieldCss(form, 'ldapPassword')">
+                                <label class="control-label"></label>
+                                <input type="password"
+                                    class="form-control"
+                                    id="ldapPassword"
+                                    formControlName="ldapPassword">
+                                <div *ngIf="isFieldValid(form, 'ldapPassword')">
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Enter a valid password.
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-right">
+                	<button class="btn btn-default">Probar conexión</button>
+                    <button type="submit" class="btn btn-rose btn-fill" (click)="onType()">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

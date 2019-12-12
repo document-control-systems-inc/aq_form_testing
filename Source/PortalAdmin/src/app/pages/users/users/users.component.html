@@ -1,0 +1,209 @@
+<div class="main-content">
+	<div class="col-md-12">
+        <!-- [selectedIndex]="selectedIndex" (selectedTabChange)="tabChanged($event)" -->
+        <mat-tab-group style="margin-bottom: 5px;" (selectedTabChange)="addStyle($event)">
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Alta
+                </ng-template>
+                <div class="col-md-12" style="padding:0;">
+                    <div class="card">
+                        <form [formGroup]="add" class="form-horizontal">
+                            <div class="card-header card-header-text" data-background-color="rose">
+                                <h4 class="card-title">Añadir usuario</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="row">
+                                    <label class="col-sm-2 label-on-left">Nombre</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group label-floating" [ngClass]="displayFieldCss(add, 'name')">
+                                            <label class="control-label"></label>
+                                            <input type="text" class="form-control" id="addName" formControlName="name">
+                                            <div *ngIf="isFieldValid(add, 'name')">
+                                                <span class="sr-only">(error)</span>
+                                                <div class="error-msg">
+                                                    Required text
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-2 label-on-left">Apellido</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group label-floating" [ngClass]="displayFieldCss(add, 'lastname')">
+                                            <label class="control-label"></label>
+                                            <input type="text" class="form-control" id="addLastname" formControlName="lastname">
+                                            <div *ngIf="isFieldValid(add, 'lastname')">
+                                                <span class="sr-only">(error)</span>
+                                                <div class="error-msg">
+                                                    Required text
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-2 label-on-left">Email</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group label-floating" [ngClass]="displayFieldCss(add, 'email')">
+                                            <label class="control-label"></label>
+                                            <input type="text" class="form-control" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="addEmail" formControlName="email">
+                                            <div *ngIf="isFieldValid(add, 'email')">
+                                                <span class="sr-only">(error)</span>
+                                                <div class="error-msg">
+                                                    Must be a valid email like user@examplepage.com
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-2 label-on-left">User id</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group label-floating" [ngClass]="displayFieldCss(add, 'uid')">
+                                            <label class="control-label"></label>
+                                            <input type="text" class="form-control" id="addUid" formControlName="uid">
+                                            <div *ngIf="isFieldValid(add, 'uid')">
+                                                <span class="sr-only">(error)</span>
+                                                <div class="error-msg">
+                                                    Required text
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-2 label-on-left">Password</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group label-floating column-sizing" [ngClass]="displayFieldCss(add, 'password')">
+                                            <label class="control-label"></label>
+                                            <input type="password"
+                                                class="form-control"
+                                                id="addPassword"
+                                                formControlName="password">
+                                            <div *ngIf="isFieldValid(add, 'password')">
+                                                <span class="sr-only">(error)</span>
+                                                <div class="error-msg">
+                                                    Enter a valid password.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-2 label-on-left">Confirm password</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group label-floating column-sizing" [ngClass]="displayFieldCss(add, 'confirmPassword')">
+                                            <label class="control-label"></label>
+                                            <input type="password"
+                                                class="form-control"
+                                                id="addConfirmPassword"
+                                                formControlName="confirmPassword">
+                                            <div *ngIf="isFieldValid(add, 'confirmPassword')">
+                                                <span class="sr-only">(error)</span>
+                                                <div class="error-msg">
+                                                    Password mismatch.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-right">
+                                <button type="submit" class="btn btn-rose btn-fill" (click)="onType()">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </mat-tab>
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Suspender
+                </ng-template>
+                <div class="col-md-12" style="padding:0;">
+                    <div class="card">
+                        <div class="col-xs-12 form-horizontal">
+                            <div class="card-header card-header-text" data-background-color="rose">
+                                <h4 class="card-title">Suspender usuario</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="row">
+                                    <label class="col-sm-2" style="margin-top: 10px;">Usuario</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group">
+                                            <!-- (ngModelChange)="setLstPath()" -->
+                                            <tree-select 
+                                                name="suspClass" 
+                                                [items]="lstUsers" 
+                                                idField="uid" 
+                                                textField="fullName" 
+                                                childrenField="children" 
+                                                filterPlaceholder="Type item filter..."
+                                                [(ngModel)]="suspenderId"
+                                                [multiple]="false"
+                                                [filterPlaceholder]="'Filtra aquí...'" 
+                                                [allowFilter]="true" 
+                                                [disabled]="false" 
+                                                expandMode="All">
+                                            </tree-select> 
+                                            <span class="input-group-btn" style="padding:0;">
+                                                <button class="btn btn-rose btn-fill">Suspender</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Reset password
+                </ng-template>
+                <div class="col-md-12" style="padding:0;">
+                    <div class="card">
+                        <div class="col-xs-12 form-horizontal">
+                            <div class="card-header card-header-text" data-background-color="rose">
+                                <h4 class="card-title">Cambiar contraseña</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="row">
+                                    <label class="col-sm-2" style="margin-top: 10px;">Usuario</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group">
+                                            <!-- (ngModelChange)="setLstPath()" -->
+                                            <tree-select 
+                                                name="resPassword" 
+                                                [items]="lstUsers" 
+                                                idField="uid" 
+                                                textField="fullName" 
+                                                childrenField="children" 
+                                                filterPlaceholder="Type item filter..."
+                                                [(ngModel)]="passwordId"
+                                                [multiple]="false"
+                                                [filterPlaceholder]="'Filtra aquí...'" 
+                                                [allowFilter]="true" 
+                                                [disabled]="false" 
+                                                expandMode="All">
+                                            </tree-select> 
+                                            <span class="input-group-btn" style="padding:0;">
+                                                <button class="btn btn-rose btn-fill">Restaurar</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>
+
+    </div>
+</div>

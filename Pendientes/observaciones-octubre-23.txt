@@ -1,0 +1,45 @@
+---
+Detectar - Agrupar 
+- Transferir o borrar -
+- Actualizar un documento -
+
+---
+Aquarius no genera el multitiff
+Por página en blanco
+
+--> QR code separo e indexo
+------
+
+Imagen escaneada
+- Datos en un archivo - 
+------
+
+Backfile del folder
+- nombre de computadora
+
+
+Inteligencia:
+
+-> Llega y manda a otra carpeta en el sistema operativo
+Copiar a local 
+Enviar a a una carpeta cloud
+Generar OCR
+Convertir a PDF
+Convertir de formato --> a JPG a TIFF
+A todos los documentos que te lleguen, quiero pegarles un QR code o barcode
+--> Al documento
+Mandar por Email
+Poner un filtro por nombre
+
+--
+En la carpeta vas haciendo el registro de lo que hicieste con cada documento
+
+
+---
+En cloud --> OCR --> debe de ser configurable
+	 --> Generar el BackFile de cada archivo que suba
+---------------------------------------------------------
+
+Generar la forma
+
+

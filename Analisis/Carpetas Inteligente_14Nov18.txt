@@ -1,0 +1,9 @@
+Manejador Temporal:
+Windows y MacOs
+
+La bitácora --> no visible, no sea editable y en binario
+----
+Layers en servicios:
+	Que se ejecuta primero y que va después: Orquestación y workflow
+
+

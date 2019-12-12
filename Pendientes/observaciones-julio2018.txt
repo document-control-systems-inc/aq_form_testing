@@ -1,0 +1,22 @@
+-> Integración con otros productos:
+	- Drive --> Ponerlo como un drive
+
+.txt
+la fecha de modificación del documento
+sincronizar <--> password y user para llegar a los distintos sistemas
+quien lo modificó
+
+buscar cuándo se actualizó, quien lo actualizó, preguntar si se necesita hacer la sincronización
+(back_document) --> está por atrás (toda la información)
+--> Ruta donde se guardó
+ping -> donde estas, synronicer.
+--
+Inteligencia
+Categorizar
+que uno pueda hacer una categoria --> y el usuario nos pueda definir
+
+motor de categorización
+
+----
+Busqueda por lotes: Subir un archivo y que lea los campos del csv
+---

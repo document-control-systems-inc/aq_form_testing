@@ -1,0 +1,47 @@
+vagrant box add ubuntu/xenial64
+
+
+
+
+instalar npm
+
+--> instalar el node.js
+npm install -g @angular/cli
+ng -v
+npm install -g typescript
+tsc -v
+
+instalar atom
+
+ir a settings, seleccionar install
+buscar angular-2-typescript-snippet e instalar
+buscar atom-bootstrap4 e instalar
+buscar atom-typescript e instalar
+buscar file-icons e instalar
+buscar platformio-ide-terminal e instalar
+buscar v-bootstrap4 e instalar
+
+
+--
+ir a la carpeta del proyecto angular
+--
+npm install
+--
+abrir el folder en atom
+
+
+--
+Para correr local:
+npm install
+ng serve
+
+--
+Para compilar:
+ng build
+entrar a dist
+http-server -o -p 8081
+--
+ng build --prod
+
+
+

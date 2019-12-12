@@ -1,0 +1,56 @@
+.pdfViewer.removePageBorders{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.btn-link-preview{
+	padding: unset;
+	border: unset;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+.viewer{
+	float:right;
+}
+
+.prevPage{
+	color:#124971;
+    opacity:0.5;
+}
+
+.nextPage{
+	color:#124971;
+    opacity:0.5;
+}
+
+.layout{
+	background-color:gray;
+	padding-left:0px;
+	padding-right:0px;
+	max-height:548px;
+	border-bottom-right-radius:5px;
+	border-bottom-left-radius:5px;
+}
+
+.withoutFullscreenViewer{
+	overflow:auto;
+	max-height:500px;
+}

@@ -1,0 +1,114 @@
+<div class="main-content">
+	<div class="col-md-12">
+        <div class="card">
+            <form [formGroup]="form" class="form-horizontal">
+                <div class="card-header card-header-text" data-background-color="rose">
+                    <h4 class="card-title">Configuración</h4>
+                </div>
+                <div class="card-content">
+                	<div class="row">
+                        <label class="col-sm-2 label-on-left">Host</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(form, 'host')">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control" pattern="[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)" id="host" formControlName="host">
+                                <div *ngIf="isFieldValid(form, 'host')">
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Must be a valid URL like www.examplepage.com
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                	<div class="row">
+                        <label class="col-sm-2 label-on-left">Port</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(form, 'port')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="port" formControlName="port">
+                                <div *ngIf="isFieldValid(form, 'port')" >
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Add a number!
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">User</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(form, 'user')">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="user" formControlName="user">
+                                <div *ngIf="isFieldValid(form, 'user')">
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Must be a valid email like user@examplepage.com
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Password</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating column-sizing" [ngClass]="displayFieldCss(form, 'password')">
+                                <label class="control-label"></label>
+                                <input type="password"
+                                    class="form-control"
+                                    id="password"
+                                    formControlName="password">
+                                <div *ngIf="isFieldValid(form, 'password')">
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Enter a valid password.
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Sender</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(form, 'sender')">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="sender" formControlName="sender">
+                                <div *ngIf="isFieldValid(form, 'sender')">
+                                    <span class="sr-only">(error)</span>
+                                    <div class="error-msg">
+                                        Must be a valid email like user@examplepage.com
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="col-sm-4">
+                                
+                            </div>
+                            <div class="col-sm-8 checkbox pull-left">
+                                <label>
+                                    <input type="checkbox" id="ttl" formControlName="ttl"> TTL
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="checkbox pull-left">
+                                <label>
+                                    <input type="checkbox" name="auth" formControlName="auth"> AUTH
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-right">
+                	<button class="btn btn-default">Probar conexión</button>
+                    <button type="submit" class="btn btn-rose btn-fill" (click)="onType()">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

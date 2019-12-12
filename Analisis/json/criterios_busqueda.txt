@@ -1,0 +1,139 @@
+a.	Texto (String) Cuadro Texto 1 Linea
+1.	Empieza Por (Start with)			--> Cuadro Texto 1 Linea
+2.	Finaliza Con (End with)				--> Cuadro Texto 1 Linea
+3.	Como (Like)							--> Cuadro Texto 1 Linea
+4.	No es Como (Not like)				--> Cuadro Texto 1 Linea
+5.	Igual (Equals)						--> Cuadro Texto 1 Linea
+6.	No es igual (Not equals)			--> Cuadro Texto 1 Linea
+11.	Incluir cualquiera (Include any)	--> Cuadro Texto 1 Linea
+12.	Excluir todo (Exclude all)			--> Cuadro Texto 1 Linea
+13.	Esta vacío (Is empty)				--> 
+14.	No está vacío (Is not empty)		--> 
+
+b.	Párrafo (Text) Cuadro Texto Multilinea
+1.	Empieza Por (Start with)			--> Cuadro Texto Multilinea
+2.	Finaliza Con (End with)				--> Cuadro Texto Multilinea
+3.	Como (Like)							--> Cuadro Texto Multilinea
+4.	No es Como (Not like)				--> Cuadro Texto Multilinea
+5.	Igual (Equals)						--> Cuadro Texto Multilinea
+6.	No es igual (Not equals)			--> Cuadro Texto Multilinea
+11.	Incluir cualquiera (Include any)	--> Cuadro Texto Multilinea
+12.	Excluir todo (Exclude all)			--> Cuadro Texto Multilinea
+13.	Esta vacío (Is empty)				--> 
+14.	No está vacío (Is not empty)		--> 
+
+
+c.	Entero (Integer) Cuadro Texto 1 Linea --> numeric
+5.	Igual (Equals)										--> Cuadro Texto 1 Linea
+6.	No es igual (Not equals)							--> Cuadro Texto 1 Linea
+7.	Menos que (Less than)								--> Cuadro Texto 1 Linea
+8.	Menos que o igual que (Less than or equal)			--> Cuadro Texto 1 Linea
+9.	Mayor que (Greater than)							--> Cuadro Texto 1 Linea
+10.	Mayor que o igual que (Greater than or equal)		--> Cuadro Texto 1 Linea
+13.	Esta vacío (Is empty)								-->
+14.	No está vacío (Is not empty)						-->
+15.	Entre (Between)										--> Cuadro Texto 1 Linea "y" Cuadro Texto 1 Linea  --> validación: El integer2 no puede ser menor que el integer1
+16.	No entre (Not between)								--> Cuadro Texto 1 Linea "y" Cuadro Texto 1 Linea  --> validación: El integer2 no puede ser menor que el integer1
+
+d.	Numérico (Numeric) Cuadro Texto 1 Linea --> numeric
+5.	Igual (Equals)										--> Cuadro Texto 1 Linea
+6.	No es igual (Not equals)							--> Cuadro Texto 1 Linea
+7.	Menos que (Less than)								--> Cuadro Texto 1 Linea
+8.	Menos que o igual que (Less than or equal)			--> Cuadro Texto 1 Linea
+9.	Mayor que (Greater than)							--> Cuadro Texto 1 Linea
+10.	Mayor que o igual que (Greater than or equal)		--> Cuadro Texto 1 Linea
+13.	Esta vacío (Is empty)								-->
+14.	No está vacío (Is not empty)						-->
+15.	Entre (Between)										--> Cuadro Texto 1 Linea "y" Cuadro Texto 1 Linea  --> validación: El numeric2 no puede ser menor que el numeric1
+16.	No entre (Not between)								--> Cuadro Texto 1 Linea "y" Cuadro Texto 1 Linea  --> validación: El numeric2 no puede ser menor que el numeric1
+
+e.	Numérico Largo (Long) Cuadro Texto 1 Linea --> numeric
+5.	Igual (Equals)										--> Cuadro Texto 1 Linea
+6.	No es igual (Not equals)							--> Cuadro Texto 1 Linea
+7.	Menos que (Less than)								--> Cuadro Texto 1 Linea
+8.	Menos que o igual que (Less than or equal)			--> Cuadro Texto 1 Linea
+9.	Mayor que (Greater than)							--> Cuadro Texto 1 Linea
+10.	Mayor que o igual que (Greater than or equal)		--> Cuadro Texto 1 Linea
+13.	Esta vacío (Is empty)								-->
+14.	No está vacío (Is not empty)						-->
+15.	Entre (Between)										--> Cuadro Texto 1 Linea "y" Cuadro Texto 1 Linea  --> validación: El long2 no puede ser menor que el long1
+16.	No entre (Not between)								--> Cuadro Texto 1 Linea "y" Cuadro Texto 1 Linea  --> validación: El long2 no puede ser menor que el long1
+
+f.	Decimal (Decimal) Cuadro Texto 1 Linea --> numeric
+5.	Igual (Equals)										--> Cuadro Texto 1 Linea
+6.	No es igual (Not equals)							--> Cuadro Texto 1 Linea
+7.	Menos que (Less than)								--> Cuadro Texto 1 Linea
+8.	Menos que o igual que (Less than or equal)			--> Cuadro Texto 1 Linea
+9.	Mayor que (Greater than)							--> Cuadro Texto 1 Linea
+10.	Mayor que o igual que (Greater than or equal)		--> Cuadro Texto 1 Linea
+13.	Esta vacío (Is empty)								-->
+14.	No está vacío (Is not empty)						-->
+15.	Entre (Between)										--> Cuadro Texto 1 Linea "y" Cuadro Texto 1 Linea  --> validación: El decimal2 no puede ser menor que el decimal1
+16.	No entre (Not between)								--> Cuadro Texto 1 Linea "y" Cuadro Texto 1 Linea  --> validación: El decimal2 no puede ser menor que el decimal1
+
+g.	Moneda (Currency) Cuadro Texto 1 Linea --> numeric
+5.	Igual (Equals)										--> Cuadro Texto 1 Linea
+6.	No es igual (Not equals)							--> Cuadro Texto 1 Linea
+7.	Menos que (Less than)								--> Cuadro Texto 1 Linea
+8.	Menos que o igual que (Less than or equal)			--> Cuadro Texto 1 Linea
+9.	Mayor que (Greater than)							--> Cuadro Texto 1 Linea
+10.	Mayor que o igual que (Greater than or equal)		--> Cuadro Texto 1 Linea
+13.	Esta vacío (Is empty)								-->
+14.	No está vacío (Is not empty)						-->
+15.	Entre (Between)										--> Cuadro Texto 1 Linea "y" Cuadro Texto 1 Linea --> validación: la Currency2 no puede ser menor que el Currency1
+16.	No entre (Not between)								--> Cuadro Texto 1 Linea "y" Cuadro Texto 1 Linea --> validación: la Currency2 no puede ser menor que el Currency1
+
+h.	Fecha (Date) DatePicker
+5.	Igual (Equals)										--> DatePicker
+7.	Menos que (Less than)								--> DatePicker
+8.	Menos que o igual que (Less than or equal)			--> DatePicker
+9.	Mayor que (Greater than)							--> DatePicker
+10.	Mayor que o igual que (Greater than or equal)		--> DatePicker
+13.	Esta vacío (Is empty)								-->
+14.	No está vacío (Is not empty)						-->
+15.	Entre (Between)										--> DatePicker "y" DatePicker   --> validación: El datePicker2 no puede ser menor que el DatePicker1
+16.	No entre (Not between)								--> DatePicker "y" DatePicker   --> validación: El datePicker2 no puede ser menor que el DatePicker1
+
+i.	Fecha y Hora (DateTime) DateTimePicker
+5.	Igual (Equals)										--> DateTimePicker
+7.	Menos que (Less than)								--> DateTimePicker
+8.	Menos que o igual que (Less than or equal)			--> DateTimePicker
+9.	Mayor que (Greater than)							--> DateTimePicker
+10.	Mayor que o igual que (Greater than or equal)		--> DateTimePicker
+13.	Esta vacío (Is empty)								-->
+14.	No está vacío (Is not empty)						-->
+15.	Entre (Between)										--> DateTimePicker "y" DateTimePicker	--> validación: El dateTimePicker2 no puede ser menor que el DateTimePicker1
+16.	No entre (Not between)								--> DateTimePicker "y" DateTimePicker	--> validación: El dateTimePicker2 no puede ser menor que el DateTimePicker1
+
+
+k.	Selección de una lista (List)
+5.	Igual (Equals)						--> Lista
+6.	No es igual (Not equals)			--> Lista
+13.	Esta vacío (Is empty)				-->
+14.	No está vacío (Is not empty)		-->
+
+l.	Booleano (Boolean)
+5.	Igual (Equals)						--> True/False
+6.	No es igual (Not equals)			--> True/False
+13.	Esta vacío (Is empty)				-->
+14.	No está vacío (Is not empty)		-->
+
+m.	Complejo (varios campos de ciertos tipos)
+
+
+1.	Empieza Por (Start with)
+2.	Finaliza Con (End with)
+3.	Como (Like)
+4.	No es Como (Not like)
+5.	Igual (Equals)
+6.	No es igual (Not equals)			
+7.	Menos que (Less than)
+8.	Menos que o igual que (Less than or equal)
+9.	Mayor que (Greater than)
+10.	Mayor que o igual que (Greater than or equal)
+11.	Incluir cualquiera (Include any)
+12.	Excluir todo (Exclude all)
+13.	Esta vacío (Is empty)
+14.	No está vacío (Is not empty)
+15.	Entre (Between)
+16.	No entre (Not between)

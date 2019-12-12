@@ -1,0 +1,87 @@
+Computer\HKEY_CLASSES_ROOT\Directory\Background\shell\git_gui
+
+"C:\Program Files\Git\cmd\git-gui.exe" "--working-dir" "%v."
+
+Computer\HKEY_CLASSES_ROOT\Directory\shell\git_gui\command
+"C:\Program Files\Git\cmd\git-gui.exe" "--working-dir" "%1"
+
+
+
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shellex\ContextMenuHandlers\TortoiseGit
+
+
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\git_gui
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\git_gui
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Drive\shellex\ContextMenuHandlers\TortoiseGit
+
+
+
+
+java -cp C:\dev\workspace\MagicFolder\bin\; com.f2m.aquarius.magic.AquariusMagicFolder -sendWizard
+
+
+
+--
+--> 11 de la mañana: León
+
+
+12.30
+
+
+
+javapackager -deploy -native exe -BshortcutHint=true -Bvendor=F2M -outdir createExe\packages -outfile magicFolder -srcfiles magicFolder.jar -appclass com.f2m.aquarius.magic.AquariusMagicFolder -name "AquariusMagicFolder" -title "Aquarius Magic Folder"
+--> este es el bueno:
+cd c:\dev\workspace
+javapackager -deploy -native exe -BshortcutHint=true -Bvendor=F2M -outdir createExe\packages -outfile magicFolder -srcfiles magicFolder.jar -appclass org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader -name "AquariusMagicFolder" -title "Aquarius Magic Folder"
+
+
+
+java -jar magicFolder.jar -send "C:\Users\gomado\Documents\F2M\Aquarius\Repositorio F2M\aquarius\Test\MagicFolder"
+java -jar magicFolder.jar -uninstall
+
+
+"C:\Users\gomado\AppData\Local\AquariusDesktop\runtime\bin\java" -version
+
+
+17183
+
+
+/AquariusAWS/Home
+ff19a0db-972d-4bc7-98db-6b31cca9b8c8
+http://ec2-3-90-50-217.compute-1.amazonaws.com:8080/aquarius
+
+setFolderbyPath
+/folder/path
+PUT
+token
+path
+name
+
+
+getObjectByPath
+/object/path
+GET
+token
+path
+
+
+ff57fbe6-10c5-498c-ab11-f2eeefb92357
+
+
+
+	Archivo:	UsersManager.xml	Ruta Remota: /AquariusAWS/Home/ecm/Upload/Test/Services/UsersManager.xml	Ruta Local: C:\Users\gomado\Documents\F2M\Aquarius\Repositorio F2M\aquarius\Test\Services\UsersManager.xml
+Fecha de modificación: 1543936525900
+File existe, valido que el local no sea nuevo...
+Hora archivo remoto: 1544444929761
+
+
+
+	Archivo:	UsersManager.xml	Ruta Remota: /AquariusAWS/Home/ecm/Upload/Test/Services/UsersManager.xml	Ruta Local: C:\Users\gomado\Documents\F2M\Aquarius\Repositorio F2M\aquarius\Test\Services\UsersManager.xml
+Fecha de modificación: 1544445416689
+File existe, valido que el local no sea nuevo...
+Hora archivo remoto: 1544444929761
+
+
+1543936525900
+1544444929761
+1544445416689

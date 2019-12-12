@@ -1,0 +1,155 @@
+<div class="container col-sm-12" style="margin-top: 10px;">
+    <!--div class="dropdown col-xs-5 col-sm-3" style="margin: 0px; padding: 10px 0px;">
+        <button href="#pablo" class="dropdown-toggle btn btn-default btn-round btn-block" data-toggle="dropdown" style="padding-right: 15px 0px; padding: 1px 0px; margin-top: 0px;margin-bottom: 0px;">Seleccionar
+            <b class="caret"></b>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-center">
+            <li>
+                <a>Editar Propiedades</a>
+            </li>
+            <li>
+                <a>Realizar Comentarios</a>
+            </li>
+            <li>
+                <a>Editar Permisos</a>
+            </li>
+            <li>
+                <a>Compartir Documento</a>
+            </li>
+            <li>
+                <a>Mover Documento</a>
+            </li>
+        </ul>
+    </div-->
+    <div class="col-xs-7"></div>
+    <div class="hidden-xs col-sm-5 text-right" style="padding-right: 0px;">
+        <button class="btn-link" (click)="view='table';thumbnail.emit([]);">
+            <i class="material-icons" style="font-size: 30px; color: gray;">list</i>
+        </button>
+        <button class="btn-link" (click)="getLstThumbnails(selectedPage)">
+            <i class="material-icons" style="font-size: 30px;color: gray;">view_module</i>
+        </button>
+    </div>
+</div>
+<!-- Table  -->
+<div class="col-xs-12" style="padding: 0 10px;">
+    <div class="card" style="overflow: auto;padding: 5px;min-height: 450px;margin-top: 0px;">
+        <div style="border-radius: 1px;" *ngIf="dataTable!==undefined">
+            <!-- Buscador -->
+            <div class="col-xs-12">
+                <div class="col-xs-6" style="padding-left: 0px;">
+                    <div class="form-inline">
+                    	<button class="btn btn-round btn-primary btn-fill btn-just-icon" [disabled]="lstParentFolder[lstParentFolderSize]===''" (click)="returnToParentFolder()" *ngIf="lstParentFolder!==undefined">
+                            <i class="material-icons">more_horiz</i>
+                        </button>
+                        <div class="form-group" style="margin-top: 0px;padding-left: 5px;top: 5px;">
+                            <h3 class="card-title" style="margin-left: 0px;margin-top: 6px;margin-bottom: 6px;">{{folderName}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6" *ngIf="dataTable.dataRows.length>0">
+                    <div class="form-inline text-right">
+                        <label>Buscar: </label>
+                        <div class="form-group" style="margin-top: 0px;padding-left: 5px;">
+                            <input class="form-control" type="text" [(ngModel)]="filter">
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="table-responsive col-xs-12" style="height: 345px;" *ngIf="dataTable.dataRows.length>0">
+                <ng-container *ngIf="view==='table'">
+                    <table class="table table-hover text-center text-center" id="datatableFolder" style="width:100%;" >
+                        <thead>
+                            <tr>
+                                <th class="text-left disabled-sorting col-xs-1">{{ dataTable.headerRow[0] }}</th>
+                                <th class="text-left col-xs-3">{{ dataTable.headerRow[1] }}</th>
+                                <th class="text-left col-xs-1">{{ dataTable.headerRow[2] }}</th>
+                                <th class="text-left col-xs-2">{{ dataTable.headerRow[3] }}</th>
+                                <th class="text-left col-xs-2">{{ dataTable.headerRow[4] }}</th>
+                                <th class="text-left disabled-sorting col-xs-1">{{ dataTable.headerRow[5] }}</th>
+                                <th class="text-center disabled-sorting col-xs-1"></th>
+                                <th class="text-center disabled-sorting col-xs-1"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of dataTable.dataRows | filter:filter | paginate: { itemsPerPage: 10, currentPage: selectedPage }; let i = index" class="clickedRow">
+                                <td>
+                                    <div class="col-xs-12" style="padding-left: 0px;padding-right: 0px;top: 7px;">
+                                        <div class="checkbox check text-center" style="width: auto;">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-left" style="padding-left: 0px;padding-right: 0px;">
+                                    <div style="position: relative;top: 2px;">
+                                        <i class="material-icons" *ngIf="row[6]==='folder'" style="padding-left: 5px;">folder</i>
+                                        <i class="material-icons" *ngIf="row[6]==='document'" style="padding-left: 5px;">description</i>
+                                        <div style="display: -webkit-inline-box;position: absolute;right: 0px;left: 30px;top: 3px;">
+                                            <label style="color:black;">{{row[0]}}</label> 
+                                        </div>      
+                                    </div>
+                                </td>
+                                <td class="text-center">{{row[1]}}</td>
+                                <td class="text-left">{{row[2]}}</td>
+                                <td class="text-left">{{row[3]}}</td>
+                                <td class="text-center">{{row[4]}}</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-primary btn-xs" (click)="propertiesModal(i)">
+                                        <i class="material-icons">visibility</i>
+                                    </button>
+                                </td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-primary btn-xs" (click)="goToViewer(row[0])">
+                                        <i class="material-icons">input</i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>  
+                    </table>
+                </ng-container>
+                <ng-container *ngIf="view==='thumbnail'">
+                    <div id="thumbnailsFolder">
+                        <div class="col-xs-6 col-sm-3 thumbMargin" *ngFor="let thumb of dataTable.dataRows | filter:filter | paginate: { itemsPerPage: 12, currentPage: selectedPage }; let i = index">
+                            <label>{{thumb[0]}}</label>
+                            <div class="img-wrapper">
+                                <img [src]="thumb[7]" class="img-thumbnail imagePad">
+                                <div class="img-overlay">
+                                    <button type="button" class="btn btn-primary btn-xs" (click)="propertiesModal(i)">
+                                        <i class="material-icons">visibility</i>
+                                    </button>
+                                </div>
+                            </div>      
+                        </div>
+                    </div> 
+                </ng-container>
+            </div>
+            <div class="table-responsive col-xs-12" *ngIf="dataTable.dataRows.length<1">
+                <table class="table table-striped table-no-bordered text-center" style="width:100%;">
+                    <tbody>
+                        <tr>
+                            <td class="text-left">
+                                <h4 style="margin:10px;">Sin registros.</h4>
+                            </td>
+                        </tr>
+                    </tbody>  
+                </table>
+            </div>
+            <!-- Paginado -->
+            <div class="text-right" *ngIf="filter===''||filter===undefined">
+                <ul class="pagination pagination-primary" style="margin-top: 10px;margin-bottom: 0px;" *ngIf="dataTable.dataRows.length>0">
+                    <li>
+                        <a (click)="prevPage()"> prev</a>
+                    </li>
+                    <li [ngClass]="{'active': selectedPage===i+1}" *ngFor="let row of pages; let i = index">
+                        <a (click)="selectedPage=i+1;">{{i+1}}</a>
+                    </li>
+                    <li>
+                        <a (click)="nextPage()">next </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

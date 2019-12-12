@@ -1,0 +1,50 @@
+2019-08-06 15:50:52 INFO com.f2m.aquarius.magic.AquariusMagicFolder start Iniciando Proceso
+2019-08-06 15:50:53 INFO com.f2m.aquarius.magic.AquariusMagicFolder start Par?metros: [-workflow, C:\Users\gomado\Documents\F2M\Aquarius\Repositorio F2M\aquarius\Test\img]
+2019-08-06 15:50:53 INFO com.f2m.aquarius.magic.AquariusMagicFolder start Iniciando Bandeja de Tareas
+2019-08-06 15:50:58 INFO com.f2m.aquarius.magic.AquariusAPIClient getTaskList getTaskList: 0|1|2
+2019-08-06 15:50:58 SEVERE com.f2m.aquarius.magic.gui.TaskListController updateTaskList Error al actualizar la tabla - null
+java.lang.NullPointerException
+	at com.f2m.aquarius.magic.AquariusAPIClient.getUserName(AquariusAPIClient.java:67)
+	at com.f2m.aquarius.magic.AquariusAPIClient.login(AquariusAPIClient.java:203)
+	at com.f2m.aquarius.magic.AquariusAPIClient.getTaskList(AquariusAPIClient.java:543)
+	at com.f2m.aquarius.magic.gui.TaskListController.updateTaskList(TaskListController.java:147)
+	at com.f2m.aquarius.magic.gui.TaskListController.initialize(TaskListController.java:191)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
+	at com.f2m.aquarius.magic.AquariusMagicFolder.start(AquariusMagicFolder.java:145)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$162(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$175(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$173(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$174(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Thread.java:745)
+
+2019-08-06 15:51:18 INFO com.f2m.aquarius.magic.gui.TaskListController closeWindowCancel Cerrando ventana TaskList - Cancelar
+2019-08-09 11:45:17 INFO com.f2m.aquarius.magic.AquariusMagicFolder start Iniciando Proceso
+2019-08-09 11:45:17 INFO com.f2m.aquarius.magic.AquariusMagicFolder start Par?metros: [-workflow, C:\Users\gomado\Documents\F2M\Aquarius\Repositorio F2M\aquarius\Test\img, -workflow]
+2019-08-09 11:45:17 INFO com.f2m.aquarius.magic.AquariusMagicFolder start Iniciando Select Workflow
+2019-08-09 11:45:21 INFO com.f2m.aquarius.magic.AquariusAPIClient getDefWorkflows getDefWorkflow: 
+2019-08-09 11:45:21 SEVERE com.f2m.aquarius.magic.gui.SelectWorkflowController initialize Error al inicializar la forma - null
+java.lang.NullPointerException
+	at com.f2m.aquarius.magic.AquariusAPIClient.getUserName(AquariusAPIClient.java:67)
+	at com.f2m.aquarius.magic.AquariusAPIClient.login(AquariusAPIClient.java:203)
+	at com.f2m.aquarius.magic.AquariusAPIClient.getDefWorkflows(AquariusAPIClient.java:513)
+	at com.f2m.aquarius.magic.gui.SelectWorkflowController.initialize(SelectWorkflowController.java:123)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
+	at com.f2m.aquarius.magic.AquariusMagicFolder.start(AquariusMagicFolder.java:128)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$162(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$175(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$173(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$174(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Thread.java:745)
+

@@ -1,0 +1,7 @@
+div.hideLoading{
+	display: none;
+}
+.sweet-alert button.cancel{
+	background-color: yellow;
+	color: black
+}

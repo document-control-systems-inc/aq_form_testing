@@ -1,0 +1,124 @@
+<div class="col-xs-9">
+	<div class="col-xs-12 form-inline" style="height: 50px;padding-left: 0px;padding-right: 0px;">
+		<div class="col-xs-8">
+			<button class="btn btn-primary btn-round btn-fab btn-fab-mini"
+				[cpOutputFormat]="'rgba'"
+				[cpAlphaChannel]="'disabled'"
+				[cpPosition]="'bottom'"
+				[cpPositionOffset]="'50%'"
+				[cpPositionRelativeToArrow]="true"
+				[(colorPicker)]="color">
+					<i class="material-icons">
+						color_lens
+					</i>
+			</button>
+			<button class="btn btn-primary btn-round btn-fab btn-fab-mini" (click)="setRect()" [disabled]="showRect===true || showText===true || showImg===true || color===null">
+				<i class="material-icons">crop_5_4</i>
+			</button>
+	        <button class="btn btn-primary btn-round btn-fab btn-fab-mini" (click)="showTextOptions()" [disabled]="showRect===true || showText===true || showImg===true || color===null">
+				<i class="material-icons">text_fields</i>
+			</button>
+			<button class="btn btn-primary btn-round btn-fab btn-fab-mini" (click)="setImageOptions()" [disabled]="showRect===true || showImg===true || showText===true">
+				<i class="material-icons">image</i>
+			</button>
+			<button class="btn btn-primary btn-round btn-fab btn-fab-mini" (click)="undo()" [disabled]="lstCambios[canvasIndex]===0">
+				<i class="material-icons">undo</i>
+			</button>
+			<button class="btn btn-primary btn-round btn-fab btn-fab-mini" (click)="redo()" [disabled]="lstCambios[canvasIndex]===lstImg[canvasIndex].length-1" *ngIf="lstImg[canvasIndex]">
+				<i class="material-icons">redo</i>
+			</button>
+			<button class="btn btn-info btn-round btn-fab btn-fab-mini" (click)="prevPage()" [disabled]="canvasIndex<1">
+				<i class="material-icons">arrow_back</i>
+			</button>
+			<button class="btn btn-info btn-round btn-fab btn-fab-mini" (click)="nextPage()" [disabled]="this.canvasIndex===this.lstCanvas.length-1">
+				<i class="material-icons">arrow_forward</i>
+			</button>
+		</div>
+		<div class="text-left form-inline" style="padding-left: 0px;padding-right: 0px;">
+			<div class="form-group" style="padding-bottom: 0px;margin-top: 0px;padding-left: 0px;padding-right: 0px;width: 45px;">
+				<input type="text" class="form-control text-center" style="width: 45px;" [(ngModel)]="page" (ngModelChange)="changePage()">
+			</div>
+			<label style="margin-top: 9px;margin-left: 5px;">/ {{numPages}}</label>
+		</div>	
+	</div>
+	<div class="hidden-xs col-sm-3" id="preview{{id}}" style="overflow: auto;">
+
+	</div>
+	<div class="col-xs-12 col-sm-9" id="tiff{{id}}">
+		
+	</div>
+
+</div>
+<div class="col-xs-3" style="margin-top: 40px;padding: 0;">
+	<div class="card" *ngIf="showText===true || showRect===true || showImg===true">
+        <div class="card-header card-header-text" data-background-color="purple">
+            <h4 class="card-title">Opciones</h4>
+        </div>
+        <div class="card-content">
+            <div class="col-xs-12" style="padding:0;" *ngIf="showText===true">
+				<table>
+					<tbody>
+						<tr>
+							<td class="col-xs-5" style="padding-right: 0; padding-left: 0;">
+								<label style="margin-left: 5px;"> Tipo de sello </label>
+							</td>
+							<td class="col-xs-7">
+								<div class="form-group" style="margin-top: 0px;">
+									<input type="text" class="form-control" [(ngModel)]="objComentario.comentario">
+								</div>
+			                </td>
+						</tr>
+						<tr>
+							<td class="col-xs-5" style="padding-right: 0; padding-left: 0;">
+								<label style="margin-left: 5px;"> Tamaño </label>
+							</td>
+							<td class="col-xs-7">
+								<div class="form-group" style="margin-top: 0px;padding-left: 5px;">
+			                        <select class="form-control" [(ngModel)]="objComentario.size">
+						                <option *ngFor="let size of lstSize" [ngValue]="size.size">
+						                    {{size.nombre}}
+						                </option>
+						            </select>
+			                    </div>
+			                </td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="text-right" style="margin-right: 10px;">
+					<button class="btn btn-xs btn-primary" [disabled]="objComentario.comentario===null || objComentario.comentario==='' || objComentario.size===null" (click)="setText()">Colocar</button>
+				</div>
+		    </div>
+		    <div class="togglebutton" *ngIf="showRect===true">
+		        <label>
+		        	Opacity
+		            <input type="checkbox" [(ngModel)]="opacity">
+		        </label>
+		    </div>
+		    <div class="col-xs-12" style="padding: 0;" *ngIf="showImg===true">
+				<table>
+					<tbody>
+						<tr>
+							<td class="col-xs-5" style="padding-right: 0; padding-left: 0;">
+								<label style="margin-left: 5px;"> Sello </label>
+							</td>
+							<td class="col-xs-7">
+								<div class="form-group" style="margin-top: 0px;padding-left: 5px;">
+			                        <select class="form-control" [(ngModel)]="selectedStamp" (ngModelChange)="setPreviewEditor()">
+						                <option *ngFor="let stamp of lstStamp" [ngValue]="stamp.id">
+						                    {{stamp.name}}
+						                </option>
+						            </select>
+			                    </div>
+			                </td>
+						</tr>
+					</tbody>
+				</table>
+				<img class="col-xs-12" [src]="imgPreview" *ngIf="imgPreview!==null">
+				<div class="text-right" style="margin-right: 10px;">
+					<button class="btn btn-xs btn-primary" [disabled]="imgPreview===null" (click)="setImage()">Colocar</button>
+				</div>
+			</div>
+        </div>
+    </div>
+			
+</div>

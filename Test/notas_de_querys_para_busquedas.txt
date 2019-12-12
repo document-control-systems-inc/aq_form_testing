@@ -1,0 +1,83 @@
+select 
+	node.data->'properties'->'name' as name, 
+	docversion.data->>'size' as size,
+	node.data->'properties'->'createdBy' as createdBy, 
+	node.data->'properties'->'createdOn' as createdon, 
+	docversion.data->>'numVersion' as version, 
+	docdata.data->>'numVersion' as revision, 
+	node.data->'id' as id, 
+	node.data->'type' as type
+from
+	node, docdata, docversion
+where
+	node.data->'parent' ? '13aff519-5576-495a-bffa-edc1fb16bbc4' 
+order by
+	node.data->'properties'->>'name'
+	
+	
+	
+	
+	and node.data->>'id' = docdata.data->>'id' 
+	and node.data->>'id' = docversion.data->>'id' 
+	and docdata.data->>'status'='active' 
+	and docversion.data->>'status'='active'
+	
+	
+select 
+	node.data->'properties'->'name' as name,
+	node.data->'properties'->'createdBy' as createdBy, 
+	node.data->'properties'->'createdOn' as createdon,
+	node.data->'id' as id, 
+	node.data->'type' as type
+from 
+	node
+where 
+	node.data->'parent' ? '13aff519-5576-495a-bffa-edc1fb16bbc4' and
+	node.data->>'type' = 'folder'
+order by
+	node.data->'properties'->>'name'
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+select node.data->'properties'->'name' as name,
+(select docversion.data->>'size' 
+from docversion
+where node.data->>'id' = docversion.data->>'id'
+and docversion.data->>'status'='active') as size,
+node.data->'properties'->'createdBy' as createdBy, 
+node.data->'properties'->'createdOn' as createdon,
+(select docversion.data->>'numVersion' 
+from docversion
+where node.data->>'id' = docversion.data->>'id'
+and docversion.data->>'status'='active') as version,
+(select docdata.data->>'numVersion'
+from docdata
+where node.data->>'id' = docdata.data->>'id'
+and docdata.data->>'status'='active') as revision,
+node.data->'id' as id, 
+node.data->'type' as type 
+from node
+where node.data->'parent' ? '69fb9944-0eb5-47c1-b1cb-d8de2038fa2b' 
+order by node.data->'type' desc, node.data->'properties'->>'name' asc
+
+
+
+
+docdata.data->>'numVersion' as revision, 
+left join docdata on node.data->>'id' = docdata.data->>'id'
+
+
+
+docversion.data->>'numVersion' as version,
+left join 
+and docversion.data->>'status'='active' 
+
+as size
+

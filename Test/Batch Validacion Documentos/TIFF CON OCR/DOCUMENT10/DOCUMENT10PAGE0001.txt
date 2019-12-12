@@ -1,0 +1,17 @@
+﻿QR Code by Account
+Date:
+Page:
+Country
+Branch
+Account Number
+Account Title
+Contract Date
+Status
+TRINIDAD
+1754
+102402623
+EZRA ADAMS
+27-JUN-2017
+ACTIVE
+26-09-2018 12:39:12
+17 of 3,583

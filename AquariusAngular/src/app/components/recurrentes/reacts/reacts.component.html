@@ -1,0 +1,25 @@
+<div class="col-xs-12 text-left" style="padding-left: 0px;padding-right: 0px;">
+	<div class="col-xs-7 col-sm-8 text-left" style="padding-left: 0px;margin-top: 2px;">
+		<label class="reacts" [ngClass]="{'liked':rated===true}"><i class="fa fa-star" aria-hidden="true"></i> {{rateNumber}}</label>
+		<label class="reacts" [ngClass]="{'liked':rated===true}"><i class="fa fa-heart" aria-hidden="true"></i> {{likeNumber}}</label>
+		<label class="reacts" [ngClass]="{'liked':rated===true}"><i class="fa fa-comment" aria-hidden="true"></i> {{commentsNumber}}</label>
+	</div>
+	<div class="col-xs-3" style="padding-right: 0px;right: 10px;">
+		<div class="stars" style="margin-left: 0px;margin-right: 0px;">
+	        <input type="radio" name="star" class="star-1" id="star-1" [value]="1"  [(ngModel)]="rateNumber"/>
+	        <label class="star-1" for="star-1"></label>
+	        <input type="radio" name="star" class="star-2" id="star-2" [value]="2"  [(ngModel)]="rateNumber"/>
+	        <label class="star-2" for="star-2"></label>
+	        <input type="radio" name="star" class="star-3" id="star-3" [value]="3"  [(ngModel)]="rateNumber"/>
+	        <label class="star-3" for="star-3"></label>
+	        <input type="radio" name="star" class="star-4" id="star-4" [value]="4"  [(ngModel)]="rateNumber"/>
+	        <label class="star-4" for="star-4"></label>
+	        <input type="radio" name="star" class="star-5" id="star-5" [value]="5"  [(ngModel)]="rateNumber"/>
+	        <label class="star-5" for="star-5"></label>
+	        <span></span>
+	    </div>
+	</div>
+	<div class="col-xs-1 text-right">
+		<button class="btn btn-link blackButtons" [ngClass]="{'liked':liked===true}" (click)="like()"><i class="fa fa-heart" aria-hidden="true"></i></button>	
+	</div>
+</div>

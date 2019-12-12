@@ -1,0 +1,528 @@
+<div class="main-content">
+	<div class="col-xs-12">
+		<!-- [selectedIndex]="selectedIndex" (selectedTabChange)="tabChanged($event)" -->
+		<mat-tab-group style="margin-bottom: 5px;" (selectedTabChange)="addStyle($event)">
+			<mat-tab>
+				<ng-template mat-tab-label>
+					Perfiles de documentos
+				</ng-template>
+				<div class="col-md-12">
+			        <div class="card">
+			            <ul class="nav nav-pills nav-pills-rose" style="margin: 10px;">
+		                    <li class="active">
+		                        <a href="#admin" data-toggle="tab" (click)="addStyle()">Administrador</a>
+		                    </li>
+		                    <li>
+		                        <a href="#manager" data-toggle="tab" (click)="addStyle()">Manager</a>
+		                    </li>
+		                    <li>
+		                        <a href="#colaborador" data-toggle="tab" (click)="addStyle()">Colaborador</a>
+		                    </li>
+		                    <li>
+		                        <a href="#contribuidor" data-toggle="tab" (click)="addStyle()">Contribuidor</a>
+		                    </li>
+		                    <li>
+		                        <a href="#comentador" data-toggle="tab" (click)="addStyle()">Comentador</a>
+		                    </li>
+		                    <li>
+		                        <a href="#lector" data-toggle="tab" (click)="addStyle()">Lector</a>
+		                    </li>
+		                </ul>
+		                <div class="tab-content">
+		                    <div class="tab-pane active" id="admin">
+		                        <div class="col-md-12" style="padding: 10px;padding-top: 0px;">
+							        <div class="row">
+	                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
+	                                        <label style="margin-top: 10px;">Usuario/grupo</label>
+	                                    </div>
+	                                    <div class="col-sm-10">
+	                                        <div class="input-group">
+	                                            <!-- (ngModelChange)="setLstPath()" -->
+	                                            <tree-select 
+	                                                name="userGroup" 
+	                                                [items]="lstUsersGroups" 
+	                                                idField="id" 
+	                                                textField="name" 
+	                                                childrenField="children" 
+	                                                filterPlaceholder="Type item filter..."
+	                                                [(ngModel)]="adminId"
+	                                                [multiple]="false"
+	                                                [filterPlaceholder]="'Filtra aquí...'" 
+	                                                [allowFilter]="true" 
+	                                                [disabled]="false" 
+	                                                expandMode="All">
+	                                            </tree-select> 
+	                                            <span class="input-group-btn" style="padding:0;">
+	                                                <button class="btn btn-rose btn-fill">Añadir</button>
+	                                            </span>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                <div class="row" style="padding: 20px;">
+	                                    <table class="table table-striped table-no-bordered">
+	                                        <thead>
+	                                            <tr>
+	                                                <th class="col-xs-7">Nombre</th>
+	                                                <th class="col-xs-4">Tipo</th>
+	                                                <th class="col-xs-1"></th>
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                            <tr>
+	                                                <td>Alexis Gallardo</td>
+	                                                <td>Usuario</td>
+	                                                <td>
+	                                                    <button type="button" class="btn btn-link btn-xs">
+	                                                        <i class="material-icons">delete</i>
+	                                                    </button>
+	                                                </td>
+	                                            </tr>
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+							    </div>
+		                    </div>
+		                    <div class="tab-pane" id="manager">
+		                        <div class="col-md-12" style="padding: 10px;padding-top: 0px;">
+							        <div class="row">
+	                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
+	                                        <label style="margin-top: 10px;">Usuario/grupo</label>
+	                                    </div>
+	                                    <div class="col-sm-10">
+	                                        <div class="input-group">
+	                                            <!-- (ngModelChange)="setLstPath()" -->
+	                                            <tree-select 
+	                                                name="userGroupManager" 
+	                                                [items]="lstUsersGroups" 
+	                                                idField="id" 
+	                                                textField="name" 
+	                                                childrenField="children" 
+	                                                filterPlaceholder="Type item filter..."
+	                                                [(ngModel)]="adminId"
+	                                                [multiple]="false"
+	                                                [filterPlaceholder]="'Filtra aquí...'" 
+	                                                [allowFilter]="true" 
+	                                                [disabled]="false" 
+	                                                expandMode="All">
+	                                            </tree-select> 
+	                                            <span class="input-group-btn" style="padding:0;">
+	                                                <button class="btn btn-rose btn-fill">Añadir</button>
+	                                            </span>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                <div class="row" style="padding: 20px;">
+	                                    <table class="table table-striped table-no-bordered">
+	                                        <thead>
+	                                            <tr>
+	                                                <th class="col-xs-7">Nombre</th>
+	                                                <th class="col-xs-4">Tipo</th>
+	                                                <th class="col-xs-1"></th>
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                            <tr>
+	                                                <td>Alexis Gallardo</td>
+	                                                <td>Usuario</td>
+	                                                <td>
+	                                                    <button type="button" class="btn btn-link btn-xs">
+	                                                        <i class="material-icons">delete</i>
+	                                                    </button>
+	                                                </td>
+	                                            </tr>
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+							    </div>
+		                    </div>
+		                    <div class="tab-pane" id="colaborador">
+		                        <div class="col-md-12" style="padding: 10px;padding-top: 0px;">
+							        <div class="row">
+	                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
+	                                        <label style="margin-top: 10px;">Usuario/grupo</label>
+	                                    </div>
+	                                    <div class="col-sm-10">
+	                                        <div class="input-group">
+	                                            <!-- (ngModelChange)="setLstPath()" -->
+	                                            <tree-select 
+	                                                name="userGroupColaborador" 
+	                                                [items]="lstUsersGroups" 
+	                                                idField="id" 
+	                                                textField="name" 
+	                                                childrenField="children" 
+	                                                filterPlaceholder="Type item filter..."
+	                                                [(ngModel)]="adminId"
+	                                                [multiple]="false"
+	                                                [filterPlaceholder]="'Filtra aquí...'" 
+	                                                [allowFilter]="true" 
+	                                                [disabled]="false" 
+	                                                expandMode="All">
+	                                            </tree-select> 
+	                                            <span class="input-group-btn" style="padding:0;">
+	                                                <button class="btn btn-rose btn-fill">Añadir</button>
+	                                            </span>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                <div class="row" style="padding: 20px;">
+	                                    <table class="table table-striped table-no-bordered">
+	                                        <thead>
+	                                            <tr>
+	                                                <th class="col-xs-7">Nombre</th>
+	                                                <th class="col-xs-4">Tipo</th>
+	                                                <th class="col-xs-1"></th>
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                            <tr>
+	                                                <td>Alexis Gallardo</td>
+	                                                <td>Usuario</td>
+	                                                <td>
+	                                                    <button type="button" class="btn btn-link btn-xs">
+	                                                        <i class="material-icons">delete</i>
+	                                                    </button>
+	                                                </td>
+	                                            </tr>
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+							    </div>
+		                    </div>
+		                    <div class="tab-pane" id="contribuidor">
+		                        <div class="col-md-12" style="padding: 10px;padding-top: 0px;">
+							        <div class="row">
+	                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
+	                                        <label style="margin-top: 10px;">Usuario/grupo</label>
+	                                    </div>
+	                                    <div class="col-sm-10">
+	                                        <div class="input-group">
+	                                            <!-- (ngModelChange)="setLstPath()" -->
+	                                            <tree-select 
+	                                                name="userGroupContribuidor" 
+	                                                [items]="lstUsersGroups" 
+	                                                idField="id" 
+	                                                textField="name" 
+	                                                childrenField="children" 
+	                                                filterPlaceholder="Type item filter..."
+	                                                [(ngModel)]="adminId"
+	                                                [multiple]="false"
+	                                                [filterPlaceholder]="'Filtra aquí...'" 
+	                                                [allowFilter]="true" 
+	                                                [disabled]="false" 
+	                                                expandMode="All">
+	                                            </tree-select> 
+	                                            <span class="input-group-btn" style="padding:0;">
+	                                                <button class="btn btn-rose btn-fill">Añadir</button>
+	                                            </span>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                <div class="row" style="padding: 20px;">
+	                                    <table class="table table-striped table-no-bordered">
+	                                        <thead>
+	                                            <tr>
+	                                                <th class="col-xs-7">Nombre</th>
+	                                                <th class="col-xs-4">Tipo</th>
+	                                                <th class="col-xs-1"></th>
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                            <tr>
+	                                                <td>Alexis Gallardo</td>
+	                                                <td>Usuario</td>
+	                                                <td>
+	                                                    <button type="button" class="btn btn-link btn-xs">
+	                                                        <i class="material-icons">delete</i>
+	                                                    </button>
+	                                                </td>
+	                                            </tr>
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+							    </div>
+		                    </div>
+		                    <div class="tab-pane" id="comentador">
+		                        <div class="col-md-12" style="padding: 10px;padding-top: 0px;">
+							        <div class="row">
+	                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
+	                                        <label style="margin-top: 10px;">Usuario/grupo</label>
+	                                    </div>
+	                                    <div class="col-sm-10">
+	                                        <div class="input-group">
+	                                            <!-- (ngModelChange)="setLstPath()" -->
+	                                            <tree-select 
+	                                                name="userGroupComentador" 
+	                                                [items]="lstUsersGroups" 
+	                                                idField="id" 
+	                                                textField="name" 
+	                                                childrenField="children" 
+	                                                filterPlaceholder="Type item filter..."
+	                                                [(ngModel)]="adminId"
+	                                                [multiple]="false"
+	                                                [filterPlaceholder]="'Filtra aquí...'" 
+	                                                [allowFilter]="true" 
+	                                                [disabled]="false" 
+	                                                expandMode="All">
+	                                            </tree-select> 
+	                                            <span class="input-group-btn" style="padding:0;">
+	                                                <button class="btn btn-rose btn-fill">Añadir</button>
+	                                            </span>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                <div class="row" style="padding: 20px;">
+	                                    <table class="table table-striped table-no-bordered">
+	                                        <thead>
+	                                            <tr>
+	                                                <th class="col-xs-7">Nombre</th>
+	                                                <th class="col-xs-4">Tipo</th>
+	                                                <th class="col-xs-1"></th>
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                            <tr>
+	                                                <td>Alexis Gallardo</td>
+	                                                <td>Usuario</td>
+	                                                <td>
+	                                                    <button type="button" class="btn btn-link btn-xs">
+	                                                        <i class="material-icons">delete</i>
+	                                                    </button>
+	                                                </td>
+	                                            </tr>
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+							    </div>
+		                    </div>
+		                    <div class="tab-pane" id="lector">
+		                        <div class="col-md-12" style="padding: 10px;padding-top: 0px;">
+							        <div class="row">
+	                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
+	                                        <label style="margin-top: 10px;">Usuario/grupo</label>
+	                                    </div>
+	                                    <div class="col-sm-10">
+	                                        <div class="input-group">
+	                                            <!-- (ngModelChange)="setLstPath()" -->
+	                                            <tree-select 
+	                                                name="userGroupLector" 
+	                                                [items]="lstUsersGroups" 
+	                                                idField="id" 
+	                                                textField="name" 
+	                                                childrenField="children" 
+	                                                filterPlaceholder="Type item filter..."
+	                                                [(ngModel)]="adminId"
+	                                                [multiple]="false"
+	                                                [filterPlaceholder]="'Filtra aquí...'" 
+	                                                [allowFilter]="true" 
+	                                                [disabled]="false" 
+	                                                expandMode="All">
+	                                            </tree-select> 
+	                                            <span class="input-group-btn" style="padding:0;">
+	                                                <button class="btn btn-rose btn-fill">Añadir</button>
+	                                            </span>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                <div class="row" style="padding: 20px;">
+	                                    <table class="table table-striped table-no-bordered">
+	                                        <thead>
+	                                            <tr>
+	                                                <th class="col-xs-7">Nombre</th>
+	                                                <th class="col-xs-4">Tipo</th>
+	                                                <th class="col-xs-1"></th>
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                            <tr>
+	                                                <td>Alexis Gallardo</td>
+	                                                <td>Usuario</td>
+	                                                <td>
+	                                                    <button type="button" class="btn btn-link btn-xs">
+	                                                        <i class="material-icons">delete</i>
+	                                                    </button>
+	                                                </td>
+	                                            </tr>
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+							    </div>
+		                    </div>
+		                </div>
+			        </div>
+			    </div>
+			</mat-tab> 
+			<mat-tab>
+				<ng-template mat-tab-label>
+					Perfiles de pantallas
+				</ng-template>
+				<div class="col-md-12" style="min-height: 500px;">
+			        <div class="card">
+			            <ul class="nav nav-pills nav-pills-rose" style="margin: 10px;">
+		                    <li class="active">
+		                        <a href="#añadir" data-toggle="tab" (click)="addStyle()">Añadir</a>
+		                    </li>
+		                    <li>
+		                        <a href="#eliminar" data-toggle="tab" (click)="addStyle()">Eliminar</a>
+		                    </li>
+		                    <li>
+		                        <a href="#asignar" data-toggle="tab" (click)="addStyle()">Asignar</a>
+		                    </li>
+		                </ul>
+		                <div class="tab-content">
+		                	<div class="tab-pane active" id="añadir">
+		                		<div class="col-md-12 form-horizontal" style="padding: 10px;padding-top: 0px;">
+		                			<div class="card-content">
+		                				<div class="row">
+		                                    <label class="col-sm-2 label-on-left" style="padding-top: 8px;">Nombre</label>
+		                                    <div class="col-sm-10">
+		                                        <div class="form-group label-floating" style="margin-top: 0px;">
+		                                            <label class="control-label"></label>
+		                                            <input type="text" class="form-control" [(ngModel)]="profileName">
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                                <div class="row">
+		                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
+		                                        <label style="margin-top: 10px;">Pantallas/componentes</label>
+		                                    </div>
+		                                    <div class="col-sm-10">
+		                                        <tree-select 
+		                                            name="addProfile" 
+		                                            [items]="lstPantalla" 
+		                                            idField="id" 
+		                                            textField="name" 
+		                                            childrenField="components" 
+		                                            filterPlaceholder="Type item filter..."
+		                                            [(ngModel)]="page"
+		                                            (ngModelChange)="setElements()"
+		                                            [multiple]="true"
+		                                            [filterPlaceholder]="'Filtra aquí...'" 
+		                                            [allowFilter]="true" 
+		                                            [disabled]="false" 
+		                                            expandMode="All">
+		                                        </tree-select> 
+		                                    </div>
+		                                </div>
+		                			</div>
+			                		<div class="card-footer text-right" style="border-top-width: 0px;padding-top: 0px;">
+		                                <button type="submit" class="btn btn-rose btn-fill" (click)="addProfile()" [disabled]="elements.length < 1 || profileName===''">Guardar</button>
+		                            </div>
+		                		</div>
+			                </div>
+			                <div class="tab-pane" id="eliminar">
+	                			<div class="col-md-12 form-horizontal" style="padding: 10px;padding-top: 0px;">
+		                			<div class="card-content">
+		                				<div class="row">
+		                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
+		                                        <label style="margin-top: 10px;">Perfil</label>
+		                                    </div>
+		                                    <div class="col-sm-10">
+		                                        <div class="input-group">
+		                                            <!-- (ngModelChange)="setLstPath()" -->
+		                                            <tree-select 
+		                                                name="delProfile" 
+		                                                [items]="lstProfile" 
+		                                                idField="id" 
+		                                                textField="name" 
+		                                                childrenField="children" 
+		                                                filterPlaceholder="Type item filter..."
+		                                                [(ngModel)]="adminId"
+		                                                [multiple]="false"
+		                                                [filterPlaceholder]="'Filtra aquí...'" 
+		                                                [allowFilter]="true" 
+		                                                [disabled]="false" 
+		                                                expandMode="All">
+		                                            </tree-select> 
+		                                            <span class="input-group-btn" style="padding:0;">
+		                                                <button class="btn btn-rose btn-fill">Eliminar</button>
+		                                            </span>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                			</div>
+		                		</div>
+			                </div>
+			                <div class="tab-pane" id="asignar">
+			                	<div class="col-md-12 form-horizontal" style="padding: 10px;padding-top: 0px;">
+		                			<div class="card-content">
+		                                <div class="row">
+		                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
+		                                        <label style="margin-top: 10px;">Usuario</label>
+		                                    </div>
+		                                    <div class="col-sm-10">
+		                                        <!-- (ngModelChange)="setLstPath()" -->
+		                                        <tree-select 
+		                                            name="userGroup" 
+		                                            [items]="lstUsers" 
+		                                            idField="uid" 
+		                                            textField="fullName" 
+		                                            childrenField="children" 
+		                                            filterPlaceholder="Type item filter..."
+		                                            [(ngModel)]="objUser"
+		                                            (ngModelChange)="setIdUser()"
+		                                            [multiple]="false"
+		                                            [filterPlaceholder]="'Filtra aquí...'" 
+		                                            [allowFilter]="true" 
+		                                            [disabled]="false" 
+		                                            expandMode="All">
+		                                        </tree-select> 
+		                                    </div>
+		                                </div>
+		                                <div class="row">
+		                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
+		                                        <label style="margin-top: 10px;">Perfiles</label>
+		                                    </div>
+		                                    <div class="col-sm-10">
+		                                        <div class="input-group">
+		                                            <!-- (ngModelChange)="setLstPath()" -->
+		                                            <tree-select 
+		                                                name="addProfile" 
+		                                                [items]="lstProfile" 
+		                                                idField="id" 
+		                                                textField="name" 
+		                                                childrenField="children" 
+		                                                filterPlaceholder="Type item filter..."
+		                                                [(ngModel)]="objProfile"
+		                                                (ngModelChange)="setIdProfile()"
+		                                                [multiple]="false"
+		                                                [filterPlaceholder]="'Filtra aquí...'" 
+		                                                [allowFilter]="true" 
+		                                                [disabled]="false" 
+		                                                expandMode="All">
+		                                            </tree-select> 
+		                                            <span class="input-group-btn" style="padding:0;">
+		                                                <button class="btn btn-rose btn-fill">Añadir</button>
+		                                            </span>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                                <div class="row" style="padding: 20px;">
+		                                    <table class="table table-striped table-no-bordered">
+		                                        <thead>
+		                                            <tr>
+		                                                <th class="col-xs-11">Perfil</th>
+		                                                <th class="col-xs-1"></th>
+		                                            </tr>
+		                                        </thead>
+		                                        <tbody>
+		                                            <tr>
+		                                                <td>Perfil 1</td>
+		                                                <td>
+		                                                    <button type="button" class="btn btn-link btn-xs">
+		                                                        <i class="material-icons">delete</i>
+		                                                    </button>
+		                                                </td>
+		                                            </tr>
+		                                        </tbody>
+		                                    </table>
+		                                </div>
+		                			</div>
+		                		</div>
+			                </div>
+		                </div>
+			        </div>
+			    </div>
+			</mat-tab>
+		</mat-tab-group>	
+	</div>    
+</div>	

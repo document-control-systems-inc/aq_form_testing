@@ -1,0 +1,92 @@
+java -jar javathumbnailer-standalone.jar inputfile [outputfile]"
+
+sudo yum install openoffice.org-headless 
+
+
+Conexión a Base de Datos
+Configuración --> Conexión LDAP
+Configuración --> Manejo de Sesiones
+Configuración --> Envío de correo electrónicos
+Configuración --> Configuración de Dominio
+Configuración --> Ruta del Storage Area
+Configuración --> Multipart
+Dominio --> Cear Dominio
+Dominio --> Cambiar ruta del Storage Area
+
+
+Dominio --> Crear Storage Policy
+
+
+Clase Documental --> Nueva
+Clase Documental --> Modificar
+Clase Documental --> Suspender
+
+Usuarios --> ALTA
+Usuarios --> BAJA
+Usuarios --> Suspender
+Usuarios --> Reset Password
+Grupos --> ALTA
+Grupos --> BAJA
+Grupos --> Agregar/Quitar usuarios
+Procesos --> Subir Procesos
+Procesos --> Eliminar Procesos
+
+Permisos Portal
+
+---
+
+
+
+Conexión a Base de Datos:
+    - hostname:    localhost
+    - port        5432
+    - dbName    aquarius
+    - username    aquarius
+    - password    aquarius01
+    - ValidationInterval    30000
+    - TimeBetweenEvictionRuns    30000
+    - MaxActive    100
+    - InitialSize    10
+    - MaxWait    10000
+    - RemoveAbandonedTimeout    60
+    - MinEvictableIdleTime    30000
+    - MinIdle    10
+
+Configuración:
+    - Conexión LDAP:
+        {"id": "ldap", "ldapPort": 389, "ldapUser": "cn=admin,dc=f2m,dc=com,dc=mx", "ldapServer": "localhost", "ldapPassword": "adminpass"}
+    - Manejo de Sesiones:
+        {"id": "session", "minutes": 2, "maxUsers": 3, "maxConcurrent": 2}
+    - Envío de correo electrónicos:
+        {"id": "mail", "ttl": null, "auth": true, "host": "mail.f2m.com.mx", "port": "587", "user": "aquarius@f2m.com.mx", "sender": "aquarius@f2m.com.mx", "password": "4qU4r1U5%1"}
+    - Configuración de Dominio:
+        {"id": "domain", "folder": [{"name": "Home", "visible": true}, {"name": "Shared", "visible": true}, {"name": "Repository", "visible": true}, {"name": "Trash", "visible": false}, {"name": "Temp", "visible": false}, {"name": "Process", "visible": false}, {"name": "Rules", "visible": false}, {"name": "Batch", "visible": false}]}
+    - Ruta del Storage Area:
+        {"id": "storagearea", "prefix": "sa", "defaultPath": "/opt/ecm/"}
+    - Multipart
+        {"id": "multiplart", "encoding": "utf-8", "maxUpload": 50000000}
+
+Dominio:
+    - Cear Dominio
+    - Cambiar ruta del Storage Area:
+        {"id": "dcad7a39-6a19-4ce8-a9c9-fe681d6bc90a", "file": 1, "name": "saAquarius", "path": "/opt/ecm/saAquarius", "domain": "b1a8c54a-f5c1-4daf-9f2d-bbb494f73345", "status": "active"}
+    - Crear Storage Policy:
+        {"id": "a62fa7a3-d705-43aa-b57b-41f062554e03", "name": "spAquarius", "type": "domain", "domain": "b1a8c54a-f5c1-4daf-9f2d-bbb494f73345", "storageId": ["dcad7a39-6a19-4ce8-a9c9-fe681d6bc90a"]}
+    
+Usuarios:
+    - ALTA
+    - BAJA
+    - Suspender
+    - Reset Password
+
+Grupos:
+    - ALTA
+    - BAJA
+    - Agregar/Quitar usuarios
+
+
+Procesos
+    - Subir Procesos
+    - Eliminar Procesos
+
+Permisos Portal

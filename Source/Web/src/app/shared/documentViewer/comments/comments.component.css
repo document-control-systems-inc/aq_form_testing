@@ -1,0 +1,36 @@
+.userPic{
+	height:40px;
+	border-radius: 50%;
+}
+.userName{
+	color:blue;
+}
+.comment{
+	padding-left: 0px;
+    padding-right: 0px;
+}
+label{
+    color:#505050;
+}
+@media only screen and ( max-width: 700px ) {
+	.comment {
+		margin-bottom: 10px;
+		width: 95%;
+    	left: 9px;
+	}
+}
+@media screen and (min-width: 701px) {
+    .comment {
+    	margin-bottom: 10px;
+		width: 97%;
+    	left: 13px;
+	}
+}
+
+.form-group{
+	background-image: none;
+}
+
+.is-focused{
+	background-image: none;
+}

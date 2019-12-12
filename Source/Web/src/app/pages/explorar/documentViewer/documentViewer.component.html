@@ -1,0 +1,162 @@
+<div class="main-content" style="padding-top: 0px;width: 99%;">
+
+	<ngx-loading [show]="loading"></ngx-loading>
+
+	<h3>{{docTitle}}</h3>
+
+	<div class="nav-left">
+        <ul class="nav nav-pills nav-pills-primary nav-pills-icons" role="tablist" *ngIf="systemProperties!==null">
+            <li class="active">
+                <a href="#social" role="tab" data-toggle="tab" (click)="hidePreview();">
+                    <i class="material-icons">face</i> Social
+                </a>
+            </li>
+            <li class="hidden-xs" *ngIf="systemProperties.mimeType==='application/pdf' || systemProperties.mimeType==='image/jpeg' || systemProperties.mimeType==='image/png' || systemProperties.mimeType==='image/tiff'">
+                <a href="#editor" role="tab" data-toggle="tab" (click)="showEditor();">
+                    <i class="material-icons">create</i> Editor
+                </a>
+            </li>
+            <li>
+                <a href="#properties" role="tab" data-toggle="tab" (click)="hidePreview();">
+                    <i class="material-icons">info_outline</i> Propiedades
+                </a>
+            </li>
+            <li>
+                <a href="#visor" role="tab" data-toggle="tab" (click)="showPreview();">
+                    <i class="material-icons">visibility</i> Visor
+                </a>
+            </li>
+            <div class="text-right" *ngIf="lstDocumentos.length!==0">
+	        	<div class="btn-group" style="margin-top: 30px;">
+	                <button type="button" class="btn btn-default" style="margin:0;padding: 12px 20px;" (click)="regresarAExplorar()">
+		                <i class="material-icons">reply</i>
+		                Regresar
+		            </button>
+	                <button type="button" class="btn btn-primary" style="padding: 12px 20px;" [disabled]="indexDoc===0" (click)="prevDoc()">
+	                	<i class="material-icons">arrow_back</i>
+	                </button>
+	                <button type="button" class="btn btn-primary" style="padding: 12px 20px;" [disabled]="indexDoc===lstDocumentos.length-1" (click)="nextDoc()">
+	                	<i class="material-icons">arrow_forward</i>
+	                </button>
+	            </div>
+	        </div>
+        </ul>
+    </div>
+
+	<div class="tab-content">
+
+		<div class="tab-pane active" id="social" style="margin-top: 50px;" *ngIf="isVisor===false">
+			<!-- Editor de documentos -->
+			<div class="col-xs-12" style="padding-left: 0px;padding-right: 0px;bottom: 43px;">
+				<!-- Bloque de vista previa y vista de documento-->
+				<div class="col-xs-12" style="padding-left: 0px;padding-right: 0px;" *ngIf="systemProperties!==null">
+					<!-- Visores de PDF, Tiff, video e imágenes-->
+					<pdf [idDoc]="idDocumento" *ngIf="systemProperties.mimeType==='application/pdf'"></pdf>
+					<tiff [id]="'Social'" [idDoc]="idDocumento" *ngIf="systemProperties.mimeType==='image/tiff'"></tiff>
+					<imageViewer [id]="'Social'" [idDoc]="idDocumento" *ngIf="systemProperties.mimeType==='image/jpeg' || systemProperties.mimeType==='image/png'"></imageViewer>
+					<videoPlayer [idDoc]="idDocumento" *ngIf="systemProperties.mimeType==='audio/mp3' || systemProperties.mimeType==='video/mp4'"></videoPlayer>
+					<!-- Bloque de reacts y comentarios-->
+					<div class = "col-xs-12" style="padding-left: 0px;padding-right: 0px;">
+						<!-- Bloque de reacts -->
+						<reacts></reacts>
+						<!-- Bloque de comentarios -->
+						<comments [idDoc]="idDocumento"></comments>					
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane" id="editor" *ngIf="isEditor===true">
+			<div *ngIf="systemProperties!==null">
+				<div *ngIf="systemProperties.mimeType==='application/pdf'">
+					<pdf-editor [idDoc]="idDocumento"></pdf-editor>
+				</div>
+				<div *ngIf="systemProperties.mimeType==='image/jpeg' || systemProperties.mimeType==='image/png'">
+					<image-editor [id]="idDocumento"></image-editor>
+				</div>
+				<div *ngIf="systemProperties.mimeType==='image/tiff'" style="margin-top: 10px;">
+					<tiff-editor [idDoc]="idDocumento" [id]="'Editor'"></tiff-editor>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane" id="properties" *ngIf="isVisor===false">
+			<!-- Bloque de edición de propiedades de documento -->
+			<document-properties [metadata]="metadata" *ngIf="metadata!==null"></document-properties>
+			<!-- Bloque de edición de propiedades del sistema-->
+			<system-properties [systemProperties]="systemProperties"></system-properties>
+			<!-- Bloque de historial de versiones -->
+			<version-history [historial]="historial" *ngIf="historial!==null"></version-history>
+			<!-- Bloque de acciones -->
+			<div class="col-xs-12">
+				<div class="card" style="margin-top: 10px;">
+			        <div style="margin-top: 10px;">
+			        	<div class="col-xs-6">
+							<div class="checkbox" style="padding: 4% 0;">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Guardar y continuar
+								</label>
+							</div>
+						</div>
+						<div class="col-xs-6 text-right" style="padding-left: 0px;margin-bottom: 10px;">
+							<button type="button" class="btn btn-info btn-xs">
+								<i class="material-icons">replay</i> Restablecer
+							</button>
+							<button type="button" class="btn btn-primary btn-xs" style="width: 114.984px;">
+								<i class="material-icons">save</i> Guardar
+							</button>
+						</div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+
+		<div class="tab-pane" id="visor" *ngIf="isVisor===true">	
+			<div style="margin-top: 10px;">
+				<!-- Editor de documentos -->
+				<div class="col-xs-12 col-sm-7" style="padding-left: 0px;padding-right: 0px;" *ngIf="systemProperties!==null">
+					<!-- Visores de PDF, Tiff, video e imágenes-->
+					<pdf [idDoc]="idDocumento" *ngIf="systemProperties.mimeType==='application/pdf'"></pdf>
+					<tiff [id]="'Visor'" [idDoc]="idDocumento" *ngIf="systemProperties.mimeType==='image/tiff'"></tiff>
+					<imageViewer [id]="'Visor'" [idDoc]="idDocumento" *ngIf="systemProperties.mimeType==='image/jpeg' || systemProperties.mimeType==='image/png'"></imageViewer>
+					<videoPlayer [idDoc]="idDocumento" *ngIf="systemProperties.mimeType==='audio/mp3' || systemProperties.mimeType==='video/mp4'"></videoPlayer>
+				</div>
+
+				<!--Bloque de información -->
+				<div class="col-xs-12 col-sm-5 properties" style="padding-right:0px;padding-left:0px;">
+					<!-- Bloque de edición de propiedades de documento -->
+					<document-properties [metadata]="metadata" *ngIf="metadata!==null"></document-properties>
+					<!-- Bloque de edición de propiedades del sistema-->
+					<system-properties [systemProperties]="systemProperties" *ngIf="systemProperties!==null"></system-properties>
+					<!-- Bloque de historial de versiones-->
+					<version-history [historial]="historial" *ngIf="historial!==null"></version-history>
+					<!-- Bloque de acciones -->
+					<div class="col-xs-12">
+						<div class="card" style="margin-top: 10px;">
+					        <div style="margin-top: 10px;">
+					        	<div class="col-xs-6">
+									<div class="checkbox" style="padding: 4% 0;">
+										<label>
+											<input type="checkbox" name="optionsCheckboxes">
+											Guardar y continuar
+										</label>
+									</div>
+								</div>
+								<div class="col-xs-6 text-right" style="padding-left: 0px;margin-bottom: 10px;">
+									<button type="button" class="btn btn-info btn-xs">
+										<i class="material-icons">replay</i> Restablecer
+									</button>
+									<button type="button" class="btn btn-primary btn-xs" style="width: 114.984px;">
+										<i class="material-icons">save</i> Guardar
+									</button>
+								</div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,13 @@
+.dropdown-menu li a:hover, .dropdown-menu li a:focus{
+	background-color: #357ebd;
+}
+
+.whiteBackground {
+    background-color: white!important;
+    color:white!important;
+}
+
+.noPad{
+	padding-left: 0px;
+    padding-right: 0px;
+}

@@ -1,0 +1,29 @@
+﻿Jsland
+finance
+Bank
+1
+2
+3
+4
+5
+6
+7
+8
+Customer Credit Disclosure
+List Total Amount of Credit
+Type of Loan	Monthly Payment
+Privacy Disclosure: As an applicant, co-applicant and/or cosigner who is applying for a loan with Island Finance Curacao or Island
+Finance St. Maarten, l/we hereby acknowledge that, as a component of this loan application process and only for the sole purpose of
+the potential execution of a credit agreement contract to which l/we may become party to, Island Finance Curacao or island Finance
+St. Maarten may solicit personal (credit) data from other banks and/or financial institutions which has been deemed necessary for
+determining a conclusion of the stated contract(s).
+Central Bank POC provisions: In accordance with the Provisions on Preventing Overextension of Credit, lenders should obtain
+sufficient information on a consumer's financial condition in order to assess the consumer's creditworthiness. Approved credits must
+be well documented and clearly substantiate the consumers' creditworthiness. Truthfully and accurately completing this form will
+ensure compliance with regulatory requirements. Omitting information regarding your debts could be considered as an act of fraud
+to our institution.
+Applicantfsignature
+1
+Applicant signature	Date
+Date
+Applicant signature

@@ -1,0 +1,246 @@
+<div class="main-content">
+	<div class="col-xs-12">
+		<!-- [selectedIndex]="selectedIndex" (selectedTabChange)="tabChanged($event)" -->
+		<mat-tab-group style="margin-bottom: 5px;" (selectedTabChange)="addStyle($event)">
+			<mat-tab>
+				<ng-template mat-tab-label>
+					Ruta de almacenamiento
+				</ng-template>
+				<div class="col-md-12">
+			        <div class="card">
+			            <form [formGroup]="path" class="form-horizontal">
+			                <div class="card-header card-header-text" data-background-color="rose">
+			                    <h4 class="card-title">Definir ruta</h4>
+			                </div>
+			                <div class="card-content">
+			                	<div class="row">
+			                        <label class="col-sm-2 label-on-left">Ruta</label>
+			                        <div class="col-sm-10">
+			                            <div class="form-group label-floating" [ngClass]="displayFieldCss(path, 'storagePath')">
+			                                <label class="control-label"></label>
+			                                <input type="text" class="form-control" id="storagePath" formControlName="storagePath">
+			                                <div *ngIf="isFieldValid(path, 'storagePath')">
+												<span class="sr-only">(error)</span>
+												<div class="error-msg">
+													Required text
+												</div>
+											</div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+			                <div class="card-footer text-right">
+			                    <button type="submit" class="btn btn-rose btn-fill" (click)="setDomain()">Guardar</button>
+			                </div>
+			            </form>
+			        </div>
+			    </div>
+			</mat-tab>
+			<mat-tab>
+				<ng-template mat-tab-label>
+					Área de almacenamiento
+				</ng-template>
+				<div class="col-xs-12" style="margin-top: 5px;">
+					<ul class="nav nav-pills nav-pills-rose" style="margin-bottom: 5px;">
+	                    <li class="active">
+	                        <a href="#add" data-toggle="tab" (click)="addStyle()">Agregar</a>
+	                    </li>
+	                    <li>
+	                        <a href="#update" data-toggle="tab" (click)="addStyle()">Modificar</a>
+	                    </li>
+	                </ul>
+	                <div class="tab-content">
+	                    <div class="tab-pane active" id="add">
+	                        <div class="col-md-12" style="padding:0">
+						        <div class="card" style="margin:0">
+						            <form [formGroup]="add" class="form-horizontal">
+						                <div class="card-content" style="padding-bottom: 0px;">
+						                	<div class="row">
+						            			<div class="col-sm-2 text-right" style="padding-right: 0; margin-top: 10px;">
+						            				<label style="margin-top: 10px;">Dominio</label>
+						            			</div>
+			                                    <div class="col-sm-10">                                        
+			                                        <!-- (ngModelChange)="setLstPath()" -->
+			                                    	<tree-select 
+			                                            name="id" 
+			                                            [items]="lstDomain" 
+			                                            idField="id" 
+			                                            textField="domainName" 
+			                                            childrenField="children" 
+			                                            filterPlaceholder="Type item filter..."
+			                                            formControlName="domain"
+			                                            [multiple]="false"
+			                                            [filterPlaceholder]="'Filtra aquí...'" 
+			                                            [allowFilter]="true" 
+			                                            [disabled]="false" 
+			                                            expandMode="All">
+			                                        </tree-select>
+			                                        <div *ngIf="isFieldValid(add, 'domain')">
+														<span class="sr-only">(error)</span>
+														<div class="error-msg">
+															Required domain
+														</div>
+													</div> 
+			                                    </div>
+			                                </div>
+						                    <div class="row">
+						                        <label class="col-sm-2 label-on-left">Nombre</label>
+						                        <div class="col-sm-10">
+						                            <div class="form-group label-floating" [ngClass]="displayFieldCss(add, 'name')">
+						                                <label class="control-label"></label>
+						                                <input type="text" class="form-control" id="name-add" formControlName="name">
+						                                <div *ngIf="isFieldValid(add, 'name')">
+															<span class="sr-only">(error)</span>
+															<div class="error-msg">
+																Required text
+															</div>
+														</div>
+						                            </div>
+						                        </div>
+						                    </div>
+						                    <div class="row">
+						                        <label class="col-sm-2 label-on-left">Ruta</label>
+						                        <div class="col-sm-10">
+						                            <div class="form-group label-floating" [ngClass]="displayFieldCss(add, 'path')">
+						                                <label class="control-label"></label>
+						                                <input type="text" class="form-control" id="path-add" formControlName="path">
+						                                <div *ngIf="isFieldValid(add, 'path')">
+															<span class="sr-only">(error)</span>
+															<div class="error-msg">
+																Required text
+															</div>
+														</div>
+						                            </div>
+						                        </div>
+						                    </div>
+						                    <div class="row">
+						                        <label class="col-sm-2 label-on-left">Estatus</label>
+						                        <div class="col-sm-10">
+						                            <div class="form-group label-floating" style="margin-top: 10px;padding-bottom: 0px;" [ngClass]="displayFieldCss(add, 'status')">
+						                                <label class="control-label"></label>
+						                                <mat-form-field>
+													        <mat-select id="status-add" formControlName="status">
+													          <mat-option *ngFor="let domain of lstDomain" [value]="domain.id">
+													            {{ domain.properties.name }}
+													          </mat-option>
+													        </mat-select>
+													    </mat-form-field>
+						                                <div *ngIf="isFieldValid(add, 'status')">
+															<span class="sr-only">(error)</span>
+															<div class="error-msg">
+																Required status
+															</div>
+														</div>
+						                            </div>
+						                        </div>
+						                    </div>
+						                </div>
+						                <div class="card-footer text-right">
+						                    <button type="submit" class="btn btn-rose btn-fill" (click)="test()">Guardar</button>
+						                </div>
+						            </form>
+						        </div>
+						    </div>
+	                    </div>
+	                    <div class="tab-pane" id="update">
+	                        <div class="col-md-12" style="padding:0">
+						        <div class="card" style="margin:0">
+						            <form [formGroup]="update" class="form-horizontal">
+						                <div class="card-content" style="padding-bottom: 0px;">
+						                	<div class="row">
+						            			<div class="col-sm-2 text-right" style="padding-right: 0; margin-top: 10px;">
+						            				<label style="margin-top: 10px;">Dominio</label>
+						            			</div>
+			                                    <div class="col-sm-10">                                        
+			                                        <!-- (ngModelChange)="setLstPath()" -->
+			                                    	<tree-select 
+			                                            name="id" 
+			                                            [items]="lstDomain" 
+			                                            idField="id" 
+			                                            textField="domainName" 
+			                                            childrenField="children" 
+			                                            filterPlaceholder="Type item filter..."
+			                                            formControlName="domain"
+			                                            [multiple]="false"
+			                                            [filterPlaceholder]="'Filtra aquí...'" 
+			                                            [allowFilter]="true" 
+			                                            [disabled]="false" 
+			                                            expandMode="All">
+			                                        </tree-select>
+			                                        <div *ngIf="isFieldValid(add, 'domain')">
+														<span class="sr-only">(error)</span>
+														<div class="error-msg">
+															Required domain
+														</div>
+													</div> 
+			                                    </div>
+			                                </div>
+						                    <div class="row">
+						                        <label class="col-sm-2 label-on-left">Nombre</label>
+						                        <div class="col-sm-10">
+						                            <div class="form-group label-floating" [ngClass]="displayFieldCss(update, 'name')">
+						                                <label class="control-label"></label>
+						                                <input type="text" class="form-control" id="name-update" formControlName="name">
+						                                <div *ngIf="isFieldValid(update, 'name')">
+															<span class="sr-only">(error)</span>
+															<div class="error-msg">
+																Required text
+															</div>
+														</div>
+						                            </div>
+						                        </div>
+						                    </div>
+						                    <div class="row">
+						                        <label class="col-sm-2 label-on-left">Ruta</label>
+						                        <div class="col-sm-10">
+						                            <div class="form-group label-floating" [ngClass]="displayFieldCss(update, 'path')">
+						                                <label class="control-label"></label>
+						                                <input type="text" class="form-control" id="path-update" formControlName="path">
+						                                <div *ngIf="isFieldValid(update, 'path')">
+															<span class="sr-only">(error)</span>
+															<div class="error-msg">
+																Required text
+															</div>
+														</div>
+						                            </div>
+						                        </div>
+						                    </div>
+						                    <div class="row">
+						                        <label class="col-sm-2 label-on-left">Estatus</label>
+						                        <div class="col-sm-10">
+						                            <div class="form-group label-floating" style="margin-top: 10px;padding-bottom: 0px;" [ngClass]="displayFieldCss(update, 'status')">
+						                                <label class="control-label"></label>
+						                                <mat-form-field>
+													        <mat-select id="status-update" formControlName="status">
+													          <mat-option *ngFor="let domain of lstDomain" [value]="domain.id">
+													            {{ domain.properties.name }}
+													          </mat-option>
+													        </mat-select>
+													    </mat-form-field>
+						                                <div *ngIf="isFieldValid(update, 'status')">
+															<span class="sr-only">(error)</span>
+															<div class="error-msg">
+																Required status
+															</div>
+														</div>
+						                            </div>
+						                        </div>
+						                    </div>
+						                </div>
+						                <div class="card-footer text-right">
+						                    <button type="submit" class="btn btn-rose btn-fill" (click)="test()">Guardar</button>
+						                </div>
+						            </form>
+						        </div>
+						    </div>
+	                    </div>
+	                </div>
+				</div>
+					
+
+				
+
+			</mat-tab>
+		</mat-tab-group>	
+	</div>    
+</div>	

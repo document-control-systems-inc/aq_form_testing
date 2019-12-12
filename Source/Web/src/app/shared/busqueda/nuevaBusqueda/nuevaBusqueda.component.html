@@ -1,0 +1,9 @@
+<tipo-busqueda [clases]="lstClase" [paths]="lstPaths" [id]="id" [subfolder]="searchData.includeChildren" (selected)="selected($event)" [name]="searchData.info.name" (search)="search($event)" (subcarpetas)="subcarpetas($event)"></tipo-busqueda>
+<criterios-busqueda [camposClase]="propClaseDocumental" [lstCriteria]="lstCriteria" [selectedCriteria]="searchData.criteria" [idDocumentClass]="searchData.documentClass[0]" (changedCriteria)="changeLstSelectedCriteria($event)"></criterios-busqueda>
+<visualizacion [camposClase]="propClaseDocumentalVisualizacion" [criteria]="criteriaString" [id]="id" (visualizationEvent)="visualizationEvent($event)" (orderByEvent)="orderByEvent($event)"></visualizacion>
+<div class="text-right" style="padding:0">
+	<button class="btn btn-default" (click)="executeSearch()">Buscar</button>
+	<button class="btn btn-default">Cancelar</button>
+	<button class="btn btn-default" (click)="showStorageModal()">Guardar</button>
+	<button class="btn btn-default">Restablecer</button>
+</div>

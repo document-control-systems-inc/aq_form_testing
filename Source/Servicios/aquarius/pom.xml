@@ -1,0 +1,237 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.f2m</groupId>
+  <artifactId>aquarius</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>aquarius Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <!-- se declara repositorio local -->
+  <repositories>
+	  <repository>
+		<id>in-project</id>
+		<name>In Project Repo</name>
+		<url>file://C:/Users/gomado/Documents/F2M/Aquarius/Repositorio F2M/aquarius/Source/Servicios/aquarius/libs</url>
+	  </repository>
+  </repositories>
+  
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<spring.version>4.2.2.RELEASE</spring.version>
+  	<spring-mock.version>2.0.8</spring-mock.version>
+  	<jackson.version>2.6.3</jackson.version>
+  	<slf4j.version>1.7.7</slf4j.version>
+	<junit.version>3.8.1</junit.version> 
+	<ldap.version>0.1</ldap.version>
+	<codec.version>1.8</codec.version>
+	<servlet.version>3.1.0</servlet.version>
+	<jdbc.version>7.0.78</jdbc.version>
+	<postgres.version>9.4-1206-jdbc42</postgres.version>
+	<mail.version>1.5.1</mail.version>
+	<fileupload.version>1.3.1</fileupload.version>
+	<apachepoi.version>3.7</apachepoi.version>
+	<aperture.version>1.5.0</aperture.version>
+	<itext.version>5.5.13</itext.version>
+  </properties>
+  
+  
+  
+  <dependencies>
+  	<!-- Pruebas -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- iText -->
+	<dependency>
+	    <groupId>com.itextpdf</groupId>
+	    <artifactId>itextpdf</artifactId>
+	    <version>${itext.version}</version>
+	</dependency> 
+    
+    <!-- Ldap -->
+	<dependency>
+		<groupId>org.apache.directory.client.ldap</groupId>
+		<artifactId>ldap-client-api</artifactId>
+		<version>${ldap.version}</version>
+	</dependency>
+	
+	<!-- Logging -->
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>${slf4j.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+		<version>${slf4j.version}</version>
+	</dependency>
+	
+	<!-- commons codec -->
+	<dependency>
+		<groupId>commons-codec</groupId>
+		<artifactId>commons-codec</artifactId>
+		<version>${codec.version}</version>
+	</dependency>
+    
+    <!-- Web Project -->
+    <dependency>
+    	<groupId>javax.servlet</groupId>
+    	<artifactId>javax.servlet-api</artifactId>
+    	<version>${servlet.version}</version>
+    </dependency>
+    
+    <!-- Spring -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	
+	<!-- Spring Mock -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-mock</artifactId>
+	    <version>${spring-mock.version}</version>
+	</dependency>
+	<!-- Jackson -->
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+	<!-- cmis 
+	<dependency>
+  		<groupId>org.apache.chemistry.opencmis</groupId>
+  		<artifactId>chemistry-opencmis-client-impl</artifactId>
+  		<version>0.10.0</version>
+  	</dependency>
+  	-->
+  	<!-- Pool DB -->
+  	<dependency>
+	    <groupId>org.apache.tomcat</groupId>
+	    <artifactId>tomcat-jdbc</artifactId>
+	    <version>${jdbc.version}</version>
+	</dependency>
+	<!-- Postgres Driver -->
+    <dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>${postgres.version}</version>
+	</dependency>
+	<!-- Java Mail -->
+	<dependency>
+	    <groupId>com.sun.mail</groupId>
+	    <artifactId>javax.mail</artifactId>
+	    <version>${mail.version}</version>
+	</dependency>
+	<!-- Apache Commons FileUpload -->
+	<dependency>
+	    <groupId>commons-fileupload</groupId>
+	    <artifactId>commons-fileupload</artifactId>
+	    <version>${fileupload.version}</version>
+	</dependency>
+	<!-- Apache POI  -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-scratchpad</artifactId>
+	    <version>${apachepoi.version}</version>
+	</dependency>
+	<dependency>
+    <groupId>org.semweb4j</groupId>
+    <artifactId>rdf2go.api</artifactId>
+    <version>5.0.0</version>
+	</dependency>
+		<dependency>
+	    <groupId>org.apache.pdfbox</groupId>
+	    <artifactId>pdfbox</artifactId>
+	    <version>1.6.0</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.openoffice</groupId>
+	    <artifactId>ridl</artifactId>
+	    <version>3.2.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.openoffice</groupId>
+	    <artifactId>juh</artifactId>
+	    <version>3.2.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.openoffice</groupId>
+	    <artifactId>jurt</artifactId>
+	    <version>3.2.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.openoffice</groupId>
+	    <artifactId>unoil</artifactId>
+	    <version>3.2.1</version>
+	</dependency>
+	<!-- Local - aperture-core -->
+	<dependency>
+	    <groupId>org.semanticdesktop</groupId>
+	    <artifactId>aperture-core</artifactId>
+	    <version>1.5.0</version>
+	</dependency>
+	<!-- Local - jodconverter-core -->
+	<dependency>
+	    <groupId>org.artofsolving</groupId>
+	    <artifactId>jodconverter-core</artifactId>
+	    <version>3.0</version>
+	</dependency>
+	<!-- Local - scratchApplet -->
+	<dependency>
+	    <groupId>edu.mit</groupId>
+	    <artifactId>scratchApplet</artifactId>
+	    <version>1.0.0</version>
+	</dependency>
+  </dependencies>
+  <build>
+    <finalName>aquarius</finalName>
+    <plugins>
+    	<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.12.4</version>
+			<configuration>
+				<skipTests>true</skipTests>
+			</configuration>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.1</version>
+			<configuration>
+				<source>1.7</source>
+				<target>1.7</target>
+				<encoding>${project.build.sourceEncoding}</encoding>
+			</configuration>
+		</plugin>
+    	<!-- Jetty -->
+		<plugin>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-maven-plugin</artifactId>
+			<configuration>
+				<systemProperties>
+					<systemProperty>
+						<name>jetty.port</name>
+						<value>9090</value>
+					</systemProperty>
+				</systemProperties>
+			</configuration>
+		</plugin>
+	</plugins>
+  </build>
+</project>

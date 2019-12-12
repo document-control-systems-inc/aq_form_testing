@@ -1,0 +1,67 @@
+Workflow: Solicitud de Servicios
+
+Por carpeta:
+
+usuario 1 - 	lo escanea
+		- Registrado	- Enviar a Papelera
+
+usuario 2 - 	Lo recibe
+		- Recibido -Rechazar (poner una nota)
+
+usuario 3 - 	Lo recibe
+		- Revisado:
+			- Expediente de solicitud
+			- Anexos
+			- Pago correspondiente
+
+		- Rechazado
+			- Expediente de solicitud
+			- Anexos
+			- Pago correspondiente
+----------------------------
+		Selecciona el tipo de documento: con pago/sin pago
+		Completa metadata
+		Asigna un analista
+
+----------------------------
+usuario 4 - 	- Analisis completado
+		- Observaciones
+		- Tipo de servicio solicitado
+		- Informar pago adicional (enviar e-mail)
+
+--
+Tengo que ir guardando en las carpetas
+sólo los usuarios que tiene la tarea pueden ver el documento
+
+
+--
+posponer (no me deja avanzar) --> reanudar
+
+
+----
+Notificación de vencimiento al supervisor:
+-- 	Cuántos expedientes se trabajaron
+	Cuantos expedientes con su status
+	cuantos expedientes pendientes
+
+Notificación por metas --> Cada X tareas, enviar reporte
+
+
+
+Pendientes:
+YA -- funcion: finalizar tareas (debe de recibir un output y otros datos, como comentario y forma)
+YA -- Info de Tareas
+Seleccion de archivos multiples o individuales
+Diseñar Workflow
+
+Hacer bien el cálculo de los datos de tarea
+Ver historial del workflow en la tarea --> con comentarios
+
+-------------------------
+Notificaciones (dueDate)
+Notificaciones (aviso por correo electrónico) --> Inicio de Tarea o Finalización de tarea
+--> Dashboard
+--> crear subtarea
+
+
+Tareas automáticas

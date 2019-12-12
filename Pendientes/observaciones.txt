@@ -1,0 +1,95 @@
+1. Portal 
+OK - No muestra nada (no es bug, hay que definir)
+
+2. Captura
+REVISAR - No muestra imagen a capturar
+ (chrome)
+RESUELTO - La Clase Documental se muestra repetida
+ASI SE DEFINIO - No permite cambiar el nombre
+BUG DEL COMPONENTE - Para la Ruta de guardado no permite escoger una rama, tiene que ser una hoja
+
+3. Explorar
+AUN NO SE IMPLEMENTA. ES LO DE COPIAR, MOVER, BORRAR, DESCARGAR, ETC - La opción Seleccionar de la parte de arriba no tiene funcionalidad
+ - Al seleccionar el botón de propiedades, en el Modal en 
+RESUELTO  - Propiedades del documento se muestran duplicadas
+  - Propiedades del sistema 
+BUG DE PERDIDA DE CONEXION   - Se muestra null a partir de la segunda vez que se abre el Modal
+CHECAR SI RESTA EL NUMERO REVISION   - No corresponde el número de versión con el mostrado en la tabla
+  - Historial de versiones
+AUN NO SE IMPLEMENTA EN PANTALLA   - Los botones no tienen funcionalidad
+ - Pestaña Editor
+  - Se muestra cuando es un PDF, pero no muestra el documento
+ - Pestaña Visor
+  - No muestra la clase documental y no se puede agregar una
+  - Las flechas para avanzar y retroceder no tienen funcionalidad
+PARA MODIFICAR LOS DATOS DE LA CLASE DOCUMENTAL  - Check de "Guardar y continuar" (¿para qué lo queríamos?)
+  - No guarda los cambios hechos (imagen)
+ - Añadir documento
+ASI ES  - Si ya existe un documento con el mismo nombre muestra error porque ya existe uno. ¿deería dar la opción de sobreescribir, actualizar versión?
+4. Búsqueda
+IMPLEMENTANDO - No filtra resultados, regresa todo
+ - Cuando se selecciona del lado izquierdo (Mi búsqueda, Búsqueda más complejao Búsqueda de Carpeta) abre la pestaña del lado derecho, pero no le da Focus
+
+
+
+
+
+
+--
+
+Qué documentos estoy autorizado a ver:
+Por ejemplo, Facturas, Documentos por Pagar
+
+
+
+Precargar clases documentales:
+	--> Hijos
+
+
+Guardar el documento - sustituir cuando se modifica la imagen.
+
+
+- Auditoria: Deshabilitar
+Busqueda por puntuación
+
+
+Envio de Correo
+Enviar por pagina
+Enviar por documento
+Enviar el Link
+
+
+
+
+sudo rm -rf /var/lib/tomcat7/webapps/ROOT/*
+sudo unzip /home/ubuntu/vagrant/web/portal.zip -d /var/lib/tomcat7/webapps/ROOT/
+echo "Iniciando servicios"
+
+
+
+
+
+
+
+---
+- Loading
+- Drag & Drop para que puedan convivir los dos componentes (o sea, botón y drag&drop)
+- Tablas:
+	sombreado mouse encima
+	botón de preview documento
+	cambio puntero de mouse cuando sea clickeable
+- Dashboard:
+	- Componente búsqueda
+	- Componente Seguimiento Documento
+	- Componentes Indicadores
+	- Componente Tareas pendientes
+- Explorar:
+	- Que se pueda minimizar o ocultar arbol de carpetas
+	- Que las tablas tomen el tamaño máximo hacia abajo de la resolución
+	- verificar el tema de responsivo de los componentes
+- Buscar:
+	- Que se pueda minimizar o ocultar el panel de busquedas guardadas
+	- Que la tabla tome el tamaño máximo
+	- Verificar el tema de responsivo
+- Tareas
+	- Lo mismo...

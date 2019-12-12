@@ -1,0 +1,27 @@
+Download:
+
+Carpeta o Carpetas:
+content|metadata|contentMetadata|list
+Documento
+original|zipContent|zipContentMetadata|csv|pdf
+Documentos:
+zipContent|zipContentMetadata|list
+Carpetas y Documentos:
+content|metadata|contentMetadata|list
+
+
+
+
+
+SEVERE: The web application [] appears to have started a thread named [] but has failed to stop it. This is very likely to create a memory leak.
+
+
+--
+pendiente
+Agregar la etiqueta de "label" en los campos de criterios de busqueda
+
+amartinez@revistaurbana.com.mx
+Lorena%1983
+
+mail.f2m.com.mx
+110

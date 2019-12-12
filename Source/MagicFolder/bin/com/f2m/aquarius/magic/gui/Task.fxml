@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.f2m.aquarius.magic.gui.TaskController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Nombre:" />
+      <TextField fx:id="txtName" layoutX="114.0" layoutY="10.0" prefHeight="25.0" prefWidth="257.0" />
+      <Label layoutX="14.0" layoutY="42.0" text="Responsable:" />
+      <Button layoutX="327.0" layoutY="86.0" mnemonicParsing="false" text="Editar" />
+      <Label layoutX="14.0" layoutY="121.0" text="Vencimiento:" />
+      <RadioButton fx:id="rbtDuration" layoutX="114.0" layoutY="121.0" mnemonicParsing="false" onChange="#onChangeDueTask" selected="true" text="Duración">
+         <toggleGroup>
+            <ToggleGroup fx:id="dueTask" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbtDueDate" layoutX="214.0" layoutY="121.0" mnemonicParsing="false" text="Fecha" toggleGroup="$dueTask" />
+      <Label layoutX="13.0" layoutY="212.0" text="Tipo de Archivo:" />
+      <TextField fx:id="txtFile" layoutX="113.0" layoutY="208.0" />
+      <Label layoutX="13.0" layoutY="241.0" text="Opciones Salida:" />
+      <Button layoutX="326.0" layoutY="288.0" mnemonicParsing="false" onAction="#addSalidas" text="Editar" />
+      <Button layoutX="249.0" layoutY="325.0" mnemonicParsing="false" onAction="#closeWindowAccept" text="Aceptar" />
+      <Button fx:id="btnCancelar" layoutX="313.0" layoutY="325.0" mnemonicParsing="false" onAction="#closeWindowCancel" text="Cancelar" />
+      <TextArea fx:id="txtResponsable" disable="true" layoutX="114.0" layoutY="42.0" prefHeight="74.0" prefWidth="200.0" />
+      <TextField fx:id="txtDuration" layoutX="114.0" layoutY="146.0" prefHeight="25.0" prefWidth="88.0" />
+      <ComboBox fx:id="cmbDuration" layoutX="209.0" layoutY="146.0" prefHeight="25.0" prefWidth="105.0" />
+      <Label fx:id="lblDuration" layoutX="14.0" layoutY="150.0" text="Duración:" />
+      <Label fx:id="lblDueDate" layoutX="14.0" layoutY="150.0" text="Fecha:" visible="false" />
+      <DatePicker fx:id="dtpDueDate" layoutX="114.0" layoutY="146.0" prefHeight="25.0" prefWidth="200.0" visible="false" />
+      <ListView fx:id="lstSalidas" layoutX="113.0" layoutY="238.0" prefHeight="74.0" prefWidth="200.0" />
+      <Label layoutX="13.0" layoutY="181.0" text="Tipo de Selección:" />
+      <RadioButton fx:id="rbtSimple" layoutX="115.0" layoutY="181.0" mnemonicParsing="false" selected="true" text="Simple">
+         <toggleGroup>
+            <ToggleGroup fx:id="multifile" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbtMultiple" layoutX="206.0" layoutY="181.0" mnemonicParsing="false" text="Multiple" toggleGroup="$multifile" />
+   </children>
+</AnchorPane>

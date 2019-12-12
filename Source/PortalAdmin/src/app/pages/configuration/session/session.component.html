@@ -1,0 +1,61 @@
+<div class="main-content">
+	<div class="col-md-12">
+        <div class="card">
+            <form [formGroup]="form" class="form-horizontal">
+                <div class="card-header card-header-text" data-background-color="rose">
+                    <h4 class="card-title">Configuración</h4>
+                </div>
+                <div class="card-content">
+                	<div class="row">
+                        <label class="col-sm-2 label-on-left">Minutes</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(form, 'minutes')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="minutes" formControlName="minutes">
+                                <div *ngIf="isFieldValid(form, 'minutes')" >
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Add a number!
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Max users</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(form, 'maxUsers')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="maxUsers" formControlName="maxUsers">
+                                <div *ngIf="isFieldValid(form, 'maxUsers')" >
+                                    <span class="sr-only">(error)</span>
+                                    <div class="error-msg">
+                                        Add a number!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Max concurrent</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(form, 'maxConcurrent')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="maxConcurrent" formControlName="maxConcurrent">
+                                <div *ngIf="isFieldValid(form, 'maxConcurrent')" >
+                                    <span class="sr-only">(error)</span>
+                                    <div class="error-msg">
+                                        Add a number!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-right">
+                    <button type="submit" class="btn btn-rose btn-fill" (click)="onType()">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

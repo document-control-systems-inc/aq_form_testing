@@ -1,0 +1,14 @@
+<footer class="footer" style="padding-top: 0px;">
+    <div class="container-fluid">
+        <p class="copyright pull-left">
+            © 2017. F2M SAS de C.V.
+        </p>
+        <div class="form-group pull-right" style="margin-top: 5px;margin-right: 15px;">
+            <select class="form-control">
+                <option *ngFor="let row of languages" [value]="row.value">
+                    {{ row.language }}
+                </option>
+            </select>
+        </div>
+    </div>
+</footer>

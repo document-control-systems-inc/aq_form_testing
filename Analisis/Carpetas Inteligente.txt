@@ -1,0 +1,111 @@
+Local VM
+http://localhost:8080/aquarius
+
+Local Desarrollo:
+http://localhost:9090
+
+Nube:
+http://ec2-52-23-226-55.compute-1.amazonaws.com:8080/aquarius
+
+Id Sesión:
+abe07bc3-150c-4aba-bcd6-d4485295f6d9
+
+Dominio:
+8f04265a-e84b-42d6-8416-8319bcdd9957
+
+
+Folder Home:
+7454fbbc-a37d-4c0a-a97b-04443e9af937
+
+
+Hijos:
+/AquariusAWS/Home
+
+
+
+--
+
+Creación --> 
+	Scan
+	Import (Multiformato)
+	Foto (cámara)
+	Email --> Attach o todo el email
+	Observador de una carpeta
+	Leer de un WebService (Excel, Base de Datos)
+	Un form ya hecho (metadata)
+	FTP*
+	Aquarius Form (Imagen en el fondo y encima ponemos los text fields para poner la metadata)
+		-> se pueden crear QR Code o BarCode
+
+Distribución --> *Puede ser encriptado o Seguridad
+	Mandar a Printer
+	Mandar a Email
+	Mandar a un Aquarius Messanger
+	Mandar a un Export (Movil multiformato o multimedio)
+	Mandar a carpetas (de Aquarius o a carpetas de sistema)
+	Compartir (Redes sociales)
+
+Edición -->
+	OCR
+	Insertar:
+		Página
+		Campo de Texto
+		QR Code
+		Bar Code
+		Anotación
+		Notas
+	Índice:
+		Crear
+		Eliminar
+		Editar
+		Aumentar a un documento
+	
+		¿Cómo llenar los indices?
+			- Con un WS
+			- Con una BD
+			- Con una función
+			- Con un Bar Code
+			- Con un QR Code
+
+	Firma:
+		Manuscrita
+		Firma Electrónica
+	Sellos
+	GPS
+	Redes Sociales
+
+Búsqueda -->
+	Por Indice
+	Por Usuario
+	Por OCR
+	Por tipo de documento
+	
+Reportes -->
+	Salen de las busquedas y se exportan
+
+Eliminar -->
+	Políticas de Retención
+	Quiero eliminar sólo algunas páginas
+
+Genérica -->
+	Timer: para llamar las funciones anteriores
+	Alertas:
+	Notas: Tipo PostIt
+
+Bitácora -->
+	Ledger: Del documento y expediente
+	Ledger: Del folder
+	Ledger: Del Task
+
+Usuarios -->
+	Permisos por usuarios
+
+Automatización -->
+	Cambio de Status del Expediente --> cambiar el indice
+		Creado (persona 1) --> pasó a la persona 2
+	Regla: Colocar if
+
+Dashboard -->
+	Mostrar 
+
+--> WF

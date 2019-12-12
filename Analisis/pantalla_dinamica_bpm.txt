@@ -1,0 +1,122 @@
+Pantalla dinámica - Tareas
+
+Para ejecutar la pantalla, se deberá llamar un servicio con el Id de la tarea que se va a ejecutar. El servicio responderá con un json de entrada con los elementos de la pantalla.
+La pantalla debe de tener el Id de la tarea, el cual mandará al final al servicio de finalización de la tarea.
+
+Los elementos de la pantalla son:
+
+Título:
+	Se debe de especificar un titulo de la pantalla
+
+Después, la pantalla deberá pintar de acuerdo a la información que reciba las distintas secciones:
+
+- "Campos-Valor". Uno o varios
+Aparecerá como una lista con dos columnas. La primera columna tendrá los valores de campos (nombres) y la segunda columna tendrá el valor que deberá ingresar el usuario.
+Se definirán los siguientes tipos de valor:
+Texto
+Numérico
+Fecha
+Lista (el Json debería incluir los posibles valores de la lista)
+
+Por ejemplo:
+[
+	{
+		"id": "name",
+		"label": "Nombre",
+		"type": "String",
+		"required": true
+	},
+	{
+		"id": "date",
+		"label": "Fecha del Contrato",
+		"type": "Date",
+		"required": false
+	}
+]
+
+- "Documento":
+El usuario podrá seleccionar uno o más documento previamente ingresado al sistema.
+Se le debe de permitir navegar por las carpetas y seleccionar un documento.
+
+
+- Acciones (Botones)
+Por default, la pantalla sólo tendra un botón: Cancelar. Cuya acción será cerrar la pestaña sin realizar ninguna otra acción.
+Se podrán definir otros botones, por lo que el json debe de permitir definir un valor para la "etiqueta" del boton y otro valor para definir el id del botón.
+
+Por ejemplo,
+[
+	{
+		"id": "continue",
+		"label": "Aprobar Contrato",
+		"value": "true"
+	},
+	{
+		"id": "reject",
+		"label": "Rechazar Contrato",
+		"value": "true"
+	}
+]
+
+Excepto el botón de cancelar (que ya se describió la funcionalidad), todos los demás botones mandaran a llamar el servicio para finalizar la tarea, en cuyo caso, deberán enviar la información de lo que se hizo en la pantalla en un json, por ejemplo:
+{
+	"idTask": "XXXXXX",
+	"fields": [
+		{
+			"id": "name",
+			"value": "Adrián Martínez"
+		},
+		{
+			"id": "date",
+			"value": "07/03/2018"
+		}
+	],
+	"documents": [
+			"AAAA-BBBB-CCCC-DDDD",
+			"EEEE-FFFF-GGGG-HHHH",
+			"IIII-JJJJ-KKKK-LLLL"
+	],
+	"actions":
+		{
+			"id": "reject",
+			"value": "true"
+		}
+}
+
+
+En resumen, este podría ser el json de entrada:
+{
+	"title": "Aprobación de contrato",
+	"fields": [
+		{
+			"id": "name",
+			"label": "Nombre",
+			"type": "String",
+			"required": true
+		},
+		{
+			"id": "date",
+			"label": "Fecha del Contrato",
+			"type": "Date",
+			"required": false
+		}
+	],
+	"documents": {
+		"visible": true,
+		"maxDocs": 3,
+		"minDocs": 1
+	},
+	"actions":
+		[
+		{
+			"id": "continue",
+			"label": "Aprobar Contrato",
+			"value": "true"
+		},
+		{
+			"id": "reject",
+			"label": "Rechazar Contrato",
+			"value": "true"
+		}
+	]
+}
+	

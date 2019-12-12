@@ -1,0 +1,112 @@
+<div class="card">
+	<div class="card-header card-header-icon" data-background-color="blue">
+        <i class="material-icons">filter_list</i>
+    </div>
+    <h4 class="card-title" style="margin-top: 10px;margin-bottom: 15px;">Criterios de búsqueda</h4>
+	<table>
+		<thead>
+			<th class="col-xs-1"></th>
+			<th class="col-xs-3"></th>
+			<th class="col-xs-3"></th>
+			<th class="col-xs-4"></th>
+			<th class="col-xs-1">Opciones</th>
+			<!--th class="hidden-xs col-sm-1">Editable</th>
+			<th class="hidden-xs col-sm-1">Visible</th>
+			<th class="hidden-xs col-sm-1">Obligatorio</th>
+			<th class="hidden-xs col-sm-1">AND/OR</th-->
+		</thead>
+		<tbody>
+			<tr *ngFor="let criteria of lstSelectedCriteria; let i = index">
+				<td class="text-center">
+					<button class="btn btn-primary btn-sm" style="padding-left: 8px;padding-right: 8px;" (click)="removeCriteria(i)">
+						<i class="material-icons">remove</i>
+					</button>
+				</td>
+				<td style="padding-right: 10px;">
+					<div class="form-group" style="margin-top: 0px;">
+			            <select class="form-control" [disabled]="claseDocumental===undefined" [(ngModel)]="selectedField[i]" (ngModelChange)="changeField(i)">
+			            <!--select class="form-control" [disabled]="claseDocumental===undefined" [(ngModel)]="lstSelectedCriteria[i].field" (ngModelChange)="changeField(i)"-->
+			                <option *ngFor="let row of claseDocumental" [ngValue]="row">
+			                <!--option *ngFor="let row of claseDocumental" [ngValue]="row.name"-->
+			                    {{row.label}} - ({{row.className}})
+			                </option>
+			            </select>
+			        </div>
+				</td>
+				<td style="padding-right: 10px;">
+					<div class="form-group" style="margin-top: 0px;">
+			            <select class="form-control" [disabled]="lstSelectedCriteria[i].lstCriteria===undefined || lstSelectedCriteria[i].lstCriteria===null" [(ngModel)]="lstSelectedCriteria[i].search_criteria" (ngModelChange)="cleanData(i)">
+			                <option *ngFor="let row of lstSelectedCriteria[i].lstCriteria" [ngValue]="row.search_criteria">
+			                	{{row.label}}
+			                </option>
+			            </select>
+			        </div>
+				</td>
+				<td>
+					<!-- String -->
+					<div class="form-group" style="margin-top: 0px;" *ngIf="lstSelectedCriteria[i].fieldType==='String' && lstSelectedCriteria[i].search_criteria!=='IsEmpty' && lstSelectedCriteria[i].search_criteria!=='IsNotEmpty' && lstSelectedCriteria[i].search_criteria!==null">
+						<input type="text" class="form-control" 
+							[(ngModel)]="lstSelectedCriteria[i].writtenValue"
+							(ngModelChange)="setValue(i)">
+					</div>
+					<!-- Datetime -->
+					<owl-date-time 
+						[(ngModel)]="lstSelectedCriteria[i].selectedDate" 
+						(onSelect)="convertDateToTimestamp(i)" 
+						(onClear)="cleanData(i)" 
+						placeHolder="Select date here"
+						*ngIf="lstSelectedCriteria[i].fieldType==='DateTime' && (lstSelectedCriteria[i].search_criteria!=='IsEmpty' && lstSelectedCriteria[i].search_criteria!=='IsNotEmpty' && lstSelectedCriteria[i].search_criteria!==null && lstSelectedCriteria[i].search_criteria!=='Between' && lstSelectedCriteria[i].search_criteria!=='NotBetween')">
+					</owl-date-time>
+					<owl-date-time 
+						[(ngModel)]="lstSelectedCriteria[i].selectedDate" 
+						(onSelect)="convertDateToTimestamp(i)" 
+						(onClear)="cleanData(i)"  
+						selectionMode="range" 
+						placeHolder="Select dates here"
+						*ngIf="lstSelectedCriteria[i].fieldType==='DateTime' && (lstSelectedCriteria[i].search_criteria!=='IsEmpty' && lstSelectedCriteria[i].search_criteria!=='IsNotEmpty' && lstSelectedCriteria[i].search_criteria!==null && lstSelectedCriteria[i].search_criteria==='Between' || lstSelectedCriteria[i].search_criteria==='NotBetween')">
+					</owl-date-time>
+				</td>
+				<td class="text-center">
+					<button class="btn btn-primary btn-sm" style="padding-left: 8px;padding-right: 8px;" (click)="modalOptions(i)">
+						<i class="material-icons">open_in_new</i>
+					</button>
+				</td>
+				<!--td class="text-center hidden-xs">
+					<div class="togglebutton">
+	                    <label>
+	                        <input type="checkbox" [(ngModel)]="lstSelectedCriteria[i].editable">
+	                    </label>
+	                </div>
+				</td>
+				<td class="text-center hidden-xs">
+					<div class="togglebutton">
+	                    <label>
+	                        <input type="checkbox" [(ngModel)]="lstSelectedCriteria[i].visible">
+	                    </label>
+	                </div>
+				</td>
+				<td class="text-center hidden-xs">
+					<div class="togglebutton">
+	                    <label>
+	                        <input type="checkbox" [(ngModel)]="lstSelectedCriteria[i].required">
+	                    </label>
+	                </div>
+				</td>
+				<td class="text-center hidden-xs">
+					<div class="togglebutton">
+	                    <label>
+	                        <input type="checkbox" [(ngModel)]="lstSelectedCriteria[i].operator">
+	                    </label>
+	                </div>
+				</td-->
+			</tr>
+			<tr>
+				<td class="text-center">
+					<button class="btn btn-primary btn-sm" style="padding-left: 8px;padding-right: 8px;" (click)="addCriteria()" [disabled]="claseDocumental===undefined||claseDocumental.length===0">
+						<i class="material-icons">add</i>
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

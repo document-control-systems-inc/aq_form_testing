@@ -1,0 +1,85 @@
+<div class="col-xs-12" (keydown.ArrowLeft)="prePage()" (keydown.ArrowRight)="nextPage()">
+	<!-- taskbar -->
+	<div class="col-xs-12" style="background-color: #124971;border-radius: 5px;border-bottom-right-radius: 0;border-bottom-left-radius: 0;">
+		<!-- Parte de paginado -->
+		<div class="col-xs-6 col-sm-3 col-lg-2 text-left inline-form" style="padding-left: 0px;padding-right: 0px;margin-bottom:5px;">
+			<input type="text" class="form-control col-xs-12 text-center" style="width: 46px;margin-top: 5px;" [(ngModel)]="pageTemp" (ngModelChange)="changePage()">
+			<label style="padding-left: 5px;padding-top: 10px;color:white;font-size:17px;">/{{totalPage}}</label>
+		</div>
+		<!-- Parte de zoom -->
+		<div class="col-xs-6 col-sm-5 col-lg-5 text-right" style="padding-left: 0px;padding-right: 0px;margin-top: 5px;right: 15px;">
+			<div class="col-xs-7 col-sm-5" style="margin-top: 3px;">
+				<button class="btn btn-link btn-link-preview" (click)="zoomOut()"><i class="fa fa-minus-circle fa-2x" aria-hidden="true" style="color:white;"></i></button>
+				<button class="btn btn-link btn-link-preview" (click)="zoomIn()"><i class="fa fa-plus-circle fa-2x" aria-hidden="true" style="color:white;"></i></button>
+			</div>
+			<div class="col-xs-5 col-sm-7" style="right: 20px;">
+				<select class="form-control" style="width: 86px;" [(ngModel)]="zoom">
+					<option *ngFor="let row of zoomPercentages" [value]="row.value" [selected]="row.value===zoom">{{row.percentage}}</option>
+				</select>
+			</div>
+		</div>
+		<!-- Apartado de pantalla completa-->
+		<div class="hidden-xs col-sm-4 col-lg-5 text-right" style="margin-top:4px;margin-bottom:5px;padding-left: 0px;padding-right: 0px;">
+			<button class="btn btn-info" (click)="showEditor()" style="padding-left:6px;padding-right:3px;padding-top:3px;padding-bottom:3px;"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" style="color:white;"></i></button>
+			<button class="btn btn-link btn-link-preview" (click)="openPdf()" style="margin-left:5px;"><i class="fa fa-expand fa-2x" aria-hidden="true" style="color:white;"></i></button>
+		</div>
+	</div>
+	<div class="col-xs-12 layout">
+		<!-- Preview -->
+		<div class="hidden-xs hidden-sm col-sm-4 col-lg-2" style="overflow: auto;max-height:548px;display:none;" id="preview" [hidden]="!showPreviewPanel" #preview>
+			<div class="col-xs-12 inline-form" *ngFor="let row of pagesArray" style="margin-top: 10px;">
+				<label>{{row}}</label>
+				<pdf-viewer class="pdfViewer"
+					[src]="pdf"
+					[page]="row"
+				    [show-all]="false"
+				    [zoom]="0.12"
+				    [autoresize]="true"
+				    [render-text]="false"
+				    (click) = "changePagePreview(row)"
+				    style="margin-bottom: 0px;">	
+				</pdf-viewer>
+			</div>
+		</div>
+		<!-- Viewer -->
+		<div class="{{pdfViewerClass}}" id="pdfViewer" >
+			<!-- Botón para ocultar sidebar -->
+			<div class="col-xs-12" style="margin-bottom:5px;" *ngIf="!fullscreen">
+				<button class="btn btn-link btn-link-preview hidden-xs hidden-sm" (click)="hidePreviewPanel()"><i class="{{showPreviewPanelIcon}}" aria-hidden="true" style="color:white;margin-top:10px;"></i></button>
+				<div style="float:right;">
+					<button class="btn btn-link btn-link-preview prevPage" (click)="prePage()" #prevPage><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></button>
+					<button class="btn btn-link btn-link-preview nextPage" (click)="nextPage()"><i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i></button>
+				</div>
+			</div>	
+			<!-- Tareas de pantalla completa-->
+			<div class="text-right" *ngIf="fullscreen" style="z-index:1;margin-top: 10px;">
+				<div class="col-xs-11 inline-form" style="left: 5px;">
+					<div class="col-xs-6" style="margin-top: 5px;left: 13px;">
+						<button class="btn btn-link btn-link-preview" (click)="zoomOut()"><i class="fa fa-minus-circle fa-2x" aria-hidden="true" style="color:white;"></i></button>
+						<button class="btn btn-link btn-link-preview" (click)="zoomIn()"><i class="fa fa-plus-circle fa-2x" aria-hidden="true" style="color:white;"></i></button>
+					</div>
+					<div class="col-xs-6">
+						<select class="form-control" style="width: 86px;" [(ngModel)]="zoom">
+							<option *ngFor="let row of zoomPercentages" [value]="row.value" [selected]="row.value===zoom">{{row.percentage}}</option>
+						</select>
+					</div>
+				</div>
+				<button class="col-xs-1 btn btn-link btn-link-preview" (click)="closePdf()"><i class="fa fa-times fa-2x" aria-hidden="true" style="color:white;"></i></button>
+			</div>
+			<!-- Botones de desplazamiento-->
+			<div class="{{withoutFullscreenStyle}}">	
+				<pdf-viewer class="pdfViewer"
+					[src]="pdf" 
+					[(page)]="page"
+				    [zoom]="zoom"
+				    [show-all]="false"
+				    [original-size]="false"
+				    [autoresize]="true"
+				    [render-text]="true"
+				    (after-load-complete)="callBackFn($event)"
+				    style="margin-top:0px;margin-bottom:0px;display:block;">
+			    </pdf-viewer>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,563 @@
+--
+Search Criteria:
+
+
+{
+	"search_criteria": "XX",
+	"label": "XX"
+}
+
+{
+	"type": "",
+	"search_criteria": [XX]
+}
+--
+Search Criteria:
+
+{
+	"search_criteria": "Equals",
+	"label": "Igual"
+}
+{
+	"search_criteria": "NotEquals",
+	"label": "No es igual"
+}
+{
+	"search_criteria": "StartWith",
+	"label": "Empieza Por"
+}
+{
+	"search_criteria": "EndWith",
+	"label": "Finaliza Con"
+}
+{
+	"search_criteria": "Like",
+	"label": "Como"
+}
+{
+	"search_criteria": "NotLike",
+	"label": "No es como"
+}
+{
+	"search_criteria": "LessThan",
+	"label": "Menor que"
+}
+{
+	"search_criteria": "LessThanOrEqual",
+	"label": "Menor o igual que"
+}
+{
+	"search_criteria": "GreaterThan",
+	"label": "Mayor que"
+}
+{
+	"search_criteria": "GreaterThanOrEqual",
+	"label": "Mayor o igual que"
+}
+{
+	"search_criteria": "IncludeAny",
+	"label": "Incluir cualquiera"
+}
+{
+	"search_criteria": "ExcludeAll",
+	"label": "Excluir todo"
+}
+{
+	"search_criteria": "IsEmpty",
+	"label": "Esta vacío"
+}
+{
+	"search_criteria": "IsNotEmpty",
+	"label": "No está vacío"
+}
+{
+	"search_criteria": "Between",
+	"label": "Entre"
+}
+{
+	"search_criteria": "NotBetween",
+	"label": "No entre"
+}
+
+---
+Types Search:
+
+{
+	"type": "String",
+	"search_criteria": ["StartWith", "EndWith", "Like", "NotLike", "Equals", "NotEquals", "IncludeAny", "ExcludeAll", "IsEmpty", "IsNotEmpty"]
+}
+{
+	"type": "Text",
+	"search_criteria": ["StartWith", "EndWith", "Like", "NotLike", "Equals", "NotEquals", "IncludeAny", "ExcludeAll", "IsEmpty", "IsNotEmpty"]
+}
+{
+	"type": "Integer",
+	"search_criteria": ["Equals", "NotEquals", "LessThan", "LessThanOrEqual", "GreaterThan", "GreaterThanOrEqual", "IsEmpty", "IsNotEmpty", "Between", "NotBetween"]
+}
+{
+	"type": "Numeric",
+	"search_criteria": ["Equals", "NotEquals", "LessThan", "LessThanOrEqual", "GreaterThan", "GreaterThanOrEqual", "IsEmpty", "IsNotEmpty", "Between", "NotBetween"]
+}
+{
+	"type": "Long",
+	"search_criteria": ["Equals", "NotEquals", "LessThan", "LessThanOrEqual", "GreaterThan", "GreaterThanOrEqual", "IsEmpty", "IsNotEmpty", "Between", "NotBetween"]
+}
+{
+	"type": "Decimal",
+	"search_criteria": ["Equals", "NotEquals", "LessThan", "LessThanOrEqual", "GreaterThan", "GreaterThanOrEqual", "IsEmpty", "IsNotEmpty", "Between", "NotBetween"]
+}
+{
+	"type": "Currency",
+	"search_criteria": ["Equals", "NotEquals", "LessThan", "LessThanOrEqual", "GreaterThan", "GreaterThanOrEqual", "IsEmpty", "IsNotEmpty", "Between", "NotBetween"]
+}
+{
+	"type": "Date",
+	"search_criteria": ["Equals", "LessThan", "LessThanOrEqual", "GreaterThan", "GreaterThanOrEqual", "IsEmpty", "IsNotEmpty", "Between", "NotBetween"]
+}
+{
+	"type": "DateTime",
+	"search_criteria": ["Equals", "LessThan", "LessThanOrEqual", "GreaterThan", "GreaterThanOrEqual", "IsEmpty", "IsNotEmpty", "Between", "NotBetween"]
+}
+{
+	"type": "List",
+	"search_criteria": ["Equals", "NotEquals", "IsEmpty", "IsNotEmpty"]
+}
+{
+	"type": "Boolean",
+	"search_criteria": ["Equals", "NotEquals", "IsEmpty", "IsNotEmpty"]
+}
+
+
+Documento:
+{
+	"id": "1",
+	"name": "document",
+	"label": "Documento",
+	"fields":[
+				{
+					"name": "title",
+					"label": "Nombre",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "id",
+					"label": "ID",
+					"type": "String",
+					"properties": {
+							"size": 36,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				}
+			]
+}
+
+Email:
+{
+	"id": "2",
+	"name": "email",
+	"label": "Correo Electrónico",
+	"fields":[
+				{
+					"name": "title",
+					"label": "Título",
+					"type": "String",
+					"properties": {
+							"size": 100,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "id",
+					"label": "ID",
+					"type": "String",
+					"properties": {
+							"size": 36,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "from",
+					"label": "De",
+					"type": "String",
+					"properties": {
+							"size": 100,
+							"required": true,
+							"email": true,
+							"url": false
+					}
+				},
+				{
+					"name": "to",
+					"label": "Para",
+					"type": "String",
+					"properties": {
+							"size": 100,
+							"required": true,
+							"email": true,
+							"url": false
+					}
+				},
+				{
+					"name": "cc",
+					"label": "CC",
+					"type": "String",
+					"properties": {
+							"size": 100,
+							"required": false,
+							"email": true,
+							"url": false
+					}
+				},
+				{
+					"name": "sentOn",
+					"label": "Enviado el",
+					"type": "DateTime",
+					"properties": {
+							"required": false
+					}
+				},
+				{
+					"name": "receivedOn",
+					"label": "Recibido el",
+					"type": "DateTime",
+					"properties": {
+							"required": false
+					}
+				},
+				{
+					"name": "link",
+					"label": "link",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": false,
+							"email": false,
+							"url": true
+					}
+				}
+			]
+}
+
+Link:
+{
+	"id": "3",
+	"name": "link",
+	"label": "Link",
+	"fields":[
+				{
+					"name": "title",
+					"label": "Nombre",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "id",
+					"label": "ID",
+					"type": "String",
+					"properties": {
+							"size": 36,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "link",
+					"label": "link",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": false,
+							"email": false,
+							"url": true
+					}
+				}
+			]
+}
+
+
+
+Carpeta:
+{
+	"id": "4",
+	"name": "folder",
+	"label": "Carpeta",
+	"fields":[
+				{
+					"name": "name",
+					"label": "Nombre",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "id",
+					"label": "ID",
+					"type": "String",
+					"properties": {
+							"size": 36,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "createdOn",
+					"label": "Creado el",
+					"type": "DateTime",
+					"properties": {
+							"required": false
+					}
+				}
+			]
+}
+
+
+File Properties:
+{
+	"id": "5",
+	"name": "fileProperties",
+	"label": "Propiedades de Sistema Documento",
+	"fields":[
+				{
+					"name": "name",
+					"label": "Nombre",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "createdOn",
+					"label": "Creado el",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "createdBy",
+					"label": "Creado por",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "modifiedOn",
+					"label": "Modificado el",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "modifiedBy",
+					"label": "Modificado por",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "id",
+					"label": "ID",
+					"type": "String",
+					"properties": {
+							"size": 36,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "location",
+					"label": "location",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "contentVersion",
+					"label": "Versión Contenido",
+					"type": "Integer",
+					"properties": {
+							"size": 5,
+							"required": false,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "metadataVersion",
+					"label": "Versión Metadata",
+					"type": "Integer",
+					"properties": {
+							"size": 5,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "mimeType",
+					"label": "Tipo MIME",
+					"type": "String",
+					"properties": {
+							"size": 30,
+							"required": false,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "extension",
+					"label": "Extensión",
+					"type": "String",
+					"properties": {
+							"size": 10,
+							"required": false,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "size",
+					"label": "Tamaño",
+					"type": "String",
+					"properties": {
+							"size": 30,
+							"required": false,
+							"email": false,
+							"url": false
+					}
+				}
+			]
+}
+
+Folder Properties:
+{
+	"id": "6",
+	"name": "folderProperties",
+	"label": "Propiedades de Sistema Carpeta",
+	"fields":[
+				{
+					"name": "name",
+					"label": "Nombre",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "createdOn",
+					"label": "Creado el",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "createdBy",
+					"label": "Creado por",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "id",
+					"label": "ID",
+					"type": "String",
+					"properties": {
+							"size": 36,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "location",
+					"label": "location",
+					"type": "String",
+					"properties": {
+							"size": -1,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "numDocuments",
+					"label": "Número Documentos",
+					"type": "Integer",
+					"properties": {
+							"size": 5,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				},
+				{
+					"name": "numFolders",
+					"label": "Número Carpetas",
+					"type": "Integer",
+					"properties": {
+							"size": 5,
+							"required": true,
+							"email": false,
+							"url": false
+					}
+				}
+				
+			]
+}

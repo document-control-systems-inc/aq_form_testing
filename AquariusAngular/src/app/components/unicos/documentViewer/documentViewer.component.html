@@ -1,0 +1,67 @@
+<navbar></navbar>
+<h2 class="text-left" style="padding-left:0px;margin-left:90px;margin-top:0px;padding-top:10px;" translate>{{_documentViewer.componentName}}</h2>
+<div *ngIf="_documentViewer.isEditor;then EditorTemplate else ViewerTemplate">here is ignored</div>
+
+<ng-template #ViewerTemplate>
+	<div class="container">
+		<!-- Editor de documentos -->
+		<div class="col-xs-8" style="padding-left: 10px;padding-right: 0px;">
+			<!-- Bloque de vista previa y vista de documento-->
+			<div class="col-xs-12">
+				<!-- Bloque de vista de documento/comentarios-->
+				<pdf></pdf>
+				<!-- Bloque de reacts y comentarios-->
+				<div class = "col-xs-12">
+					<!-- Bloque de reacts -->
+					<reacts></reacts>
+					<!-- Bloque de comentarios -->
+					<comments></comments>					
+				</div>
+			</div>
+		</div>
+		<!--Bloque de información -->
+		<div class="col-xs-4" style="padding-right:0px;padding-left:0px;bottom:53px;">
+			<!--Apartado de botones superiores -->
+			<div class="col-xs-12" style="padding-right: 0px;right: 5px;">
+				<div class="col-xs-8 text-right" style="float:right;padding-left: 5px;padding-right: 0px;">
+					<button class="btn btn-link blackButtons"><i class="fa fa-th-large fa-2x" aria-hidden="true"></i></button>
+					<button class="btn btn-link blackButtons"><i class="fa fa-th-list fa-2x" aria-hidden="true"></i></button>
+				</div>
+			</div>
+			<!-- Bloque de edición de propiedades de documento -->
+			<document-properties></document-properties>
+			<!-- Bloque de edición de propiedades del sistema-->
+			<system-properties></system-properties>
+			<!-- Bloque de historial de versiones -->
+			<version-history></version-history>
+			<!-- Bloque de acciones -->
+			<div class="col-xs-12">
+				<fieldset>
+					<legend>Acciones</legend>
+					<div class="col-xs-5" style="padding-left: 0px;">
+						<label><input type="checkbox" value="">Guardar y continuar</label>
+					</div>
+					<div class="col-xs-7 text-right" style="padding-right: 5px;">
+						<button type="button" class="btn btn-info">
+							<i class="fa fa-undo" aria-hidden="true"></i>
+						</button>
+						<button type="button" class="btn btn-primary">
+							<i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i>
+						</button>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<footer></footer>
+</ng-template>
+
+<ng-template #EditorTemplate>
+	<div style="bottom:10px;">
+		<div class="text-right" style="margin-bottom:10px;border-right-width:10px;margin-right:15px;">
+			<button class="btn btn-danger" (click)="hideEditor()" style="padding-left:6px;padding-right:3px;padding-top:3px;padding-bottom:3px;"><i class="fa fa-arrow-circle-o-left" aria-hidden="true" style="color:white;"></i> Regresar</button>
+		</div>
+		<pdf-editor></pdf-editor>
+	</div>
+	<footer></footer>
+</ng-template>

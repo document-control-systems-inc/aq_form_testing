@@ -1,0 +1,31 @@
+LISTO --> no cierra sesiones al salir
+LISTO --> no cierra la aplicación
+LISTO --> al leer los profiles on line, no está leyendo los del usuario loggeado
+LISTO --> al hacer doble click en el profile truena
+LISTO --> cambiar etiquetas de NASP por Aquarius Desktop
+LISTO --> Falta un botón de cerrar sesión
+
+
+
+Probar que funcione el escanner y que guarde y envíe las imagenes
+----
+generar un instalador de la aplicación
+---
+
+---
+
+---
+en el web --> cerrar todas las sesiones
+
+
+
+NAPS2.Scan.Exceptions.ScanDriverUnknownException: An error occurred with the scanning driver. ---> System.ArgumentException: Value of 'null' is not valid for 'stream'.
+   at System.Drawing.Image.FromStream(Stream stream, Boolean useEmbeddedColorManagement, Boolean validateImageData)
+   at NAPS2.Scan.Twain.TwainWrapper.<>c__DisplayClass8_0.<Scan>b__1(Object sender, DataTransferredEventArgs eventArgs)
+   --- End of inner exception stack trace ---
+   at NAPS2.Scan.Twain.TwainWrapper.Scan(IWin32Window dialogParent, Boolean activate, ScanDevice scanDevice, ScanProfile scanProfile, ScanParams scanParams)
+   at NAPS2.Scan.Twain.TwainScanDriver.ScanInternal()
+   at NAPS2.Scan.ScanDriverBase.Scan()
+   at NAPS2.Scan.ScanPerformer.PerformScan(ScanProfile scanProfile, ScanParams scanParams, IWin32Window dialogParent, ISaveNotify notify, Action`1 imageCallback)
+
+

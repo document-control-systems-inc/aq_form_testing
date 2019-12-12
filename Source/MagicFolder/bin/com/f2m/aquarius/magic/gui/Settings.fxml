@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="127.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.f2m.aquarius.magic.gui.SettingsController">
+   <children>
+      <Button fx:id="btnCancelar" layoutX="514.0" layoutY="95.0" mnemonicParsing="false" onAction="#closeWindow" text="Cancelar" />
+      <Button fx:id="btnAceptar" layoutX="436.0" layoutY="95.0" mnemonicParsing="false" onAction="#saveChages" text="Aceptar" />
+      <Label layoutX="17.0" layoutY="14.0" text="URL:" />
+      <TextField fx:id="txtURL" layoutX="88.0" layoutY="10.0" prefHeight="25.0" prefWidth="494.0" text="http://&lt;hostname&gt;:&lt;port&gt;/aquarius" />
+      <Label layoutX="17.0" layoutY="41.0" text="Usuario:" />
+      <Label layoutX="17.0" layoutY="69.0" text="Contraseña:" />
+      <TextField fx:id="txtUser" layoutX="88.0" layoutY="37.0" />
+      <PasswordField fx:id="txtPwd" layoutX="88.0" layoutY="65.0" />
+   </children>
+</AnchorPane>

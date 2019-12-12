@@ -1,0 +1,67 @@
+td, th {
+    vertical-align: middle !important;
+}
+
+a {
+    height:50px;
+    overflow:hidden;
+    color:#fff;
+}
+
+.left {
+    float:left;
+    height:100vh;
+    background: #124971;
+    /*display: inline-block;*/
+    white-space: nowrap;
+    width: 50px;
+    transition: width 1s;
+    position: fixed;
+    z-index:1;
+}
+
+.left:hover {
+    width: 18%;
+} 
+
+.left:hover > .profile-user {
+    height:150px;
+}   
+
+.left:hover > .profile-user > .profile-pic {
+    height:120px;
+}
+        
+.left .glyphicon {
+    margin:15px;
+    width:20px;
+    color:#fff;
+}
+    
+.item {
+    height:50px;
+    overflow:hidden;
+    color:#fff;
+}
+
+.item:hover {
+    background-color:#3493af;
+}
+
+.profile-user{
+    height:50px;
+    transition: width 1s;
+    overflow:hidden;
+    color:#fff;
+}
+
+.profile-pic{
+    margin-top: 4px;
+    height:44px;
+    border-radius: 50%;
+    transition: width 1s;
+}
+
+.activePage{
+    background-color:#3493af;
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.f2m.aquarius.magic.gui.TaskListController">
+   <children>
+      <Button fx:id="btnCancelar" layoutX="689.0" layoutY="341.0" mnemonicParsing="false" onAction="#closeWindowCancel" text="Cerrar" />
+      <Button fx:id="btnAceptar" layoutX="23.0" layoutY="23.0" mnemonicParsing="false" onAction="#createWorkflow" text="Crear Workflow" />
+      <ScrollPane layoutX="23.0" layoutY="64.0" prefHeight="268.0" prefWidth="785.0">
+         <content>
+            <TableView fx:id="tblList" prefHeight="266.0" prefWidth="785.0" />
+         </content>
+      </ScrollPane>
+      <CheckBox fx:id="chkInitial" layoutX="344.0" layoutY="40.0" mnemonicParsing="false" onAction="#updateStatus" selected="true" text="Inicial" />
+      <CheckBox fx:id="chkInProgress" layoutX="409.0" layoutY="40.0" mnemonicParsing="false" onAction="#updateStatus" selected="true" text="En Progreso" />
+      <CheckBox fx:id="chkPause" layoutX="502.0" layoutY="40.0" mnemonicParsing="false" onAction="#updateStatus" selected="true" text="Pospuesta" />
+      <CheckBox fx:id="chkFinalized" layoutX="585.0" layoutY="40.0" mnemonicParsing="false" onAction="#updateStatus" text="Finalizada" />
+      <CheckBox fx:id="chkCancelled" layoutX="665.0" layoutY="40.0" mnemonicParsing="false" onAction="#updateStatus" text="Cancelada" />
+   </children>
+</AnchorPane>

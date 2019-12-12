@@ -1,0 +1,35 @@
+Pendientes Mayo
+
+---
+x - Loading
+x - Tablas:
+x	sombreado mouse encima
+x	botón de preview documento
+x	cambio puntero de mouse cuando sea clickeable
+- Anotaciones en imagenes:
+	Recuadro, que seleccione color (si es relleno o solo contorno), transparencia
+		(deseable texto)
+	- Deseable, leer un json y reproducirlo (para poder guardar/leer la anotación)
+	- Verificar que si doy zoom, el recuadro permanezca en el lugar correcto. Si muevo la imagen también.
+* 1 semana
+	- Verificar anotación en TIFF --> sumamente importante
+	- Deseable, en el visor de PDF
+	- Quitar el editor de PDF
+
+- Dashboard:
+	- Componente búsqueda
+	- Componente Seguimiento Documento
+	- Componentes Indicadores
+	- Componente Tareas pendientes
+- Drag & Drop para que puedan convivir los dos componentes (o sea, botón y drag&drop)
+- Explorar:
+	- Que se pueda minimizar o ocultar arbol de carpetas
+	- Que las tablas tomen el tamaño máximo hacia abajo de la resolución
+	- verificar el tema de responsivo de los componentes
+- Buscar:
+	- Que se pueda minimizar o ocultar el panel de busquedas guardadas
+	- Que la tabla tome el tamaño máximo
+	- Verificar el tema de responsivo
+- Tareas
+	- Lo mismo...
+

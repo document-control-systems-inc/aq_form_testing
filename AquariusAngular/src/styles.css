@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+
+.container{
+	width: 95%;
+	left: 35px;
+	position: absolute;
+}
+
+/* PDF Viewer style*/
+.pdfViewer{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-left: 0px;
+    padding-right: 0px;
+}
+
+/* Login style */
+.form-signin {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+	-webkit-box-shadow: 0 0 10px #dfdede;
+	-moz-box-shadow: 0 0 10px #dfdede;
+	-o-box-shadow: 0 0 10px #dfdede;
+	box-shadow: 0 0 10px #dfdede;
+	clear: both;
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	text-align: left;
+	background: #ffffff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #bab9b9;
+	word-wrap: break-word;
+}
+.form-signin-login{
+	top: 100px;
+}
+.form-signin-recover{
+	top: 200px;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+	margin-bottom: 10px;
+}
+.form-signin .checkbox {
+	font-weight: normal;
+}
+.form-signin .form-control {
+	position: relative;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	      box-sizing: border-box;
+	padding: 10px;
+	font-size: 16px;
+}
+.form-signin .form-control:focus {
+	z-index: 2;
+}
+.form-signin input[type="text"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+.form-signin input[type="email"] {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+.form-logo{
+	width: 300px;
+    margin-bottom: 20px;
+}
+.form-signin-user-span{
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom: 0;
+}
+.form-signin-password-span{
+	border-top-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+/* Test de Scroll*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #666666;
+}
+::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #e1e1e1;
+}
+::-webkit-scrollbar-track:active {
+  background: #e1e1e1;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

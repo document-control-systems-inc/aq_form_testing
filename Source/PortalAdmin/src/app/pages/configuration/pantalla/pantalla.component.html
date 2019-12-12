@@ -1,0 +1,356 @@
+<div class="main-content">
+	<div class="col-xs-12">
+		<!-- [selectedIndex]="selectedIndex" (selectedTabChange)="tabChanged($event)" -->
+		<mat-tab-group style="margin-bottom: 5px;" (selectedTabChange)="addStyle($event)">
+			<mat-tab>
+				<ng-template mat-tab-label>
+					Pantallas
+				</ng-template>
+				<div class="col-xs-12" style="margin-top: 5px;max-height: 600px;">
+					<div class="card">
+						<ul class="nav nav-pills nav-pills-rose" style="margin: 10px;">
+		                    <li class="active">
+		                        <a href="#addPantalla" data-toggle="tab" (click)="addStyle()">Agregar</a>
+		                    </li>
+		                    <li>
+		                        <a href="#updPantalla" data-toggle="tab" (click)="addStyle()">Modificar</a>
+		                    </li>
+		                    <li>
+		                        <a href="#delPantalla" data-toggle="tab" (click)="addStyle()">Eliminar</a>
+		                    </li>
+		                </ul>
+		                <div class="tab-content">
+		                    <div class="tab-pane active" id="addPantalla">
+		                        <form [formGroup]="pantalla" class="form-horizontal">
+		                            <div class="card-content">
+		                                <div class="row">
+		                                    <label class="col-sm-2 label-on-left" style="padding-top: 8px;">Nombre</label>
+		                                    <div class="col-sm-10">
+		                                        <div class="form-group label-floating" style="    margin-top: 0px;" [ngClass]="displayFieldCss(pantalla, 'name')">
+		                                            <label class="control-label"></label>
+		                                            <input type="text" class="form-control" id="addName" formControlName="name">
+		                                            <div *ngIf="isFieldValid(pantalla, 'name')">
+		                                                <span class="sr-only">(error)</span>
+		                                                <div class="error-msg">
+		                                                    Required text
+		                                                </div>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                </div>   
+		                            </div>
+		                            <div class="card-footer text-right">
+		                                <button type="submit" class="btn btn-rose btn-fill" (click)="addPageSubmit()">Guardar</button>
+		                            </div>
+		                        </form>
+		                    </div>
+		                    <div class="tab-pane" id="updPantalla">
+		                        <div class="form-horizontal">
+		                            <div class="card-content">
+		                            	<div *ngIf="updPantalla===0">
+		                            		<div class="row">
+						            			<div class="col-sm-2 text-right" style="padding-right: 0; margin-top: 10px;">
+						            				<label style="margin-top: 10px;">Pantalla</label>
+						            			</div>
+			                                    <div class="col-sm-10">                       
+			                                        <!-- (ngModelChange)="setLstPath()" -->
+			                                    	<tree-select 
+			                                            name="id" 
+			                                            [items]="lstPantalla" 
+		                                                idField="id" 
+		                                                textField="name" 
+			                                            childrenField="children" 
+			                                            filterPlaceholder="Type item filter..."
+			                                            [(ngModel)]="updInfo"
+			                                            [multiple]="false"
+			                                            [filterPlaceholder]="'Filtra aquí...'" 
+			                                            [allowFilter]="true" 
+			                                            [disabled]="false" 
+			                                            expandMode="All">
+			                                        </tree-select>
+			                                    </div>
+			                                </div>
+			                                <div class="card-footer text-right" style="margin: 0;border-top-width: 0px;">
+				                                <button class="btn btn-rose btn-fill" (click)="setUpdPageInfo()" [disabled]="updInfo===null">Continuar</button>
+				                            </div> 
+		                            	</div>
+			                            <div *ngIf="updPantalla===1">
+			                            	<div class="row">
+			                                    <label class="col-sm-2 label-on-left" style="padding-top: 8px;">Nombre</label>
+			                                    <div class="col-sm-10">
+			                                        <div class="form-group label-floating" style="    margin-top: 0px;">
+			                                            <label class="control-label"></label>
+			                                            <input type="text" class="form-control" [(ngModel)]="updPage.name">
+			                                        </div>
+			                                    </div>
+			                                </div> 
+			                                <div class="card-footer text-right" style="margin: 0;border-top-width: 0px;">
+			                                	<button class="btn btn-default btn-fill" (click)="updPantalla=0;updInfo=null;">Atrás</button>
+				                                <button class="btn btn-rose btn-fill" (click)="updatePage()">Modificar</button>
+				                            </div> 
+			                            </div> 
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="tab-pane" id="delPantalla">
+		                        <div class="col-xs-12 form-horizontal">
+		                            <div class="card-content">
+		                                <div class="row">
+		                                    <label class="col-sm-2" style="margin-top: 10px;">Pantalla</label>
+		                                    <div class="col-sm-10">
+		                                        <div class="input-group">
+		                                            <!-- (ngModelChange)="setLstPath()" -->
+		                                            <tree-select 
+		                                                name="suspClass" 
+		                                                [items]="lstPantalla" 
+		                                                idField="id" 
+		                                                textField="name" 
+		                                                childrenField="children" 
+		                                                filterPlaceholder="Type item filter..."
+		                                                [(ngModel)]="suspenderId"
+		                                                [multiple]="false"
+		                                                [filterPlaceholder]="'Filtra aquí...'" 
+		                                                [allowFilter]="true" 
+		                                                [disabled]="false" 
+		                                                expandMode="All">
+		                                            </tree-select> 
+		                                            <span class="input-group-btn" style="padding:0;">
+		                                                <button class="btn btn-rose btn-fill">Eliminar</button>
+		                                            </span>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div>	
+				</div>
+			</mat-tab>
+			<mat-tab>
+				<ng-template mat-tab-label>
+					Componentes
+				</ng-template>
+				<div class="col-xs-12" style="margin-top: 5px;max-height: 600px;">
+					<div class="card">
+						<ul class="nav nav-pills nav-pills-rose" style="margin: 10px;">
+		                    <li class="active">
+		                        <a href="#addComponent" data-toggle="tab" (click)="addStyle()">Agregar</a>
+		                    </li>
+		                    <li>
+		                        <a href="#updComponent" data-toggle="tab" (click)="addStyle()">Modificar</a>
+		                    </li>
+		                    <li>
+		                        <a href="#delComponent" data-toggle="tab" (click)="addStyle()">Eliminar</a>
+		                    </li>
+		                </ul>
+		                <div class="tab-content">
+		                    <div class="tab-pane active" id="addComponent">
+		                        <form [formGroup]="component" class="form-horizontal">
+		                            <div class="card-content">
+		                                <div class="row">
+					            			<div class="col-sm-2 text-right" style="padding-right: 0; margin-top: 10px;">
+					            				<label style="margin-top: 10px;">Pantalla</label>
+					            			</div>
+		                                    <div class="col-sm-10">                                 
+		                                        <!-- (ngModelChange)="setLstPath()" -->
+		                                    	<tree-select 
+		                                            name="id" 
+		                                            [items]="lstPantalla" 
+	                                                idField="id" 
+	                                                textField="name" 
+		                                            childrenField="children" 
+		                                            filterPlaceholder="Type item filter..."
+		                                            formControlName="id"
+		                                            [multiple]="false"
+		                                            [filterPlaceholder]="'Filtra aquí...'" 
+		                                            [allowFilter]="true" 
+		                                            [disabled]="false" 
+		                                            expandMode="All">
+		                                        </tree-select>
+		                                        <div *ngIf="isFieldValid(component, 'id')">
+													<span class="sr-only">(error)</span>
+													<div class="error-msg">
+														Se requiere seleccionar una pantalla
+													</div>
+												</div> 
+		                                    </div>
+		                                </div> 
+		                                <div class="row">
+		                                    <label class="col-sm-2 label-on-left" style="padding-top: 8px;">Nombre</label>
+		                                    <div class="col-sm-10">
+		                                        <div class="form-group label-floating" style="    margin-top: 0px;" [ngClass]="displayFieldCss(component, 'name')">
+		                                            <label class="control-label"></label>
+		                                            <input type="text" class="form-control" id="addName" formControlName="name">
+		                                            <div *ngIf="isFieldValid(component, 'name')">
+		                                                <span class="sr-only">(error)</span>
+		                                                <div class="error-msg">
+		                                                    Required text
+		                                                </div>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                </div>  
+		                            </div>
+		                            <div class="card-footer text-right">
+		                                <button type="submit" class="btn btn-rose btn-fill" (click)="addComponentSubmit()">Guardar</button>
+		                            </div>
+		                        </form>
+		                    </div>
+		                    <div class="tab-pane" id="updComponent">
+		                        <div class="form-horizontal">
+		                            <div class="card-content">
+
+		                            	<div *ngIf="updComponent===0">
+		                            		<div class="row">
+						            			<div class="col-sm-2 text-right" style="padding-right: 0; margin-top: 10px;">
+						            				<label style="margin-top: 10px;">Pantalla</label>
+						            			</div>
+			                                    <div class="col-sm-10">                       
+			                                    	<tree-select 
+			                                            name="page" 
+			                                            [items]="lstPantalla" 
+		                                                idField="id" 
+		                                                textField="name" 
+			                                            childrenField="children" 
+			                                            filterPlaceholder="Type item filter..."
+			                                            [(ngModel)]="selectPage"
+			                                            (ngModelChange)="setLstComp()"
+			                                            [multiple]="false"
+			                                            [filterPlaceholder]="'Filtra aquí...'" 
+			                                            [allowFilter]="true" 
+			                                            [disabled]="false" 
+			                                            expandMode="All">
+			                                        </tree-select>
+			                                    </div>
+			                                </div>
+		                            		<div class="row">
+						            			<div class="col-sm-2 text-right" style="padding-right: 0; margin-top: 10px;">
+						            				<label style="margin-top: 10px;">Componente</label>
+						            			</div>
+			                                    <div class="col-sm-10">                       
+			                                        <!-- (ngModelChange)="setLstPath()" -->
+			                                    	<tree-select 
+			                                            name="id" 
+			                                            [items]="lstSelectedComp" 
+		                                                idField="id" 
+		                                                textField="name" 
+			                                            childrenField="children" 
+			                                            filterPlaceholder="Type item filter..."
+			                                            [(ngModel)]="selectComp"
+			                                            [multiple]="false"
+			                                            [filterPlaceholder]="'Filtra aquí...'" 
+			                                            [allowFilter]="true" 
+			                                            [disabled]="selectPage===null" 
+			                                            expandMode="All">
+			                                        </tree-select>
+			                                    </div>
+			                                </div>
+			                                <div class="card-footer text-right" style="margin: 0;border-top-width: 0px;">
+				                                <button class="btn btn-rose btn-fill" (click)="setUpdCompInfo()" [disabled]="selectComp===null">Continuar</button>
+				                            </div> 
+		                            	</div>
+
+			                            <div *ngIf="updComponent===1">
+			                            	<div class="row">
+						            			<div class="col-sm-2 text-right" style="padding-right: 0; margin-top: 10px;">
+						            				<label style="margin-top: 10px;">Pantalla</label>
+						            			</div>
+			                                    <div class="col-sm-10">                       
+			                                    	<tree-select 
+			                                            name="page" 
+			                                            [items]="lstPantalla" 
+		                                                idField="id" 
+		                                                textField="name" 
+			                                            childrenField="children" 
+			                                            filterPlaceholder="Type item filter..."
+			                                            [(ngModel)]="selectPage"
+			                                            (ngModelChange)="setLstComp()"
+			                                            [multiple]="false"
+			                                            [filterPlaceholder]="'Filtra aquí...'" 
+			                                            [allowFilter]="true" 
+			                                            [disabled]="false" 
+			                                            expandMode="All">
+			                                        </tree-select>
+			                                    </div>
+			                                </div>
+			                            	<div class="row">
+			                                    <label class="col-sm-2 label-on-left" style="padding-top: 8px;">Nombre</label>
+			                                    <div class="col-sm-10">
+			                                        <div class="form-group label-floating" style="    margin-top: 0px;">
+			                                            <label class="control-label"></label>
+			                                            <input type="text" class="form-control" [(ngModel)]="updComp.name">
+			                                        </div>
+			                                    </div>
+			                                </div> 
+			                                <div class="card-footer text-right" style="margin: 0;border-top-width: 0px;">
+			                                	<button class="btn btn-default btn-fill" (click)="updComponent=0;selectComp=null;selectPage=null;">Atrás</button>
+				                                <button class="btn btn-rose btn-fill" (click)="updateComponent()">Modificar</button>
+				                            </div> 
+			                            </div> 
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="tab-pane" id="delComponent">
+	                        	<div class="col-xs-12 form-horizontal">
+		                            <div class="card-content">
+		                            	<div class="row">
+					            			<div class="col-sm-2 text-right" style="padding-right: 0; margin-top: 10px;">
+					            				<label style="margin-top: 10px;">Pantalla</label>
+					            			</div>
+		                                    <div class="col-sm-10">                                 
+		                                        <!-- (ngModelChange)="setLstPath()" -->
+		                                    	<tree-select 
+		                                            name="id" 
+		                                            [items]="lstPantalla" 
+	                                                idField="id" 
+	                                                textField="name" 
+		                                            childrenField="children" 
+		                                            filterPlaceholder="Type item filter..."
+		                                            (ngModelChange)="getComponentSelect()"
+		                                            [(ngModel)]="idPantalla"
+		                                            [multiple]="false"
+		                                            [filterPlaceholder]="'Filtra aquí...'" 
+		                                            [allowFilter]="true" 
+		                                            [disabled]="false" 
+		                                            expandMode="All">
+		                                        </tree-select>
+		                                    </div>
+		                                </div>
+		                                <div class="row">
+		                                	<div class="col-sm-2 text-right" style="padding-right: 0; margin-top: 10px;">
+					            				<label style="margin-top: 10px;">Componente</label>
+					            			</div>
+		                                    <div class="col-sm-10">
+		                                        <div class="input-group">
+		                                            <!-- (ngModelChange)="setLstPath()" -->
+		                                            <tree-select 
+		                                                name="suspClass" 
+		                                                [items]="lstComponent" 
+		                                                idField="id" 
+		                                                textField="name" 
+		                                                childrenField="children" 
+		                                                filterPlaceholder="Type item filter..."
+		                                                [(ngModel)]="idComponent"
+		                                                [multiple]="false"
+		                                                [filterPlaceholder]="'Filtra aquí...'" 
+		                                                [allowFilter]="true" 
+		                                                [disabled]="false" 
+		                                                expandMode="All">
+		                                            </tree-select> 
+		                                            <span class="input-group-btn" style="padding:0;">
+		                                                <button class="btn btn-rose btn-fill">Eliminar</button>
+		                                            </span>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div>
+				</div>
+			</mat-tab>
+		</mat-tab-group>	
+	</div>    
+</div>

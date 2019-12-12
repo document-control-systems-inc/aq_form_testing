@@ -1,0 +1,103 @@
+<div class="main-content">
+	<div class="col-xs-12">
+		<!-- [selectedIndex]="selectedIndex" (selectedTabChange)="tabChanged($event)" -->
+		<mat-tab-group style="margin-bottom: 5px;" (selectedTabChange)="addStyle($event)">
+			<mat-tab>
+				<ng-template mat-tab-label>
+					Dominio
+				</ng-template>
+				<div class="col-md-12">
+			        <div class="card">
+			            <form [formGroup]="domainForm" class="form-horizontal">
+			                <div class="card-header card-header-text" data-background-color="rose">
+			                    <h4 class="card-title">Agregar dominio</h4>
+			                </div>
+			                <div class="card-content">
+			                	<div class="row">
+			                        <label class="col-sm-2 label-on-left">Nombre de dominio</label>
+			                        <div class="col-sm-10">
+			                            <div class="form-group label-floating" [ngClass]="displayFieldCss(domainForm, 'domain')">
+			                                <label class="control-label"></label>
+			                                <input type="text" class="form-control" id="domain" formControlName="domain">
+			                                <div *ngIf="isFieldValid(domainForm, 'domain')">
+												<span class="sr-only">(error)</span>
+												<div class="error-msg">
+													Required text
+												</div>
+											</div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+			                <div class="card-footer text-right">
+			                    <button type="submit" class="btn btn-rose btn-fill" (click)="setDomain()">Guardar</button>
+			                </div>
+			            </form>
+			        </div>
+			    </div>
+			</mat-tab>
+			<mat-tab>
+				<ng-template mat-tab-label>
+					Subdominio
+				</ng-template>
+				<div class="col-md-12">
+			        <div class="card">
+			            <form [formGroup]="subdomain" class="form-horizontal">
+			                <div class="card-header card-header-text" data-background-color="rose">
+			                    <h4 class="card-title">Agregar subdominio</h4>
+			                </div>
+			                <div class="card-content">
+			                	<div class="row">
+			            			<div class="col-sm-2 text-right" style="padding-right: 0; margin-top: 10px;">
+			            				<label style="margin-top: 10px;">Dominio</label>
+			            			</div>
+                                    <div class="col-sm-10">                                        
+                                        <!-- (ngModelChange)="setLstPath()" -->
+                                    	<tree-select 
+                                            name="id" 
+                                            [items]="lstDomain" 
+                                            idField="id" 
+                                            textField="domainName" 
+                                            childrenField="children" 
+                                            filterPlaceholder="Type item filter..."
+                                            formControlName="id"
+                                            [multiple]="false"
+                                            [filterPlaceholder]="'Filtra aquí...'" 
+                                            [allowFilter]="true" 
+                                            [disabled]="false" 
+                                            expandMode="All">
+                                        </tree-select>
+                                        <div *ngIf="isFieldValid(subdomain, 'id')">
+											<span class="sr-only">(error)</span>
+											<div class="error-msg">
+												Required domain
+											</div>
+										</div> 
+                                    </div>
+                                </div>
+			                	<div class="row">
+			                        <label class="col-sm-2 label-on-left">Nombre de subdominio</label>
+			                        <div class="col-sm-10">
+			                            <div class="form-group label-floating" [ngClass]="displayFieldCss(subdomain, 'domain')">
+			                                <label class="control-label"></label>
+			                                <input type="text" class="form-control" id="domain" formControlName="domain">
+			                                <div *ngIf="isFieldValid(subdomain, 'domain')">
+												<span class="sr-only">(error)</span>
+												<div class="error-msg">
+													Required text
+												</div>
+											</div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+			                <div class="card-footer text-right">
+			                    <button type="submit" class="btn btn-rose btn-fill" (click)="setSubdomain()">Guardar</button>
+			                </div>
+			            </form>
+			        </div>
+			    </div>
+			</mat-tab>
+		</mat-tab-group>	
+	</div>    
+</div>	

@@ -1,0 +1,77 @@
+<div class="card">
+	<div class="card-header card-header-icon" data-background-color="blue">
+        <i class="material-icons">view_headline</i>
+    </div>
+    <h4 class="card-title" style="margin-top: 10px;margin-bottom: 15px;">Visualización de resultados</h4>
+    
+    <!-- buscador -->
+    <div class="col-xs-12">
+    	<div class="col-xs-12 col-sm-6" style="padding-left: 0px;">
+            <div class="form-inline text-left">
+                <label>Buscar: </label>
+                <div class="form-group" style="margin-top: 0px;padding-left: 5px;">
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+
+    	<div class="form-group col-xs-12 col-sm-5" style="margin-top: 0px;">
+	    	<select multiple class="form-control" style="height: 100px;" [(ngModel)]="selectedProp">
+				<option [ngValue]="row" *ngFor="let row of lstPropiedades">{{row.label}} - ({{row.className}})</option>
+			</select>
+	    </div>
+
+	    <div class="col-xs-12 col-sm-1 text-center">
+			<button class="btn btn-primary btn-round btn-fab btn-fab-mini" style="margin-bottom: 5px;margin-top: 5px;" (click)="setToPropList()" [disabled]="lstSelected.length===0">
+				<i class="material-icons hidden-xs">arrow_back</i>
+				<i class="material-icons hidden-lg">arrow_upward</i>
+			</button>
+			<button class="btn btn-primary btn-round btn-fab btn-fab-mini" style="margin-bottom: 5px;margin-top: 5px;" (click)="setSelectedProperties()" [disabled]="lstPropiedades.length===0">
+				<i class="material-icons hidden-xs">arrow_forward</i>
+				<i class="material-icons hidden-lg">arrow_downward</i>
+			</button>
+		</div>
+
+	    <div class="form-group col-xs-12 col-sm-6" style="margin-top: 0px;">
+	    	<div class="col-xs-9 col-sm-10" style="padding-left: 0px; padding-right: 0px;">
+	    		<select class="form-control" style="height: 100px;" [(ngModel)]="selectedList" size="5">
+					<option [ngValue]="row" *ngFor="let row of lstSelected">{{row.label}} - ({{row.className}})</option>
+				</select>
+	    	</div>
+	    	<div class="col-xs-3 col-sm-2 text-center" *ngIf="lstSelected.length>0">
+				<button class="btn btn-primary btn-round btn-fab btn-fab-mini" style="margin-bottom: 10px;margin-top: 5px;" (click)="moveUp()" [disabled]="selectedList===lstSelected[0]" >
+					<i class="material-icons">arrow_upward</i>
+				</button>
+				<button class="btn btn-primary btn-round btn-fab btn-fab-mini" (click)="moveDown()" [disabled]="selectedList===lstSelected[lstSelected.length-1]">
+					<i class="material-icons">arrow_downward</i>
+				</button>
+			</div>	
+	    </div>
+
+    </div>
+
+    <!-- orderBy -->
+    <div class="col-xs-12">
+        <div class="form-inline text-left col-xs-12 col-sm-6" style="padding-left: 0px;">
+            <label>Ordenar por: </label>
+            <div class="form-group" style="margin-top: 0px;padding-left: 5px;">
+                <select class="form-control" style="width: 100%" [(ngModel)]="orderByObj" [disabled]="lstSelected.length===0" (ngModelChange)="setOrderBy()">
+	                <option [ngValue]="row" *ngFor="let row of lstSelected">{{row.label}} - ({{row.className}})</option>
+	            </select>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6" style="margin-top: 10px; padding-left: 0px;">
+        	<div class="radio">
+	            <label>
+	                <input type="radio" name="orderBy{{id}}" [value]="true" [(ngModel)]="orderBy.ascending"> Ascendente
+	            </label>
+	            <label>
+	                <input type="radio" name="orderBy{{id}}" [value]="false" [(ngModel)]="orderBy.ascending"> Descendente
+	            </label>
+	        </div>
+        </div>        
+    </div>
+</div>

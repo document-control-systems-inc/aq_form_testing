@@ -1,0 +1,26 @@
+<div>
+	<div class="hidden-xs col-sm-3"></div>
+	<div class="col-xs-12 col-sm-9" style="height: 50px;padding-left: 0px;padding-right: 0px;">
+		<div class="col-xs-3" style="width: 115px;">
+			<button class="btn btn-primary btn-round btn-fab btn-fab-mini" (click)="prevPage()" [disabled]="canvasIndex<1">
+				<i class="material-icons">arrow_back</i>
+			</button>
+			<button class="btn btn-primary btn-round btn-fab btn-fab-mini" (click)="nextPage()" [disabled]="this.canvasIndex===this.lstCanvas.length-1">
+				<i class="material-icons">arrow_forward</i>
+			</button>
+		</div>
+		<div class="col-xs-9 text-left form-inline" style="width: 100px;padding-left: 0px;padding-right: 0px;">
+			<div class="form-group col-xs-12" style="padding-bottom: 0px;margin-top: 0px;padding-left: 0px;padding-right: 0px;width: 45px;">
+				<input type="text" class="form-control text-center" style="width: 45px;" [(ngModel)]="page" (ngModelChange)="changePage()">
+			</div>
+			<label style="margin-top: 9px;margin-left: 5px;">/ {{numPages}}</label>
+		</div>
+	</div>
+	<div class="hidden-xs col-sm-3" id="preview{{id}}" style="overflow: auto;">
+
+	</div>
+	<div class="col-xs-12 col-sm-9" id="tiff{{id}}">
+		
+	</div>
+</div>
+	

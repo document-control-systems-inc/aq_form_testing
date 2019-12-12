@@ -1,0 +1,69 @@
+---------------------
+Perfiles de documentos
+
+Se cuenta con los siguientes perfiles:
+1.	Administrador
+2.	Manager
+3.	Colaborador
+4.	Contribuidor
+5.	Comentador
+6.	Lector
+
+Cada uno de esos perfiles, se podrá agregar a un usuario o grupo.
+
+---------------------
+Perfiles de Pantallas
+- Se deberán crear los perfiles.
+Para crear un perfil, se deberá primero seleccionar la pantalla (opción del menú):
+1.	Captura y Edición de Imágenes.
+2.	Exploración de Documentos.
+3.	Búsqueda de Documentos.
+4.	Visor/Editor de Documentos.
+5.	Reportes.
+6.	Tareas. 
+7.	Auditoría.
+8.	Monitoreo. 
+
+Cada pantalla, tiene componentes dentro. Al seleccionar la pantalla, deberá poder seleccionar un componente sobre el que tenga permisos.
+Por ejemplo, en la pantalla de Exploración de Documentos, los componentes serían:
+- Navegación por carpetas. Dicho componente tendría las siguientes opciones:
+i.	Editar las propiedades de la carpeta
+ii.	Mover la carpeta
+iii.	Copiar la carpeta
+iv.	Crear una plantilla de carpeta a partir de esa carpeta
+v.	Eliminar la carpeta y su contenido
+vi.	Agregar una nueva carpeta
+vii.	Agregar un documento sobre dicha carpeta
+viii.	Descargar el contenido de la carpeta como ZIP
+ix.	Descargar información como CSV
+x.	Enviar el contenido de la carpeta por correo electrónico
+xi.	Agregar la carpeta a la sección de Favoritos
+xii.	Iniciar Proceso de Negocio
+xiii.	Iniciar Proceso Batch
+xiv.	Seleccionar Regla de Negocio para la carpeta
+- Exploración. Dicho componente tendría las siguientes opciones:
+b.	Crear nuevo Documento
+c.	Crear nueva Carpeta
+i.	Editar las propiedades del Documento
+ii.	Realizar un comentario sobre el documento.
+iii.	Editar los permisos del Documento
+iv.	Compartir el documento
+v.	Mover el Documento
+vi.	Copiar el Documento
+vii.	Crear plantilla de documento a partir del documento seleccionado
+viii.	Eliminar el documento
+ix.	En caso de que el documento tenga más de una versión, Reemplazar con versión anterior
+x.	Reservar el documento para una nueva versión (check-in)
+xi.	En caso de que el documento se encuentre en status de check-in, crear la nueva versión del documento
+xii.	En caso de que el documento no se encuentre en status de check-in, Cerrar documento como versión definitiva.
+xiii.	Descargar (mostrando las sub-opciones de: Documento Original, ZIP con propiedades, ZIP de contenido, Información como CSV y PDF)
+xiv.	Enviar documento por Correo electrónico
+xv.	Iniciar Proceso de Negocio a partir del documento
+xvi.	Iniciar Proceso Batch a partir del documento
+xvii.	Seleccionar Regla de Negocio para la carpeta
+
+
+Cada uno de esos perfiles previamente creados, se podrá agregar a un usuario o grupo.
+
+
+

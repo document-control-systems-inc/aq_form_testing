@@ -1,0 +1,88 @@
+Búsqueda:
+{
+	"info": {
+		"id": "XX",
+		"name": "XX",
+		"createdBy": "XX",
+		"createdOn": {
+			"time": 0, 
+			"timezone": "XX"
+		}
+	},
+	"type": "XX",
+	"searchIn": ["XX","XX"],
+	"includeChildren": true,
+	"documentClass": ["XX","XX"],
+	"criteria": [
+		{
+			"documentClass": "XX",
+			"field": "XX",
+			"search_criteria": "XX",
+			"value": ["XX"],
+			"editable": true,
+			"visible": true,
+			"required": true,
+			"operator": "XX",
+			"lower":true
+		}
+	],
+	"visualization": [
+		{
+			"documentClass": "XX",
+			"field": "XX"
+		}
+	],
+	"orderBy": {
+		"documentClass": "XX",
+		"field": "XX",
+		"ascending": true
+	}
+}
+
+"type": "document"|"folder"
+"includeChildren": true|false
+"editable": true|false
+"visible": true|false
+"required": true|false
+"operator": "and"|"or"
+"ascending": true|false
+
+Ejemplo:
+{
+	"info": {
+		"name": "Busqueda de Documentos",
+		"createdBy": "ECM",
+		"createdOn": {
+			"time": 1513024746070, 
+			"timezone": "America/Mexico_City"
+		}
+	},
+	"type": "document",
+	"searchIn": ["/Aquarius/Repository"],
+	"includeChildren": true,
+	"documentClass": ["1"],
+	"criteria": [
+		{
+			"documentClass": "1",
+			"field": "title",
+			"search_criteria": "StartWith",
+			"value": ["Doc"],
+			"editable": true,
+			"visible": true,
+			"required": true,
+			"operator": "and",
+			"lower":true
+		}
+	],
+	"visualization": [
+		{
+			"documentClass": "1",
+			"field": "title"
+		}
+	],
+	"orderBy": {
+		"documentClass": "1",
+		"field": "title",
+		"ascending": true
+	}
+}

@@ -1,0 +1,17 @@
+drop table comment;
+drop table configuration;
+drop table docdata;
+drop table documentclass;
+drop table docversion;
+drop table error;
+drop table likes;
+drop table node;
+drop table page;
+drop table pageprofile;
+drop table scanprofile;
+drop table searchcriteria;
+drop table searchtype;
+drop table storagearea;
+drop table storagepolicy;
+drop table storedsearch;
+drop table users;

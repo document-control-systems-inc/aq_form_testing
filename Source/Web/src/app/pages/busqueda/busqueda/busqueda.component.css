@@ -1,0 +1,17 @@
+.nav-tabs > li .close {
+    margin: 3px 0 0 10px;
+    font-size: 18px;
+}
+.marginBottom {
+    margin-bottom :1px !important;
+}
+.nav-tabs{
+	background: #337ab7 !important;
+	padding-left: 0px;
+    padding-right: 0px;
+}
+
+.noPad{
+	padding-left: 0px;
+    padding-right: 0px;
+}

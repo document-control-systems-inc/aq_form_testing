@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="305.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.f2m.aquarius.magic.gui.TaskOutController">
+   <children>
+      <Label layoutX="21.0" layoutY="23.0" text="Salida:" />
+      <TextField fx:id="txtSalida" layoutX="73.0" layoutY="19.0" prefHeight="25.0" prefWidth="163.0" />
+      <Button fx:id="btnAdd" layoutX="248.0" layoutY="19.0" mnemonicParsing="false" onAction="#addSalida" prefHeight="25.0" prefWidth="64.0" text="Agregar" />
+      <ListView fx:id="lstSalidas" layoutX="73.0" layoutY="54.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="btnUp" layoutX="281.0" layoutY="54.0" mnemonicParsing="false" onAction="#upSalida" prefHeight="25.0" prefWidth="64.0" text="Arriba" />
+      <Button fx:id="btnDown" layoutX="281.0" layoutY="86.0" mnemonicParsing="false" onAction="#downSalida" prefHeight="25.0" prefWidth="64.0" text="Abajo" />
+      <Button fx:id="btnRemove" layoutX="281.0" layoutY="142.0" mnemonicParsing="false" onAction="#removeSalida" text="Remover" />
+      <Button fx:id="btnAceptar" layoutX="222.0" layoutY="269.0" mnemonicParsing="false" onAction="#closeWindowAccept" text="Aceptar" />
+      <Button fx:id="btnCancelar" layoutX="285.0" layoutY="269.0" mnemonicParsing="false" onAction="#closeWindowCancel" text="Cancelar" />
+   </children>
+</AnchorPane>

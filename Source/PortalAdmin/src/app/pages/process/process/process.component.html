@@ -1,0 +1,136 @@
+<div class="main-content">
+    <div class="col-xs-12">
+        <!-- [selectedIndex]="selectedIndex" (selectedTabChange)="tabChanged($event)" -->
+        <mat-tab-group style="margin-bottom: 5px;" (selectedTabChange)="addStyle($event)">
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Añadir
+                </ng-template>
+                <div class="col-md-12" style="padding:0;min-height:400px;">
+                    <div class="card">
+                        <div class="col-xs-12 form-horizontal">
+                            <div class="card-header card-header-text" data-background-color="rose">
+                                <h4 class="card-title">Agregar proceso</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="row">
+                                    <label class="col-sm-2 label-on-left">Nombre</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label"></label>
+                                            <input type="text" class="form-control" id="name" [(ngModel)]="newProcess.name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12" style="padding:5px;">
+                                        <dropzone [config]="config" [message]="'Click or drag images here to upload'" (success)="getAddFile($event)" #add></dropzone>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-right" style="margin:0;border-top-width: 0px;">
+                                    <button class="btn btn-primary btn-fill" (click)="resetAddFiles()" [disabled]="newProcess.file===null">Borrar XML</button>
+                                    <button class="btn btn-rose btn-fill" [disabled]="newProcess.name===null || newProcess.name==='' || newProcess.file===null">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Actualizar
+                </ng-template>
+                <div class="col-md-12" style="padding:0;">
+                    <div class="card">
+                        <div class="col-xs-12 form-horizontal">
+                            <div class="card-header card-header-text" data-background-color="rose">
+                                <h4 class="card-title">Modificar proceso</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="row">
+                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
+                                        <label style="margin-top: 10px;">Nombre</label>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <!-- (ngModelChange)="setLstPath()" -->
+                                        <tree-select 
+                                            name="group" 
+                                            [items]="lstGroups" 
+                                            idField="id" 
+                                            textField="name" 
+                                            childrenField="children" 
+                                            filterPlaceholder="Type item filter..."
+                                            [(ngModel)]="adminId"
+                                            [multiple]="false"
+                                            [filterPlaceholder]="'Filtra aquí...'" 
+                                            [allowFilter]="true" 
+                                            [disabled]="false" 
+                                            expandMode="All">
+                                        </tree-select> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12" style="padding:5px;">
+                                        <dropzone [config]="config" [message]="'Click or drag images here to upload'" (success)="getUpdateFile($event)" #update></dropzone>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-right" style="margin:0;border-top-width: 0px;">
+                                    <button class="btn btn-primary btn-fill" (click)="resetUpdateFiles()" [disabled]="updateProcess.file===null">Borrar XML</button>
+                                    <button class="btn btn-rose btn-fill" [disabled]="updateProcess.name===null || updateProcess.name==='' || updateProcess.file===null">Modificar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Eliminar
+                </ng-template>
+                <div class="col-md-12" style="padding:0;">
+                    <div class="card">
+                        <div class="col-xs-12 form-horizontal">
+                            <div class="card-header card-header-text" data-background-color="rose">
+                                <h4 class="card-title">Eliminar proceso</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="row">
+                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
+                                        <label style="margin-top: 10px;">Proceso</label>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <div class="input-group">
+                                            <!-- (ngModelChange)="setLstPath()" -->
+                                            <tree-select 
+                                                name="suspGroup" 
+                                                [items]="lstGroups" 
+                                                idField="id" 
+                                                textField="name" 
+                                                childrenField="children" 
+                                                filterPlaceholder="Type item filter..."
+                                                [(ngModel)]="adminId"
+                                                [multiple]="false"
+                                                [filterPlaceholder]="'Filtra aquí...'" 
+                                                [allowFilter]="true" 
+                                                [disabled]="false" 
+                                                expandMode="All">
+                                            </tree-select> 
+                                            <span class="input-group-btn" style="padding:0;">
+                                                <button class="btn btn-rose btn-fill">Eliminar</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>   
+
+    </div>    
+</div>  

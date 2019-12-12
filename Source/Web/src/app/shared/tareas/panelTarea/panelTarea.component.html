@@ -1,0 +1,163 @@
+<div style="height: 500px;">
+	<h3 style="margin-left: 5px;">{{infoTarea.title}}</h3>
+
+	<div class="col-xs-12" style="padding:5px;">
+		<div class="card" style="margin:0px;">
+			<table>
+				<tbody>
+					<tr *ngFor="let row of infoTarea.fields; let i = index" [hidden]="infoTarea.fields===null">
+						<td class="col-xs-5" style="padding-left: 10px;padding-right: 0px;">
+							<label translate>{{row.label}}</label>
+						</td>
+						<td class="col-xs-7" style="padding-right: 0px;padding-right: 10px;">
+							<div class="form-group" style="margin-top: 0px;" *ngIf="objTarea.fields[i]">
+								<input type="text" class="form-control" *ngIf="row.type==='String'" [(ngModel)]="objTarea.fields[i].value">
+								<div *ngIf="row.type==='Date'" style="width: 203px;z-index: 100;">
+			                        <!--[(ngModel)]="lstSelectedCriteria[i].selectedDate" 
+										(onSelect)="convertDateToTimestamp(i)" 
+										(onClear)="cleanData(i)"
+										*ngIf="lstSelectedCriteria[i].fieldType==='DateTime' && (lstSelectedCriteria[i].search_criteria!=='IsEmpty' && lstSelectedCriteria[i].search_criteria!=='IsNotEmpty' && lstSelectedCriteria[i].search_criteria!==null && lstSelectedCriteria[i].search_criteria!=='Between' && lstSelectedCriteria[i].search_criteria!=='NotBetween')"-->
+									<owl-date-time placeHolder="Select date here"
+										[(ngModel)]="objTarea.fields[i].date"
+										(onSelect)="convertDateToTimestamp(i)">
+									</owl-date-time>
+			                    </div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="col-xs-12" style="padding: 5px;" *ngIf="infoTarea.documents.visible===true && docPanel===true">
+		<div class="card" style="margin: 0px;">
+			<table>
+				<thead>
+					<th class="col-xs-1"></th>
+					<th class="col-xs-8"></th>
+					<th class="col-xs-2"></th>
+					<th class="col-xs-1"></th>
+				</thead>
+				<tbody>
+					<tr *ngFor="let doc of lstDocumentos; let i = index">
+						<td class="text-center">
+							<button class="btn btn-primary btn-sm" style="padding-left: 8px;padding-right: 8px;" (click)="deleteDocument(i)">
+								<i class="material-icons">remove</i>
+							</button>
+						</td>
+						<td>
+							<div class="form-group" style="margin-top: 0px;">
+								<input type="text" class="form-control" [(ngModel)]="lstDocumentos[i].nombre" disabled>
+							</div>
+						</td>
+						<td>
+							<button class="btn btn-primary btn-sm" style="padding-left: 8px;padding-right: 8px;width: 100%;" (click)="explorarDocs(i)">
+								Explorar
+							</button>
+						</td>
+						<td class="text-center">
+							<button class="btn btn-primary btn-sm" style="padding-left: 8px;padding-right: 8px;" [disabled]="lstDocumentos[i].idDoc===null">
+								<i class="material-icons">visibility</i>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="text-center">
+							<button class="btn btn-primary btn-sm" style="padding-left: 8px;padding-right: 8px;" (click)="addDocument()" [disabled]="lstDocumentos.length>=infoTarea.documents.maxDocs">
+								<i class="material-icons">add</i>
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="col-xs-12" style="padding:0;" *ngIf="infoTarea.documents.visible===true && docPanel===false">
+		<div class="col-xs-3" style="padding:5px;">
+			<div class="card" style="margin:0px;">
+				<div style="margin-top: 10px;height: 300px;overflow: auto;">
+					<tree [tree]="tree" [settings]="settings" (menuItemSelected)="onMenuItemSelected($event)" (contextmenu)="onRightClick($event)" (nodeSelected)="selectedFolder($event)" #treeComponent></tree>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-9" style="padding: 5px;">
+			<div class="card" style="margin:0px;height: 310px;overflow: auto;">
+				<div>
+					<div class="col-xs-12" *ngIf="dataTable!==null">
+		                <div class="form-inline text-right">
+		                    <label>Buscar: </label>
+		                    <div class="form-group" style="margin-top: 0px;padding-left: 5px;">
+		                        <input class="form-control" type="text" [(ngModel)]="filter">
+		                    </div>
+		                </div>
+		            </div>
+					<table class="table table-striped table-no-bordered text-center" id="datatable" style="width:100%;" *ngIf="dataTable!==null">
+			            <thead>
+			                <tr>
+			                    <th class="text-left disabled-sorting col-xs-1">{{ dataTable.headerRow[0] }}</th>
+			                    <th class="text-left col-xs-3">{{ dataTable.headerRow[1] }}</th>
+			                    <th class="text-left col-xs-1">{{ dataTable.headerRow[2] }}</th>
+			                    <th class="text-left col-xs-2">{{ dataTable.headerRow[3] }}</th>
+			                    <th class="text-left col-xs-2">{{ dataTable.headerRow[4] }}</th>
+			                    <th class="text-left disabled-sorting col-xs-2">{{ dataTable.headerRow[5] }}</th>
+			                </tr>
+			            </thead>
+			            <tbody>
+			                <tr *ngFor="let row of dataTable.dataRows | filter:filter | paginate: { itemsPerPage: 10, currentPage: selectedPage }; let i = index" class="clickedRow">
+			                    <td>
+			                        <div class="col-xs-12" style="padding-left: 0px;padding-right: 0px;top: 7px;" *ngIf="row[6]==='document'">
+			                            <div class="checkbox check text-center" style="width: auto;">
+			                                <label>
+			                                    <input type="checkbox" name="optionsCheckboxes" [(ngModel)]="dataTable.dataRows[i].selected" (ngModelChange)="selectDocument(i)">
+			                                </label>
+			                            </div>
+			                        </div>
+			                    </td>
+			                    <td class="text-left" style="padding-left: 0px;padding-right: 0px;">
+			                        <div style="position: relative;top: 2px;">
+			                            <i class="material-icons" *ngIf="row[6]==='folder'" style="padding-left: 5px;">folder</i>
+			                            <i class="material-icons" *ngIf="row[6]==='document'" style="padding-left: 5px;">description</i>
+			                            <div style="display: -webkit-inline-box;position: absolute;right: 0px;left: 30px;top: 3px;">
+			                                <label style="color:black;">{{row[0]}}</label> 
+			                            </div>      
+			                        </div>
+			                    </td>
+			                    <td class="text-center">{{row[1]}}</td>
+			                    <td class="text-left">{{row[2]}}</td>
+			                    <td class="text-left">{{row[3]}}</td>
+			                    <td class="text-center">{{row[4]}}</td>
+			                </tr>
+			            </tbody>  
+			        </table>
+			        <!-- Paginado -->
+		            <div class="text-right" *ngIf="filter===''||filter===undefined">
+		                <ul class="pagination pagination-primary" style="margin-top: 10px;margin-bottom: 0px;" *ngIf="dataTable!==null">
+		                    <li>
+		                        <a (click)="prevPage()"> prev</a>
+		                    </li>
+		                    <li [ngClass]="{'active': selectedPage===i+1}" *ngFor="let row of pages; let i = index">
+		                        <a (click)="selectedPage=i+1;">{{i+1}}</a>
+		                    </li>
+		                    <li>
+		                        <a (click)="nextPage()">next </a>
+		                    </li>
+		                </ul>
+		            </div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<div class="col-xs-12 text-right" style="padding:5px;" *ngIf="docPanel!==false">
+		<button class="btn btn-{{button.class}} btn-mobile" *ngFor="let button of infoTarea.actions; let i = index;" (click)="setAction(i)">{{button.label}}</button>
+		<button class="btn btn-default btn-mobile" (click)="regresarATareas()">Cancelar</button>
+	</div>
+	<div class="col-xs-12 text-right" style="padding:5px;" *ngIf="docPanel===false">
+		<button class="btn btn-success btn-mobile" (click)="addToDocList()" [disabled]="lstDocumentos[indexDoc].idDoc===null">Agregar documento</button>
+		<button class="btn btn-default btn-mobile" (click)="cancelarSeleccion()">Cancelar</button>
+	</div>
+
+</div>

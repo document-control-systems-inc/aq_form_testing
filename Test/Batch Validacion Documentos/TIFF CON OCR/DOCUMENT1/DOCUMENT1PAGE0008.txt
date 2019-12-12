@@ -1,0 +1,42 @@
+﻿Formulario informashon di kliente
+
+Segun e Dekreto di Merkado Financiero (Wfm BES), artikulo 5:14-5:15 y artikulo 7:16-7:17 di e Dekreto di
+BES, kliente mester provee informacion berdadero y exacto relashona ku e debenan di solicitante y e
+debenan di otro persona ku kende solicitante ta komparti kas. Solicitante por provee informashon tokante
+e entrada netto di e otro persona ku kende solicitante ta komparti un kas pa tempo largo. Kualkier
+informashon falso di parti di solicitante lo ser konsidera como fraude y lo ser denuncia serka e
+autoridadnan relevante.
+____	Komposishon familiar
+Soltero ^3)<asa L—JOtro___________
+Kantidad di adulto I Kantidad di yu ku ta depende di bo &
+Ml ir IX I
+Kas Propio ^	Kas Propio Pagando Hipotek ^
+Biba Serka Famia
+Lista kompleto di debe existente
+Hypotheek of pago di huur pa luna = '#00/1
+Bo ta pagando alimentacion pa yu ? si
+mensual =
+no1	* Si e kontesta ta si, menciona e suma di pago
+Nomberdi institushon	Tipo di fiansa	Saldo aproxima	Paqo mensual
+na			
+			
+			
+			
+S'			■7^	
+Experiencia y konocemento general
+1.	Bo ta kompronde e importancia pa hasi pago di bo fiansa na tempo?	si	ra no
+2.	Bo sa ku ora cu bo paga riba e fecha di vencemento of prome cu esey, bo ta evitadi hayagasto di
+interes adicional?	si	1*^
+3.	Bo ta kompronde ku ora ku bo paga Island Finance y otro institucion na tempo konstantemente, esaki
+ta yuda desaroya un profiel di credito positivo ku e institucionnan ta mira faborablemente?_
+si ^3no l_l
+4.	Bo sa ku bo por kaba di paga bo saldo di e fiansa pendiente prome ku e fecha di vencemento sin
+haya boet?	si	^ no ^
+5.	Bo sa kon seguro di bida riba kredito por proteha abo y bo famia?	si	C3 no CZZ)
+6.	Ora ku bo yega na e kapacidad maximo di fia plaka segun e Reglanan di BES y e Evaluacion di Balor
+di Kredito ta defini, bo ta konsiente ku bo por haya limitacion pa sigui fia?
+si
+7.	Bo ta haya ku bo tin konocemento di produkto financiero?	si
+L^J no l_l
+CD no CZZ)
+1

@@ -1,0 +1,213 @@
+<div class="main-content">
+	<div class="col-md-12">
+        <div class="card">
+            <form [formGroup]="type" class="form-horizontal">
+                <div class="card-header card-header-text" data-background-color="rose">
+                    <h4 class="card-title">Configuración</h4>
+                </div>
+                <div class="card-content">
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Hostname</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'hostname')">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control" id="hostname" formControlName="hostname">
+                                <div *ngIf="isFieldValid(type, 'hostname')">
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Required text
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Port</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'port')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="port" formControlName="port">
+                                <div *ngIf="isFieldValid(type, 'port')" >
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Add a number!
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+	                    <label class="col-sm-2 label-on-left">DB name</label>
+	                    <div class="col-sm-10">
+	                        <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'dbName')">
+	                            <label class="control-label"></label>
+	                            <input type="text" class="form-control" id="dbName" formControlName="dbName">
+	                            <div *ngIf="isFieldValid(type, 'dbName')">
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Required text
+									</div>
+								</div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <label class="col-sm-2 label-on-left">Username</label>
+	                    <div class="col-sm-10">
+	                        <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'username')">
+	                            <label class="control-label"></label>
+	                            <input type="text" class="form-control" id="username" formControlName="username">
+	                            <div *ngIf="isFieldValid(type, 'username')">
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Required text
+									</div>
+								</div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <label class="col-sm-2 label-on-left">Password</label>
+	                    <div class="col-sm-10">
+	                        <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'password')">
+	                            <label class="control-label"></label>
+	                            <input type="text" class="form-control" id="password" formControlName="password">
+	                            <div *ngIf="isFieldValid(type, 'password')">
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Required text
+									</div>
+								</div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="row">
+                        <label class="col-sm-2 label-on-left">Validation interval</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'ValidationInterval')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="ValidationInterval" formControlName="ValidationInterval">
+                                <div *ngIf="isFieldValid(type, 'ValidationInterval')" >
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Add a number!
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Time between eviction runs</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'TimeBetweenEvictionRuns')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="TimeBetweenEvictionRuns" formControlName="TimeBetweenEvictionRuns">
+                                <div *ngIf="isFieldValid(type, 'TimeBetweenEvictionRuns')" >
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Add a number!
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Max active</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'MaxActive')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="MaxActive" formControlName="MaxActive">
+                                <div *ngIf="isFieldValid(type, 'MaxActive')" >
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Add a number!
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Initial size</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'InitialSize')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="InitialSize" formControlName="InitialSize">
+                                <div *ngIf="isFieldValid(type, 'InitialSize')" >
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Add a number!
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Max wait</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'MaxWait')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="MaxWait" formControlName="MaxWait">
+                                <div *ngIf="isFieldValid(type, 'MaxWait')" >
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Add a number!
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Remove abandoned timeout</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'RemoveAbandonedTimeout')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="RemoveAbandonedTimeout" formControlName="RemoveAbandonedTimeout">
+                                <div *ngIf="isFieldValid(type, 'RemoveAbandonedTimeout')" >
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Add a number!
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Min evictable idle time</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'MinEvictableIdleTime')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="MinEvictableIdleTime" formControlName="MinEvictableIdleTime">
+                                <div *ngIf="isFieldValid(type, 'MinEvictableIdleTime')" >
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Add a number!
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Min idle</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating" [ngClass]="displayFieldCss(type, 'MinIdle')">
+                                <label class="control-label"></label>
+                                <input class="form-control" type="number" number="true" id="MinIdle" formControlName="MinIdle">
+                                <div *ngIf="isFieldValid(type, 'MinIdle')" >
+									<span class="sr-only">(error)</span>
+									<div class="error-msg">
+										Add a number!
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-right">
+                    <button class="btn btn-default">Probar conexión</button>
+                    <button type="submit" class="btn btn-rose btn-fill" (click)="onType()">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

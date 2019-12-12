@@ -1,0 +1,51 @@
+<div class="login-body">
+	<!-- Utilizado para alternar entre form de Login y de recover account-->
+	<div *ngIf="isLogin;then LoginTemplate else RecoverTemplate">here is ignored</div>
+
+	<!-- Template de Login-->
+	<ng-template #LoginTemplate>
+		<form class="form-signin form-signin-login" #LoginForm="ngForm">
+			<img class="form-logo" src="/assets/images/logo_aquarius.png">
+			<div class="input-group">
+				<span class="input-group-addon form-signin-user-span"><i class="glyphicon glyphicon-user"></i></span>
+				<input type="text" class="form-control" name="user" placeholder="{{ 'login.usernameInput' | translate }}" [(ngModel)]="user">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon form-signin-password-span"><i class="glyphicon glyphicon-lock"></i></span>
+				<input type="password" class="form-control" name="password" placeholder="{{ 'login.passwordInput' | translate }}" [(ngModel)]="password">
+			</div>
+			<div class="text-right" style="margin-top: 10px;">
+				<button class="btn btn-info" (click)="showRecoverAccount()">
+					<span class='glyphicon glyphicon-lock'></span>
+				</button>
+				<button type="submit" class="btn btn-primary" (click)="login()" translate>
+					<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> login.loginButton
+				</button>
+			</div>
+		</form>
+	</ng-template>
+
+	<!--Template de Recover account -->
+	<ng-template #RecoverTemplate>
+		<form class="form-signin form-signin-recover" #RecoverForm="ngForm">
+			<h2 translate>login.recoverTitle</h2>
+			<label translate>login.recoverDescription</label>
+			<div class="input-group">
+				<span class="input-group-addon form-signin-user-span"><i class="glyphicon glyphicon-user"></i></span>
+				<input type="text" class="form-control" name="user" placeholder="{{ 'login.usernameInput' | translate }}" [(ngModel)]="recoverUser">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon form-signin-password-span"><i class="glyphicon glyphicon-envelope"></i></span>
+				<input type="email" class="form-control" name="email" placeholder="{{ 'login.emailInput' | translate }}" [(ngModel)]="recoverEmail" >
+			</div>
+			<div class="text-right" style="margin-top: 10px;">
+				<button class="btn btn-info" (click)="showLogin()" translate>
+					<span class="glyphicon glyphicon-remove"></span> login.cancelButton
+				</button>
+				<button type="submit" class="btn btn-primary" translate>
+					<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> login.recoverButton
+				</button>
+			</div>
+		</form>
+	</ng-template>
+</div>

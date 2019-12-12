@@ -1,0 +1,45 @@
+{
+	"login":{
+		"loginButton":"Entrar",
+		"recoverTitle":"Recuperar cuenta",
+		"recoverDescription":"Puedes recuperar tu contraseña aquí.",
+		"usernameInput":"Nombre de usuario",
+		"passwordInput":"Contraseña",
+		"emailInput":"Correo electrónico",
+		"cancelButton":"Cancelar",
+		"recoverButton":"Recuperar"
+	},
+	"navbar":{
+		"home":"Portal"
+	},
+	"systemProperties":{
+		"title":"Propiedades del sistema",
+		"size":"Tamaño",
+		"minorVersion":"Versión menor",
+		"modifiedAt":"Modificado el",
+		"mainVersion":"Versión principal",
+		"modifiedBy":"Modificado por",
+		"addedBy":"Añadido por",
+		"addedAt":"Añadido el",
+		"currentVersion":"Versión actual",
+		"mimeType":"Tipo MIME"
+	},
+	"documentProperties":{
+		"title":"Propiedades de documento",
+		"class":"Clase",
+		"documentTitle":"Título documento",
+		"employeeNumber":"Num empleado",
+		"department":"Departamento"
+	},
+	"versionHistory":{
+		"title":"Historial de versiones",
+		"version":"Versión",
+		"author":"Autor",
+		"date":"Fecha"
+	},
+	"documentViewer":{
+		"viewer":"Visor de documentos",
+		"editor":"Editor de documentos"
+	},
+	"comments":"Comentarios"
+} 

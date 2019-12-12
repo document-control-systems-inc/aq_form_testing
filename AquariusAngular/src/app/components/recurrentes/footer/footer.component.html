@@ -1,0 +1,10 @@
+<div class="container footer" style="background-color:white;padding-right:40px;padding-bottom: 5px;padding-top: 5px;">
+	<div class="col-xs-10 text-left" style="transform: translateY(40%);">
+		<small>© 2017. F2M SAS de C.V.</small>
+	</div>
+	<div class="col-xs-2">
+		<select class="form-control" [(ngModel)]="_login.language" (ngModelChange)="changeLanguage()">
+			<option *ngFor="let row of languages" [value]="row.value" [selected]="row.value===_login.language">{{row.language}}</option>
+		</select>
+	</div>
+</div>

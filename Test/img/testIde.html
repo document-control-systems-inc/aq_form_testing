@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div1 {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+  var e = window.event;
+  var posX = e.clientX;
+  var posY = e.clientY;
+  var realX = posX - ev.target.offsetLeft;
+  var realY = posY - ev.target.offsetTop;
+  document.getElementById("txtPosX").value=realX;
+  document.getElementById("txtPosY").value=realY;
+  ev.dataTransfer.setData("offsetX", realX);
+  ev.dataTransfer.setData("offsetY", realY);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  var element = document.getElementById(data);
+  var cloneElement = element.cloneNode(true);
+  
+  var e = window.event;
+  var posX = e.clientX;
+  var posY = e.clientY;
+  
+  var offsetX = ev.dataTransfer.getData("offsetX");
+  var offsetY = ev.dataTransfer.getData("offsetY");
+  
+  var realX = posX - offsetX;
+  var realY = posY - offsetY;
+  
+  
+  cloneElement.style.position="absolute";
+  //cloneElement.style.top=
+  ev.target.appendChild(cloneElement);
+  cloneElement.style.top=realY + "px";
+  cloneElement.style.left=realX + "px";
+}
+
+function mouse_position()
+{
+    var e = window.event;
+    
+    //var t = setTimeout(mouse_position,100);
+
+}
+
+function loadImage() {
+	var image = document.getElementById("fileImage").value;
+}
+
+</script>
+</head>
+<body>
+
+<div style="width:850px; padding:3px;">
+	<div style="width:200px;float:left;">
+		Agregar imagen: <input id="fileImage" type="file" name="fileImage" accept=".png,.jpg">
+		<br>
+		<input type="button" value="Cargar" onclick="loadImage()">
+		<br>
+		Texto Obligatorio: <input id="txtObligatorio" draggable="true" ondragstart="drag(event)" style="width:185px;height:14px;background-color:#efe4b0;font-size:7pt;border:1px solid #ff0000" type="text">
+		<br>
+		Texto Opcional: <input id="txtOpcional" draggable="true" ondragstart="drag(event)" style="width:185px;height:14px;background-color:#efe4b0;font-size:7pt" type="text">
+		<br>
+		Radio Button: <input id="radioOpcional" draggable="true" ondragstart="drag(event)" style="width:14px;height:14px;background-color:#efe4b0;cursor:pointer;" type="radio">
+		<br>
+		Check box: <input id="chkOpcional" draggable="true" ondragstart="drag(event)" style="width:18px;height:18px;background-color:#efe4b0;cursor:pointer;" type="checkbox">
+		<br>
+		<br>
+		PosX: <input id="txtPosX" style="width:185px;height:14px;background-color:#efe4b0;font-size:7pt;border:1px solid #ff0000" type="text">
+		<br>
+		PosY: <input id="txtPosY" style="width:185px;height:14px;background-color:#efe4b0;font-size:7pt;border:1px solid #ff0000" type="text">
+		
+	</div>
+
+	<div id="div1" style="background-image: url(form1.jpg);width:600px;height:850px;float:right;"  ondrop="drop(event)" ondragover="allowDrop(event)">
+	</div>
+</div>
+
+
+</body>
+</html>

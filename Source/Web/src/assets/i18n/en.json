@@ -1,0 +1,45 @@
+{
+	"login":{
+		"loginButton":"Login",
+		"recoverTitle":"Recover account",
+		"recoverDescription":"You can reset your password here.",
+		"usernameInput":"Username",
+		"passwordInput":"Password",
+		"emailInput":"E-mail",
+		"cancelButton":"Cancel",
+		"recoverButton":"Recover"
+	},
+	"navbar":{
+		"home":"Home"
+	},
+	"systemProperties":{
+		"title":"System properties",
+		"size":"Size",
+		"minorVersion":"Minor version",
+		"modifiedAt":"Modified at",
+		"mainVersion":"Main version",
+		"modifiedBy":"Modified by",
+		"addedBy":"Added by",
+		"addedAt":"Added at",
+		"currentVersion":"Current version",
+		"mimeType":"MIME type"
+	},
+	"documentProperties":{
+		"title":"Document properties",
+		"class":"Class",
+		"documentTitle":"Document title",
+		"employeeNumber":"Employee number",
+		"department":"Department"
+	},
+	"versionHistory":{
+		"title":"Version history",
+		"version":"Version",
+		"author":"Author",
+		"date":"Date"
+	},
+	"documentViewer":{
+		"viewer":"Document viewer",
+		"editor":"Document editor"
+	},
+	"comments":"Comments"
+}

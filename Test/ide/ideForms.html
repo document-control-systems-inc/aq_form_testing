@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Aquarius IDE Forms</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style5.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+	<script>
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
+
+	function drag(ev) {
+		ev.dataTransfer.setData("text", ev.target.id);
+		var e = window.event;
+		var posX = e.clientX;
+		var posY = e.clientY;
+		var realX = posX - ev.target.offsetLeft;
+		var realY = posY - ev.target.offsetTop;
+		ev.dataTransfer.setData("offsetX", realX);
+		ev.dataTransfer.setData("offsetY", realY);
+	}
+
+	function drop(ev) {
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("text");
+		var element = document.getElementById(data);
+		var parent = element.parentNode.id;
+		var parentOffSetY = document.getElementById(parent).getBoundingClientRect().top;
+		var parentOffSetX = document.getElementById(parent).getBoundingClientRect().left;
+
+		var e = window.event;
+		var posX = e.clientX;
+		var posY = e.clientY;
+
+		var offsetX = ev.dataTransfer.getData("offsetX");
+		var offsetY = ev.dataTransfer.getData("offsetY");
+
+		var realX = posX - offsetX;
+		var realY = posY - offsetY;
+		element.style.position="absolute";
+		element.style.top=realY + "px";
+		element.style.left=realX + "px";
+	}
+
+	function mouse_position() {
+		var e = window.event;
+	}
+	</script>
+
+	
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Elementos</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#ContenedoresSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        Contenedores
+                    </a>
+                    <ul class="collapse list-unstyled" id="ContenedoresSubmenu">
+                        <li>
+                            <a href="#">Panel</a>
+                        </li>
+                        <li>
+                            <a href="#">Card</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="createNewElement('boton');">
+                        Botones
+                    </a>
+                    <a href="#FormasSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        Formas
+                    </a>
+                    <ul class="collapse list-unstyled" id="FormasSubmenu">
+                        <li>
+                            <a href="#" onclick="createNewElement('label');">Etiqueta</a>
+                        </li>
+						<li>
+                            <a href="#" onclick="createNewElement('inputText');">Texto</a>
+                        </li>
+						<li>
+                            <a href="#" onclick="createNewElement('inputPassword');">Contraseña</a>
+                        </li>
+						<li>
+                            <a href="#" onclick="createNewElement('inputNumber');">Números</a>
+                        </li>
+						<li>
+                            <a href="#" onclick="createNewElement('inputDate');">Fecha</a>
+                        </li>
+						<li>
+                            <a href="#" onclick="createNewElement('inputColor');">Color</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="createNewElement('textArea');">Área de Texto</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="createNewElement('checkBox');">CheckBox</a>
+                        </li>
+						<li>
+                            <a href="#" onclick="createNewElement('radio');">Radio</a>
+                        </li>
+						<li>
+                            <a href="#" onclick="createNewElement('select');">Lista Simple</a>
+                        </li>
+						<li>
+                            <a href="#" onclick="createNewElement('multipleSelect');">Lista Múltiple</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        Tablas
+                    </a>
+                </li>
+				<li>
+                    <a href="#OtrosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        Otros Elementos
+                    </a>
+					<ul class="collapse list-unstyled" id="OtrosSubmenu">
+                        <li>
+                            <a href="#">Separador</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>	
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+					<!--
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    -->
+					<h2>
+						Preview
+					</h2>
+                    
+                </div>
+            </nav>
+			<div id="previewForm" style="width:600px;height:850px;padding:10px;border:1px solid #aaaaaa;"  ondrop="drop(event)" ondragover="allowDrop(event)">
+			</div>
+			
+			
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+	
+	<script>
+		var countboton = 0;
+		var countinputText = 0;
+		var countinputPassword = 0;
+		var countinputDate = 0;
+		var countinputNumber = 0;
+		var countinputColor = 0;
+		var countlabel = 0;
+		var counttextArea = 0;
+		var countcheckBox = 0;
+		var countradio = 0;
+		var countselect = 0;
+		var countmultipleSelect = 0;
+		
+		function createNewElement(type) {
+			var previewForm = document.getElementById("previewForm");
+			switch(type) {
+				case "boton":
+					countboton++;
+					var element=document.createElement("button");
+					element. innerHTML = "Botón " + countboton;
+					element.id="txt" + countinputText;
+					element.addEventListener("dragstart", drag);
+					previewForm.appendChild(element);
+					break;
+				case "inputText":
+					countinputText++;
+					var element=document.createElement("input");
+					element.type="text";
+					element.draggable="true";
+					element.id="txt" + countinputText;
+					element.addEventListener("dragstart", drag);
+					previewForm.appendChild(element);
+					break;
+				case "inputPassword":
+					countinputPassword++;
+					var element=document.createElement("input");
+					element.type="password";
+					element.draggable="true";
+					element.id="pwd" + countinputPassword;
+					element.addEventListener("dragstart", drag);
+					previewForm.appendChild(element);
+					break;
+				case "inputDate":
+					countinputDate++;
+					var element=document.createElement("input");
+					element.type="date";
+					element.draggable="true";
+					element.id="pckDate" + countinputDate;
+					element.addEventListener("dragstart", drag);
+					previewForm.appendChild(element);
+					break;
+				case "inputNumber":
+					countinputNumber++;
+					var element=document.createElement("input");
+					element.type="number";
+					element.draggable="true";
+					element.id="num" + countinputNumber;
+					element.addEventListener("dragstart", drag);
+					previewForm.appendChild(element);
+					break;
+				case "inputColor":
+					countinputColor++;
+					var element=document.createElement("input");
+					element.type="color";
+					element.draggable="true";
+					element.id="pckColor" + countinputColor;
+					element.addEventListener("dragstart", drag);
+					previewForm.appendChild(element);
+					break;
+				case "label":
+					countlabel++;
+					var element=document.createElement("label");
+					element.innerHTML="Nueva Etiqueta";
+					element.draggable="true";
+					element.id="lbl" + countlabel;
+					element.addEventListener("dragstart", drag);
+					previewForm.appendChild(element);
+					break;
+				case "textArea":
+					counttextArea++;
+					var element=document.createElement("textarea");
+					element.draggable="true";
+					element.id="txtArea" + counttextArea;
+					element.addEventListener("dragstart", drag);
+					previewForm.appendChild(element);
+					break;
+				case "checkBox":
+					countcheckBox++;
+					var element=document.createElement("input");
+					element.type="checkbox";
+					element.draggable="true";
+					element.id="chk" + countcheckBox;
+					element.addEventListener("dragstart", drag);
+					previewForm.appendChild(element);
+					break;
+				case "radio":
+					countradio++;
+					var element=document.createElement("input");
+					element.type="radio";
+					element.draggable="true";
+					element.id="rdo" + countradio;
+					element.addEventListener("dragstart", drag);
+					previewForm.appendChild(element);
+					break;
+				case "select":
+					countselect++;
+					var element=document.createElement("select");
+					var items = ["opción 1", "opción 2", "opción 3"];
+					var str = "";
+					for (var item of items) {
+						str += "<option>" + item + "</option>";
+					}
+					element.innerHTML = str;
+					element.draggable="true";
+					element.id="lst" + countselect;
+					element.addEventListener("dragstart", drag);
+					previewForm.appendChild(element);
+					break;
+				case "multipleSelect":
+					countmultipleSelect++;
+					var element=document.createElement("select");
+					var items = ["opción 1", "opción 2", "opción 3"];
+					var str = "";
+					for (var item of items) {
+						str += "<option>" + item + "</option>";
+					}
+					element.innerHTML = str;
+					element.draggable="true";
+					element.id="mlt" + countmultipleSelect;
+					element.addEventListener("dragstart", drag);
+					previewForm.appendChild(element);
+					break;
+			}
+		}
+	</script>
+</body>
+
+</html>
