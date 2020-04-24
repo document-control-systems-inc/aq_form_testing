@@ -1,0 +1,46 @@
+35 usuarios
+
+
+Operation Stonegarden --> nombre del peticionario
+Subvención --> De donde vienen los fondos --> List 
+	1. EMW-2016-SS-00031-S01
+	2. EMW-2017-SS-00031-S01
+
+Contrato:	--> Deberían poder escribir  (Tipo list box que puedan escribir)
+Petición por:	--> List
+	1. Adelanto
+	2. Reembolso
+Por concepto:	--> List
+	1. Orden de Compra
+	2. Contrato
+	3. Gastos de Viaje
+	4. Combustible
+	5. Horas Extra
+Item Solicitado:	--> Texto
+Justificación:	--> Attachment  --> Que ellos pudieran subir un documento
+		(Nombre del documento)
+
+
+Arriba:
+Status:	--> List
+	1. Sometida
+	2. Revisión
+	3. Denegada
+	4. Aprobada
+	5. Pagada
+
+Número de Petición:	--> Se escribe
+	2020OPSG-01
+Año Presente
+Grant --PSG
+INT -> Incremental
+
+--
+Cuantía Solicitada:
+Cuantía Aprobada:
+Cuantía Ajustada:
+Peticionario:
+Puesto:
+
+--
+CheckList

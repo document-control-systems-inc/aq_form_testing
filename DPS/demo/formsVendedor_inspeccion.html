@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+
+
+
+
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="http://f2m.com.mx/img/core-img/favicon.png" />
+	<link rel="icon" type="image/png" href="http://f2m.com.mx/img/core-img/favicon.png" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Aquarius Forms</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
+
+	<!-- Bootstrap core CSS     -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	
+
+
+	<!--  Material Dashboard CSS    -->
+	<link href="assets/css/material-dashboard.css?v=1.3.0" rel="stylesheet"/>
+
+	<!--  CSS for Demo Purpose, don't include it in your project     -->
+	<link href="assets/css/demo.css" rel="stylesheet" />
+
+	
+	<!--     Fonts and icons     -->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+	  
+	  
+	  
+	<style>
+#can {
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #AAA;
+}
+
+.swatch {
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 2px;
+  cursor: pointer;
+
+}
+
+.highlight {
+  border: 1px solid red;
+}
+    </style>
+
+</head>
+
+
+<body >
+	<div class="wrapper">
+
+	    <div class="sidebar" data-active-color="orange" data-background-color="black" data-image="assets/img/sidebar-1.jpg">
+    <!--
+        Tip 1: You can change the color of active element of the sidebar using: data-active-color="purple | blue | green | orange | red | rose"
+        Tip 2: you can also add an image using data-image tag
+        Tip 3: you can change the color of the sidebar with data-background-color="white | black"
+    -->
+
+    <div class="logo text-center">
+            <!--img src="/assets/images/Aquarius-Imaging-web.png"-->
+            <div class="logo-img">
+                <img src="assets/img/path23.png" style="width:50px" />
+            </div>
+        </div>
+
+    <div class="sidebar-wrapper">
+        <div class="user">
+            <div class="photo">
+                <img src="assets/img/default-avatar.png" />
+            </div>
+            <div class="info">
+                <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+                    <span>
+                         Usuario Prueba 
+                        <b class="caret"></b>
+                    </span>
+                </a>
+                <div class="clearfix"></div>
+                <div class="collapse" id="collapseExample">
+                    <ul class="nav">
+                        <li>
+                            <a href="#">
+                                <span class="sidebar-mini"> MP </span>
+                                <span class="sidebar-normal"> Mi Perfil </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="sidebar-mini"> EP </span>
+                                <span class="sidebar-normal"> Editar Perfil </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="login.html">
+                                <span class="sidebar-mini"> CS </span>
+                                <span class="sidebar-normal"> Cerrar Sesión </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="nav">
+
+             <li >
+                <a href="./clientes100100.html">
+                    <i class="material-icons">people</i>
+                    <p> Mis Clientes </p>
+                </a>
+            </li>
+            <li class="active">
+                <a href="./formsVendor.html">
+                    <i class="material-icons">content_paste</i>
+                    <p> Nueva Forma </p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+	    <div class="main-panel">
+
+			<nav class="navbar navbar-transparent navbar-absolute">
+    <div class="container-fluid">
+        <div class="navbar-minimize">
+            <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
+                <i class="material-icons visible-on-sidebar-regular">more_vert</i>
+                <i class="material-icons visible-on-sidebar-mini">view_list</i>
+            </button>
+        </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"> Forms </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="material-icons">dashboard</i>
+                        <p class="hidden-lg hidden-md">Dashboard</p>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="material-icons">notifications</i>
+                        <span class="notification">5</span>
+                        <p class="hidden-lg hidden-md">
+                            Notifications
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Mike John responded to your email</a></li>
+                        <li><a href="#">You have 5 new tasks</a></li>
+                        <li><a href="#">You're now friend with Andrew</a></li>
+                        <li><a href="#">Another Notification</a></li>
+                        <li><a href="#">Another One</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                       <i class="material-icons">person</i>
+                       <p class="hidden-lg hidden-md">Profile</p>
+                    </a>
+                </li>
+
+                <li class="separator hidden-lg hidden-md"></li>
+            </ul>
+
+
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group form-search is-empty">
+                    <input type="text" class="form-control" placeholder=" Search ">
+                    <span class="material-input"></span>
+                </div>
+                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                    <i class="material-icons">search</i><div class="ripple-container"></div>
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+			
+
+				<div class="content">
+					<div class="container-fluid">
+					
+	<!-- <form action="http://ec2-3-90-50-217.compute-1.amazonaws.com:8080/aquarius/getFormPdfPrime" method="post" target="_blank" name="myForm" id="myForm"> -->
+	<form action="http://localhost:9090/getFormPdfPrime" method="post" target="_blank" name="myForm" id="myForm">
+		<input type="hidden" name="template" value="inspeccion">
+		<input type="hidden" name="docName" value="ejemplo001">
+	
+	<div id="page1">
+		<img id="imgFondo" src="assets/img/frmJanitorial_inspeccion1.jpg" alt="Form01" width="1100" height="850" border="0" usemap="#form01">
+			
+			  <!--papel-->
+         <input style="position:absolute;top:300px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:300px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="apariencia_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:317px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:317px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="alfombra_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:334px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:334px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="paredes_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:352px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:352px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="rejillas_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:369px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:369px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="polvo_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:386px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:386px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="aceras_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:403px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:403px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escaleras_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:420px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:420px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="ventanas_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:437px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:437px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="cristales_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:454px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:454px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="zafacones_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:472px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:472px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="tuberias_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:490px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:490px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="stainless_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:507px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:507px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="plafones_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:524px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:524px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="escritorios_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:541px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:541px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="sillas_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:558px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:558px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="lavamanos_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:575px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:575px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="fuentes_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:592px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:592px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="inodoros_area" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:609px;left:302px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:325px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_2" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:350px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_3" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:375px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_4" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:400px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_5" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:426px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_6" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:452px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_7" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:478px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_8" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:505px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_9" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:531px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_10" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:557px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_11" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:585px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_12" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:610px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_13" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:637px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_14" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:664px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_15" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:690px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_16" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:716px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_17" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:745px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_18" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:770px;width:20px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_19" onchange="sumaT1();">
+		 <input style="position:absolute;top:609px;left:820px;width:180px;height:15px;background-color:#efe4b0;font-size:9pt" type="text" name="telas_area" onchange="sumaT1();">
+		 
+		 <!-- Totales -->
+		 
+		 <input style="position:absolute;top:626px;left:302px;width:20px;height:14px;background-color:#ddd;font-size:9pt" type="text" name="puntos_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:626px;left:820px;width:50px;height:14px;background-color:#ddd;font-size:9pt" type="text" name="total_puntos" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:641px;left:302px;width:20px;height:14px;background-color:#ddd;font-size:9pt" type="text" name="tareas_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:641px;left:820px;width:50px;height:14px;background-color:#ddd;font-size:9pt" type="text" name="total_tareas" onchange="sumaT1();">
+		 
+		 <input style="position:absolute;top:656px;left:302px;width:20px;height:14px;background-color:#ddd;font-size:9pt" type="text" name="eficiencia_1" onchange="sumaT1();">
+		 <input style="position:absolute;top:656px;left:820px;width:50px;height:14px;background-color:#ddd;font-size:9pt" type="text" name="total_eficiencia" onchange="sumaT1();">
+		 
+		 
+
+		
+			<br>
+			<input type="button" value="Enviar" onclick="submitForm()">
+	</div>
+	
+	</form>
+
+					</div>
+				</div>
+
+			 
+
+			
+			<footer class="footer">
+    <div class="container-fluid">
+        <p class="copyright pull-right">
+            &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.f2m.com.mx"> F2M S.A. de C.V. </a>
+        </p>
+    </div>
+</footer>
+
+			
+		</div>
+	</div>
+</body>
+  
+	<!--   Core JS Files   -->
+<script src="assets/js/jquery.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/material.min.js" type="text/javascript"></script>
+<script src="assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+
+<!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
+<!-- Library for adding dinamically elements -->
+<script src="assets/js/arrive.min.js" type="text/javascript"></script>
+
+<!-- Forms Validations Plugin -->
+<script src="assets/js/jquery.validate.min.js"></script>
+
+<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+<script src="assets/js/moment.min.js"></script>
+
+<!--  Charts Plugin, full documentation here: https://gionkunz.github.io/chartist-js/ -->
+<script src="assets/js/chartist.min.js"></script>
+
+<!--  Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+<script src="assets/js/jquery.bootstrap-wizard.js"></script>
+
+<!--  Notifications Plugin, full documentation here: http://bootstrap-notify.remabledesigns.com/    -->
+<script src="assets/js/bootstrap-notify.js"></script>
+
+<!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+<script src="assets/js/bootstrap-datetimepicker.js"></script>
+
+<!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+<script src="assets/js/jquery-jvectormap.js"></script>
+
+<!-- Sliders Plugin, full documentation here: https://refreshless.com/nouislider/ -->
+<script src="assets/js/nouislider.min.js"></script>
+
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
+<!--  Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+<script src="assets/js/jquery.select-bootstrap.js"></script>
+
+<!--  DataTables.net Plugin, full documentation here: https://datatables.net/    -->
+<script src="assets/js/jquery.datatables.js"></script>
+
+<!-- Sweet Alert 2 plugin, full documentation here: https://limonte.github.io/sweetalert2/ -->
+<script src="assets/js/sweetalert2.js"></script>
+
+<!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+<script src="assets/js/jasny-bootstrap.min.js"></script>
+
+<!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+<script src="assets/js/fullcalendar.min.js"></script>
+
+<!-- Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+<script src="assets/js/jquery.tagsinput.js"></script>
+
+<!-- Material Dashboard javascript methods -->
+<script src="assets/js/material-dashboard.js?v=1.3.0"></script>
+
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="assets/js/demo.js"></script>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+		
+    });
+</script>
+
+<script>
+
+function showPage(actualPage, nextPage) {
+	document.getElementById(actualPage).style.display='none';
+	document.getElementById(nextPage).style.display='block';
+	
+}
+
+
+function sumaT1() {
+	var suma_puntos1 = 0;
+	var suma_tareas1 = 0;
+	var eficiencia1 = 0;
+	var suma_puntos2 = 0;
+	var suma_tareas2 = 0;
+	var eficiencia2 = 0;
+	var suma_puntos3 = 0;
+	var suma_tareas3 = 0;
+	var eficiencia3 = 0;
+	var suma_puntos4 = 0;
+	var suma_tareas4 = 0;
+	var eficiencia4 = 0;
+	var suma_puntos5 = 0;
+	var suma_tareas5 = 0;
+	var eficiencia5 = 0;
+	var suma_puntos6 = 0;
+	var suma_tareas6 = 0;
+	var eficiencia6 = 0;
+	var suma_puntos7 = 0;
+	var suma_tareas7 = 0;
+	var eficiencia7 = 0;
+	var suma_puntos8 = 0;
+	var suma_tareas8 = 0;
+	var eficiencia8 = 0;
+	var suma_puntos9 = 0;
+	var suma_tareas9 = 0;
+	var eficiencia9 = 0;
+	var suma_puntos10 = 0;
+	var suma_tareas10 = 0;
+	var eficiencia10 = 0;
+	var suma_puntos11 = 0;
+	var suma_tareas11 = 0;
+	var eficiencia11 = 0;
+	var suma_puntos12 = 0;
+	var suma_tareas12 = 0;
+	var eficiencia12 = 0;
+	var suma_puntos13 = 0;
+	var suma_tareas13 = 0;
+	var eficiencia13 = 0;
+	var suma_puntos14 = 0;
+	var suma_tareas14 = 0;
+	var eficiencia14 = 0;
+	var suma_puntos15 = 0;
+	var suma_tareas15 = 0;
+	var eficiencia15 = 0;
+	var suma_puntos16 = 0;
+	var suma_tareas16 = 0;
+	var eficiencia16 = 0;
+	var suma_puntos17 = 0;
+	var suma_tareas17 = 0;
+	var eficiencia17 = 0;
+	var suma_puntos18 = 0;
+	var suma_tareas18 = 0;
+	var eficiencia18 = 0;
+	var suma_puntos19 = 0;
+	var suma_tareas19 = 0;
+	var eficiencia19 = 0;
+	
+	var total_puntos = 0;
+	var total_tareas = 0;
+	var total_eficiencia = 0;
+	
+	if (!isNaN(document.getElementsByName('apariencia_1')[0].value)) { var parcial_puntos = parseInt(document.getElementsByName('apariencia_1')[0].value, 10); suma_puntos1 = suma_puntos1 + parcial_puntos; suma_tareas1 = suma_tareas1 + 1; if (suma_tareas1 > 0) { eficiencia1 = suma_puntos1/suma_tareas1;} }else {document.getElementsByName('apariencia_1')[0].value = 0;}
+
+
+
+
+
+	document.getElementsByName('puntos_1')[0].value=suma_puntos1; 
+	document.getElementsByName('tareas_1')[0].value=suma_tareas1; 
+	document.getElementsByName('eficiencia_1')[0].value=eficiencia1;
+
+	total_puntos = suma_puntos1 + suma_puntos2 + suma_puntos3 + suma_puntos4 + suma_puntos5 + suma_puntos6 + suma_puntos7 + suma_puntos8 + suma_puntos9 + suma_puntos10 + suma_puntos11 + suma_puntos12 + suma_puntos13 + suma_puntos14 + suma_puntos15 + suma_puntos16 + suma_puntos17 + suma_puntos18 + suma_puntos19;
+	total_tareas = suma_tareas1 + suma_tareas2 + suma_tareas3 + suma_tareas4 + suma_tareas5 + suma_tareas6 + suma_tareas7 + suma_tareas8 + suma_tareas9 + suma_tareas10 + suma_tareas11 + suma_tareas12 + suma_tareas13 + suma_tareas14 + suma_tareas15 + suma_tareas16 + suma_tareas17 + suma_tareas18 + suma_tareas19;
+	if (total_tareas > 0) {
+		total_eficiencia = total_puntos/total_tareas;
+	}
+
+document.getElementsByName('total_puntos')[0].value = total_puntos;
+document.getElementsByName('total_tareas')[0].value = total_tareas;
+document.getElementsByName('total_eficiencia')[0].value = total_eficiencia;
+	
+}
+
+function submitForm() {
+	var frm = document.getElementsByName('myForm')[0];
+	frm.submit(); // Submit the form
+	frm.reset();  // Reset all form data
+	location.reload();
+}
+
+// size of drawing and its starting background colour
+const drawingInfo = {
+  width: 384 ,
+  height: 160,
+  bgColor: "white",
+}
+// "red,orange,yellow,green,cyan,blue,purple,white,gray,black"
+var currentColor = "blue";
+var currentWidth = 2;
+
+const canvas = document.getElementById("can");
+//const mouse = createMouse().start(canvas, true);
+const mouse = createMouse();
+const ctx = canvas.getContext("2d");
+var updateDisplay = false; // when true the display needs updating
+var ch, cw, w, h; // global canvas size vars
+var currentLine;
+var deleteSign = false;
+var isCanvasVisible = false;
+var isNewSign = false;
+
+var displayOffset = {
+  x: 0,
+  y: 0
+};
+
+// a point object creates point from x,y coords or object that has x,y
+const point = (x, y = x.y + ((x = x.x) * 0)) => ({
+  x,
+  y
+});
+// function to add a point to the line
+function addPoint(x, y) {
+  this.points.push(point(x, y));
+}
+
+function drawLine(ctx, offset) { // draws a line
+  ctx.strokeStyle = this.color;
+  ctx.lineWidth = this.width;
+  ctx.lineJoin = "round";
+  ctx.lineCap = "round";
+  ctx.beginPath();
+  var i = 0;
+  while (i < this.points.length) {
+    const p = this.points[i++];
+    ctx.lineTo(p.x + offset.x, p.y + offset.y);
+  }
+  ctx.stroke();
+}
+
+function createLine(color, width) {
+  return {
+    points: [],
+    color,
+    width,
+    add: addPoint,
+    draw: drawLine,
+  };
+}
+
+
+// creates a canvas
+function createCanvas(width, height) {
+  const c = document.createElement("canvas");
+  c.width = width;
+  c.height = height;
+  c.ctx = c.getContext("2d");
+  return c;
+}
+// resize main display canvas and set global size vars
+function resizeCanvas() {
+  //ch = ((h = canvas.height = innerHeight - 32) / 2) | 0;
+  //ch = ((h = canvas.height = document.getElementById("imgFondo").height - 32) / 2) | 0;
+  ch = ((h = canvas.height = 230) / 2) | 0;
+  //cw = ((w = canvas.width = innerWidth) / 2) | 0;
+  //cw = ((w = canvas.width = document.getElementById("imgFondo").width) / 2) | 0;
+  cw = ((w = canvas.width = 440) / 2) | 0;
+  
+  updateDisplay = true;
+}
+
+function createMouse() {
+  function preventDefault(e) { e.preventDefault() }
+  const mouse = {
+    x: 0,
+    y: 0,
+    buttonRaw: 0,
+    prevButton: 0
+  };
+  const bm = [1, 2, 4, 6, 5, 3]; // bit masks for mouse buttons
+  const mouseEvents = "mousemove,mousedown,mouseup".split(",");
+  const m = mouse;
+  // one mouse handler
+  function mouseMove(e) {
+	
+  
+    m.bounds = m.element.getBoundingClientRect();
+    m.x = e.pageX - m.bounds.left - scrollX;
+    m.y = e.pageY - m.bounds.top - scrollY;
+    
+    if (e.type === "mousedown") {
+      m.buttonRaw |= bm[e.which - 1];
+    } else if (e.type === "mouseup") {
+      m.buttonRaw &= bm[e.which + 2];
+    }
+    // check if there should be a display update
+    if (m.buttonRaw || m.buttonRaw !== m.prevButton) {
+      updateDisplay = true;
+    }
+    // if the mouse is down and the prev mouse is up then start a new line
+    if (m.buttonRaw !== 0 && m.prevButton === 0) { // starting new line
+      currentLine = createLine(currentColor, currentWidth);
+      currentLine.add(m); // add current mouse position
+    } else if (m.buttonRaw !== 0 && m.prevButton !== 0) { // while mouse is down
+      currentLine.add(m); // add current mouse position      
+    }
+    m.prevButton = m.buttonRaw; // remember the previous mouse state
+    e.preventDefault();
+  }
+  // starts the mouse 
+  m.start = function(element, blockContextMenu) {
+    m.element = element;
+
+    //mouseEvents.forEach(n => document.addEventListener(n, mouseMove));
+	mouseEvents.forEach(n => document.getElementById("divFirma").addEventListener(n, mouseMove));
+    if (blockContextMenu === true) {
+      //document.addEventListener("contextmenu", preventDefault)
+	  document.getElementById("divFirma").addEventListener("contextmenu", preventDefault)
+    }
+    return m
+  }
+  return m;
+}
+
+
+
+var cursor = "crosshair";
+function update(timer) { // Main update loop
+  cursor = "crosshair";
+  globalTime = timer;
+  // if the window size has changed resize the canvas
+  if (w !== innerWidth || h !== innerHeight) {
+    resizeCanvas()
+  }
+  if (updateDisplay) {
+    updateDisplay = false;
+    display(); // call demo code
+  }
+ 
+  ctx.canvas.style.cursor = cursor;
+  requestAnimationFrame(update);
+}
+// create a drawing canvas.
+const drawing = createCanvas(drawingInfo.width, drawingInfo.height);
+// fill with white
+drawing.ctx.fillStyle = drawingInfo.bgColor;
+drawing.ctx.fillRect(0, 0, drawing.width, drawing.height);
+
+// function to display drawing 
+function display() {
+	  ctx.clearRect(0, 0, w, h);
+	  //ctx.fillStyle = "rgba(0,0,0,0.25)";
+	  ctx.clearRect(0, 0, w, h);
+	  //ctx.fillStyle = "rgba(0,0,0,0.25)";
+	  const imgX = cw - (drawing.width / 2) | 0;
+	  const imgY = ch - (drawing.height / 2) | 0;
+	  // add a shadow to make it look nice
+	  //ctx.fillRect(imgX + 5, imgY + 5, drawing.width, drawing.height);
+
+	  // add outline
+	  ctx.strokeStyle = "black";
+	  ctx.lineWidth = "2";
+	  //ctx.strokeRect(imgX, imgY, drawing.width, drawing.height);
+	  // draw the image
+	  ctx.drawImage(drawing, imgX, imgY);
+	  if (mouse.buttonRaw !== 0) {
+		if (currentLine !== undefined) {
+		  currentLine.draw(ctx, displayOffset); // draw line on display canvas
+		  cursor = "none";
+		  updateDisplay = true; // keep updating 
+		}
+	  } else if (mouse.buttonRaw === 0) {
+		if (currentLine !== undefined) {
+			if (isNewSign) {
+				drawing.ctx.fillStyle = drawingInfo.bgColor;
+				drawing.ctx.fillRect(0, 0, drawing.width, drawing.height);
+				isNewSign = false;
+			} 
+			currentLine.draw(drawing.ctx, {x: -imgX, y: -imgY }); // draw line on drawing
+			currentLine = undefined;
+			updateDisplay = true;
+			// next line is a quick fix to stop a slight flicker due to the current frame not showing the line
+			ctx.drawImage(drawing, imgX, imgY);
+		}
+	  }
+	
+	  
+}
+
+requestAnimationFrame(update);
+
+/* load and add image to the drawing. It may take time to load. */
+function loadImage(url){
+    const image = new Image();
+    image.src = url;
+    image.onload = function(){
+        if(drawing && drawing.ctx){
+            drawing.width = image.width;
+            drawing.height = image.height;
+            drawing.ctx.drawImage(image,0,0);
+        };
+    }
+
+ }
+
+ 
+var button = document.getElementById('btn-download');
+button.addEventListener('click', function (e) {
+    var dataURL = canvas.toDataURL('image/png');
+    button.href = dataURL;
+});
+
+function showCanvas(type) {
+	if(type == 1){
+		isNewSign = true;
+	} else {
+		if(type == 3){
+			isNewSign = true;
+		}
+		if(type == 2){
+			var imgFirma = document.getElementById('imgFirma');
+			imgFirma.value = canvas.toDataURL('image/png');
+		}
+		var canvasElement = document.getElementById('can');
+		var btnBorrar = document.getElementById('btnBorrar');
+		var btnAceptar = document.getElementById('btnAceptar');
+		var btnCancelar = document.getElementById('btnCancelar');
+		if (!isCanvasVisible) {
+			canvasElement.style.visibility='visible';
+			btnBorrar.style.visibility='visible';
+			btnAceptar.style.visibility='visible';
+			btnCancelar.style.visibility='visible';
+			isCanvasVisible = true;
+			mouse.start(canvas, true);
+		} else {
+			btnBorrar.style.visibility='hidden';
+			btnAceptar.style.visibility='hidden';
+			btnCancelar.style.visibility='hidden';
+			isCanvasVisible = false;
+			canvasElement.style.visibility='hidden';
+			mouse = null;
+		}
+	
+	}
+	
+	
+}
+
+
+</script>
+
+
+
+</html>

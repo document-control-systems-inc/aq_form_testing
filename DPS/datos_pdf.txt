@@ -1,0 +1,47 @@
+numPeticion
+tipoOperacion
+subvencion
+numContrato
+motivoPeticion
+concepto
+itemSolicitado
+justificacion
+cuantiaSolicitada
+cuantiaAprobada
+cuantiaAjustada
+peticionario
+puesto
+
+chk_solicitud_adelanto_fondos
+txt_solicitud_adelanto_fondos
+
+chk_informe_horas_extras
+txt_informe_horas_extras
+
+chk_hojas_asistencia
+txt_hojas_asistencia
+
+chk_cheque_cancelado
+txt_cheque_cancelado
+
+chk_otros
+txt_otros
+
+chk_gerentes_budget
+txt_gerentes_budget
+
+chk_finanzas_prifas
+txt_finanzas_prifas
+
+
+
+
+--
+Justificación:
+Que seleccione un archivo (que seleccione un PDF)
+y se agrega como parte de atras
+
+
+
+En la lista, que pueda escoger un attachment
+--
