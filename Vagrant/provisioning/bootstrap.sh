@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 echo "Actualizando librerias"
-apt-get update
+sudo apt-get update
 if [ ! -f /var/log/ldapinstall ];
 then
 	echo "Instalando LDAP"
 	debconf-set-selections <<< 'slapd slapd/password1 password adminpass'
 	debconf-set-selections <<< 'slapd slapd/password2 password adminpass'
-	apt-get -y install unzip tomcat7 postgresql postgresql-contrib python-software-properties slapd ldap-utils
+	sudo apt-get -y install unzip tomcat7 postgresql postgresql-contrib python-software-properties slapd ldap-utils
 	sudo touch /var/log/ldapinstall
 fi
 
