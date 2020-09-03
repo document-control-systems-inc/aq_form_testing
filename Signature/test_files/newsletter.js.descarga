@@ -1,0 +1,42 @@
+$(function() {
+    // Newsletter
+    Vue.component('newsletter', {
+        data: function () {
+            return {
+                URL_API: 'https://programadorwebvalenciapi.herokuapp.com',
+                DELAY_SEND: 2000,
+                mail: '',
+                isLoading: false,
+                message: '',
+                messageError: false,
+                finish: false,
+                disclaimer: false
+            }
+        },
+        methods: {
+            suscribe: function () {
+                let that = this;
+                this.isLoading = true;
+                setTimeout(function () {
+                    that.$http.post(that.URL_API + '/api/v1/newsletter', {
+                        mail: that.mail
+                    }).then(response => {
+                        that.messageError = false
+                        that.message = response.body['message'];
+                        if(that.message == 'ok') {
+                            that.finish = true;
+                            that.message = '¡Gracias por suscribirte!'
+                        } else {
+                            that.messageError = true
+                        }
+                        that.isLoading = false;
+                    }, response => {
+                        // error callback
+                        that.message = 'Ha ocurrido un problema, por favor inténtelo en otro momento.';
+                    });
+                }, that.DELAY_SEND);
+            }
+        },
+        template: $('template#newsletter').html()
+    })
+});

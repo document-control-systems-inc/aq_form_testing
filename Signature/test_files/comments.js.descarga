@@ -1,0 +1,176 @@
+const URL_API = 'https://glosa.programadorwebvalencia.com';
+//const URL_API = 'http://programadorwebvalencia.localhost:9000';
+const ENDPOINT_COMMENTS_API = '/api/v1/comments/';
+const ENDPOINT_GET_TOKEN_API = '/api/v1/captcha/';
+const ANIMATION_CLOSE_FORM_SEND = 2000;
+const ANIMATION_CLOSE_FORM = 500;
+
+/**
+  * Main
+  */
+const MAX_LENGTH_AUTHOR = 15;
+
+function formatEllipsisAuthor(text) {
+    return text.length > MAX_LENGTH_AUTHOR ? `${text.slice(0, MAX_LENGTH_AUTHOR - 3)}...` : text;
+}
+
+/**
+  * Vue APP
+ **/
+let app = new Vue({
+    el: '#app-comments',
+    data: {
+        comments: [],
+        token: undefined,
+        showNewComment: false,
+        reply: undefined,
+        newCommentParent: undefined,
+        newCommentAuthor: '',
+        newCommentContent: '',
+        policy: false,
+        loadingNewComment: false,
+        stateNewComment: undefined
+    },
+    mounted: function () {
+        this.getComments();
+    },
+    computed: {
+        commentsParent: function () {
+            return R.filter(item => item.deep === 0, this.comments);
+        },
+        replyComment: function () {
+            return R.head(R.filter(comment => comment.id === this.reply, this.comments));
+        },
+        isSubmit: function () {
+            return this.policy && this.newCommentAuthor !== '' && this.newCommentAuthor !== undefined && this.newCommentContent !== '' && this.newCommentContent !== undefined;
+        }
+    },
+    methods: {
+        getComments: function () {
+            axios({
+                method: 'get',
+                url: URL_API + ENDPOINT_COMMENTS_API,
+                params: {
+                    url: this.getURL()
+                }
+            })
+                .then(response => {
+                    this.comments = response.data;
+                    // Close form new comment
+                    setTimeout(() => {
+                        this.closeNewComment();
+                    }, ANIMATION_CLOSE_FORM);
+                });
+        },
+        addComment: function () {
+            this.loadingNewComment = true;
+            axios({
+                method: 'post',
+                url: URL_API + ENDPOINT_COMMENTS_API,
+                data: {
+                    parent: this.newCommentParent,
+                    token: this.token,
+                    author: this.newCommentAuthor,
+                    message: this.newCommentContent,
+                    thread: this.getURL()
+                }
+            })
+                .then(response => {
+                    this.stateNewComment = 'success';
+                    this.getComments();
+                })
+                .catch(error => {
+                    console.log(error);
+                    this.stateNewComment = 'error';
+                    setTimeout(() => {
+                        this.stateNewComment = undefined;
+                    }, ANIMATION_CLOSE_FORM_SEND);
+                })
+                .then(() => {
+                    // always executed
+                    this.loadingNewComment = false;
+                });
+
+        },
+        getToken: function () {
+            axios({
+                method: 'get',
+                url: URL_API + ENDPOINT_GET_TOKEN_API,
+                params: {
+                    url: this.getURL()
+                }
+            })
+                .then(response => {
+                    this.token = response.data.token;
+                });
+        },
+        getCommentsChilds: function (id) {
+            return R.filter(item => item.parent === id, this.comments);
+        },
+        getURL: function () {
+            return window.location.href;
+        },
+        openNewComment: function (id = undefined) {
+            this.getToken();
+            this.reply = id;
+            this.showNewComment = true;
+            this.newCommentParent = id !== undefined ? id : '';
+        },
+        closeNewComment: function () {
+            // Clean data
+            this.showNewComment = false;
+            // Hide reply finish animation
+            setTimeout(() => {
+                this.newCommentParent = undefined;
+                this.newCommentAuthor = undefined;
+                this.newCommentContent = undefined;
+                this.reply = undefined;
+                this.stateNewComment = undefined;
+                this.policy = false;
+            }, ANIMATION_CLOSE_FORM);
+        },
+        formatEllipsisAuthor: formatEllipsisAuthor,
+        sendNewComment: function () {
+            this.addComment();
+        }
+    }
+});
+
+/**
+ * Vue component: comment
+ **/
+Vue.component('comment', {
+    props: {
+        id: Number,
+        comments: Object
+    },
+    data: function () {
+        return {
+            maxDeep: 4
+        };
+    },
+    template: document.querySelector('template#comment').innerHTML,
+    computed: {
+        fields: function () {
+            return R.head(R.filter((item) => item.id === this.id, this.comments));
+        },
+        childs: function () {
+            return R.filter(item => item.parent === this.id, this.comments);
+        }
+    },
+    methods: {
+        formatDate: function (unixtime) {
+            const DATE = new Date(unixtime * 1000);
+            return `${DATE.getDate()}/${DATE.getMonth() + 1}/${DATE.getFullYear()}`;
+        },
+        filterHTMLTags: function (text) {
+            let myElement = document.createElement('div');
+            myElement.innerHTML = text;
+            return myElement.textContent;
+        },
+        openReply: function (id) {
+            app.openNewComment(id);
+        },
+        formatEllipsisAuthor: formatEllipsisAuthor
+    }
+});

@@ -1,0 +1,37 @@
+body::-moz-selection{background:#e48400;}
+body::selection{background:#e48400;}
+.progress-box .progress-bar{background-color:#e48400;}
+.service-item i{color:#e48400;}
+.service-item:hover{border-color:#e48400;i}
+.filter li a:hover{border-bottom:1px solid #e48400;}
+.filter li.active a{border-bottom:1px solid #e48400;}
+figure.effect-hover figcaption{background:#e48400;}
+.team-item figcaption small{color:#e48400;}
+.pricing-inner:hover{border-color:#e48400;}
+.pricing-inner:hover .pricing-icon,
+.pricing-inner:hover .pricing-title{color:#e48400;}
+.pricing-main .pricing-inner{border-color:#e48400;}
+.pricing-main .pricing-icon,
+.pricing-main .pricing-title{color:#e48400;}
+.pricing-main .pricing-button .btn{background:#e48400;}
+.contact-item span,
+.contact-item i{color:#e48400;}
+.btn-continue-reading{color:#e48400;}
+.btn-continue-reading:hover{color:#e48400;}
+.pagination > li.active a,
+.pagination > li.active span{border-color:#e48400;color:#e48400;}
+.features-icon{color:#e48400;}
+.btn-coffee.btn-color{background:#e48400;}
+.btn-coffee.btn-color-w{border:2px solid #e48400;background:#e48400;}
+span.higl{color:#e48400 !important;}
+.team-slider .owl-page span{border:1px solid #e48400;}
+.team-slider .owl-page.active span{background:#e48400;}
+@media only screen and (max-width:768px){.overlay-left{width:100%;background:#e48400;}
+.overlay-left div,
+.overlay-left h1{color:#fff;}
+.overlay-right{display:none;}
+.btn-scroll-alt:before,
+.btn-scroll-alt:after{border-bottom:1px solid #fff;border-right:1px solid #fff;}
+}
+.btn-coffee.btn-border{color:#e48400;border-color:#e48400;}
+.btn-coffee.btn-border:hover{color:#fff;background-color:#e48400;}

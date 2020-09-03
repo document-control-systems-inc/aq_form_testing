@@ -346,11 +346,28 @@ function showPage(actualPage, nextPage) {
 }
 
 
+function validateForm() {
+	itemSeleccionado = 'proposito_de_la_visita'; valueElemento = document.getElementsByName(itemSeleccionado)[0].value;if (!valueElemento || 0 === valueElemento.length) {document.getElementsByName(itemSeleccionado)[0].value = 'NA'; }
+	itemSeleccionado = 'asuntos_expuestos_por_clientes'; valueElemento = document.getElementsByName(itemSeleccionado)[0].value;if (!valueElemento || 0 === valueElemento.length) {document.getElementsByName(itemSeleccionado)[0].value = 'NA'; }
+	itemSeleccionado = 'necesidades_del_proyecto'; valueElemento = document.getElementsByName(itemSeleccionado)[0].value;if (!valueElemento || 0 === valueElemento.length) {document.getElementsByName(itemSeleccionado)[0].value = 'NA'; }
+	itemSeleccionado = 'oportunidades_de_crecimiento_en_el_proyecto'; valueElemento = document.getElementsByName(itemSeleccionado)[0].value;if (!valueElemento || 0 === valueElemento.length) {document.getElementsByName(itemSeleccionado)[0].value = 'NA'; }
+	itemSeleccionado = 'comentarios'; valueElemento = document.getElementsByName(itemSeleccionado)[0].value;if (!valueElemento || 0 === valueElemento.length) {document.getElementsByName(itemSeleccionado)[0].value = 'NA'; }
+	
+	return false;
+}
+
+
 function submitForm() {
-	var frm = document.getElementsByName('myForm')[0];
-	frm.submit(); // Submit the form
-	//frm.reset();  // Reset all form data
-	//location.reload();
+	if (validateForm()) {
+		var frm = document.getElementsByName('myForm')[0];
+		frm.submit(); // Submit the form
+		//frm.reset();  // Reset all form data
+		//location.reload();
+	} else {
+		alert('No se ha completado correctamente la forma');
+	}
+	
+	
 }
 
 // size of drawing and its starting background colour

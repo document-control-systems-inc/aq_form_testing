@@ -1,0 +1,21 @@
+$(function() {
+    // Add window code bash
+    // Make node
+    let nodeFakeControls = document.createElement('div');
+    nodeFakeControls.classList.add('fakeMenu');
+    let nodeClose = document.createElement('div');
+    nodeClose.classList.add('fakeButtons', 'fakeClose')
+    let nodeMinimize = document.createElement('div');
+    nodeMinimize.classList.add('fakeButtons', 'fakeMinimize');
+    let nodeZoom = document.createElement('div');
+    nodeZoom.classList.add('fakeButtons', 'fakeZoom');
+    nodeFakeControls.appendChild(nodeClose);
+    nodeFakeControls.appendChild(nodeMinimize);
+    nodeFakeControls.appendChild(nodeZoom);
+    // Add node
+    $('.language-bash').each(function() {
+        let $highlight = $(this).parent().parent();
+        $highlight.before(nodeFakeControls.cloneNode(true));
+        $highlight.css('border-radius', '0 0 5px 5px');  
+    });
+});

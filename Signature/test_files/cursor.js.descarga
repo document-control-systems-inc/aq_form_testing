@@ -1,0 +1,47 @@
+"use strict";
+// Variables
+var cursorPoint = document.querySelector(".cursor__point");
+var cursorCircle = document.querySelector(".cursor__circle");
+var width = window.innerWidth;
+var height = window.innerHeight;
+var target = {
+  x: width / 2,
+  y: height / 2 };
+
+var position = {
+  x: height,
+  y: width };
+
+var BORDER_WIDTH = 2;
+var DELAY_CURSOR = 0.1;
+var DISTANCE_HIDDEN = 20;
+var DISTANCE_VISIBLE = 100;
+var SIZE_CURSOR = 5;
+window.addEventListener("mousemove", function (event) {
+  target.x = event.clientX;
+  target.y = event.clientY;
+});
+// Funciones
+function updateCursorPoint() {
+  cursorPoint.style.left = (Number(target.x.toFixed()) + SIZE_CURSOR) + "px";
+  cursorPoint.style.top = (Number(target.y.toFixed()) - SIZE_CURSOR) + "px";
+  requestAnimationFrame(updateCursorPoint);
+}
+function updateCursorCircle() {
+  var dx = target.x - position.x;
+  var dy = target.y - position.y;
+  var vx = dx * DELAY_CURSOR;
+  var vy = dy * DELAY_CURSOR;
+  var distance = Math.abs(Math.abs(dx) > Math.abs(dy) ? dx.toFixed() : dy.toFixed());
+  position.x += vx;
+  position.y += vy;
+  cursorCircle.style.display = "" + (distance < DISTANCE_HIDDEN ? 'none' : 'block');
+  var opacity = distance < DISTANCE_VISIBLE ? (distance - DISTANCE_HIDDEN) / (DISTANCE_VISIBLE - DISTANCE_HIDDEN) : 1;
+  cursorCircle.style.transform = "scale(" + opacity + ")";
+  cursorCircle.style.left = (position.x + BORDER_WIDTH - cursorCircle.offsetWidth / 2).toFixed() + "px";
+  cursorCircle.style.top = (position.y + BORDER_WIDTH - cursorCircle.offsetHeight / 2).toFixed() + "px";
+  requestAnimationFrame(updateCursorCircle);
+}
+// Init
+updateCursorPoint();
+updateCursorCircle();

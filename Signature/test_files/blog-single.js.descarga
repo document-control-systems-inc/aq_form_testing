@@ -1,0 +1,8 @@
+$(function() {
+
+    // VueJS
+    new Vue({
+        el: '#app-blog-single--newsletter'
+    });
+
+});

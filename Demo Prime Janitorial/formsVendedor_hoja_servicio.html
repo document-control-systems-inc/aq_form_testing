@@ -322,7 +322,18 @@
 			
 			  
          <input style="position:absolute;top:315px;left:201px;width:370px;height:20px;background-color:#efe4b0;font-size:9pt" type="text" name="cliente">
-         <input style="position:absolute;top:315px;left:635px;width:140px;height:20px;background-color:#efe4b0;font-size:9pt" type="text" name="fecha">
+         <input type="hidden" name="fecha">
+		 <input style="position:absolute;top:315px;left:635px;width:140px;height:20px;background-color:#efe4b0;font-size:9pt" type="date" name="dt_fecha" onChange="formatFecha(document.getElementsByName('dt_fecha')[0].value, document.getElementsByName('fecha')[0])">
+		 <script>
+			function formatFecha(valueFecha, text) {
+				var myDate = new Date(valueFecha);
+				var mes = new Intl.DateTimeFormat('es', { month: 'short' }).format(myDate);
+				mes = mes.toUpperCase().substring(0,3);
+				var dia = ('0' + myDate.getUTCDate()).slice(-2);
+				text.value = mes + '/' + dia + '/' + myDate.getFullYear();
+			}
+		 </script>
+		 
          <input style="position:absolute;top:356px;left:218px;width:560px;height:20px;background-color:#efe4b0;font-size:9pt" type="text" name="direccion">
          <input style="position:absolute;top:395px;left:218px;width:355px;height:20px;background-color:#efe4b0;font-size:9pt" type="text" name="contacto">
          <input style="position:absolute;top:395px;left:655px;width:123px;height:20px;background-color:#efe4b0;font-size:9pt" type="text" name="telefono">

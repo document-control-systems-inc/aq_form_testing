@@ -1,0 +1,1 @@
+GRANT ALL on all tables in schema public to aquarius with grant option;

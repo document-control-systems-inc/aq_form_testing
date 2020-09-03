@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://programadorwebvalencia.com/dibujar-con-el-raton-en-HTML-y-Javascript/ -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <meta name="theme-color" content="#f7b143">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+   
+    	<title>F2M Signature</title>
+    
+    <link href="./test_files/css" rel="stylesheet">
+    <link href="./test_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./test_files/style.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+  <body class="appear-animate">
+    
+	
+<input type="button" value="Firmar" style="width:50px;height:19px;font-size:7pt" onClick="showSignature('signature1');">
+<input id="signature1" type="hidden" name="firmaCliente" value="">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<input type="button" value="Firmar" style="width:50px;height:19px;font-size:7pt" onClick="showSignature('signature2');">
+<input id="signature2" type="hidden" name="firmaCliente" value="">
+
+<input type="button" value="Firmar" style="width:50px;height:19px;font-size:7pt" onClick="showSignature('signature3');">
+<input id="signature3" type="hidden" name="firmaCliente" value="">
+
+
+<div id="signature-modal" class="w3-modal" style="background-color: #aaa;">
+	<span onclick="cerrarSignature();" class="w3-button w3-display-topright">&times;</span>
+	<div id="signature_frame" class="text-center">
+		<canvas id="signature" style="width: 384px; height: 160px; margin-top: 2px; background-color: #fff;"></canvas>
+	</div>
+	<div id="signature_controls" class="text-center">
+		<input id="btnBorrar" type="button" value="Borrar" style="left:50px;width:50px;height:19px;font-size:7pt" onClick="borrarSignature();">
+		<input id="btnAceptar" type="button" value="Aceptar" style="left:280px;width:50px;height:19px;font-size:7pt" onClick="aceptarSignature();">
+	</div>
+	
+</div>
+
+<script src="signature.js"></script>
+
+</body></html>
